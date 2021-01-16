@@ -7,17 +7,17 @@
 
 import UIKit
 
-protocol ReusableCell {
-    var reusableIndentify: String { get }
-    var nib: UINib { get }
+protocol ReusableCell: class {
+    static var reusableIndentify: String { get }
+    static var nib: UINib { get }
 }
 
 extension ReusableCell {
-    var reusableIndentify: String{
+    static var reusableIndentify: String{
         return String(describing: self)
     }
     
-    var nib: UINib {
+    static var nib: UINib {
         return UINib(nibName: String(describing: self), bundle: nil)
     }
 }

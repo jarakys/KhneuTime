@@ -34,7 +34,7 @@ class TableViewController<T>: UIViewController, TableViewDataSourceConfigurable,
         guard let cell = reusableCell else {
             fatalError("No register cell")
         }
-        tableView.register(cell.nib, forCellReuseIdentifier: cell.reusableIndentify)
+//        tableView.register(cell.nib, forCellReuseIdentifier: cell.reusableIndentify)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -61,12 +61,12 @@ class TableViewController<T>: UIViewController, TableViewDataSourceConfigurable,
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reusableCell!.reusableIndentify, for: indexPath)
-        let item = items[indexPath.row]
-        if let configurableCell = cell as? ConfigurableViewCell<T> {
-            configurableCell.configure(item: item)
-        }
-        return cell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: reusableCell!.reusableIndentify, for: indexPath)
+//        let item = items[indexPath.row]
+//        if let configurableCell = cell as? ConfigurableViewCell<T> {
+//            configurableCell.configure(item: item)
+//        }
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

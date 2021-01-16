@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="82v-ly-gXO" customClass="HeaderView" customModule="KhneuTime" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="465" height="151"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FE6-Ak-Rsc">
+                    <rect key="frame" x="8" y="52" width="449" height="57"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" systemColor="secondaryLabelColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="hLc-uM-uNJ"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="hLc-uM-uNJ" firstAttribute="trailing" secondItem="FE6-Ak-Rsc" secondAttribute="trailing" constant="8" id="1tE-zv-Eay"/>
+                <constraint firstItem="FE6-Ak-Rsc" firstAttribute="top" secondItem="hLc-uM-uNJ" secondAttribute="top" constant="8" id="3AS-sD-9Hu"/>
+                <constraint firstItem="FE6-Ak-Rsc" firstAttribute="leading" secondItem="hLc-uM-uNJ" secondAttribute="leading" constant="8" id="KFW-0K-Sss"/>
+                <constraint firstItem="hLc-uM-uNJ" firstAttribute="bottom" secondItem="FE6-Ak-Rsc" secondAttribute="bottom" constant="8" id="UhT-6k-7KO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="headerTitleLabel" destination="FE6-Ak-Rsc" id="ihU-GH-gmx"/>
+            </connections>
+            <point key="canvasLocation" x="250.00000000000003" y="112.16517857142857"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
