@@ -11,7 +11,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="unF-g3-PLg">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dLv-mU-K5k" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="UITabBarController" automaticallyAdjustsScrollViewInsets="NO" id="dLv-mU-K5k" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Z5j-fM-8Uv">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -98,7 +98,7 @@
         <!--Main-->
         <scene sceneID="pfh-u4-Dyg">
             <objects>
-                <viewController id="bAz-8e-OUX" customClass="MainViewController" customModule="KhneuTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="bAz-8e-OUX" customClass="MainViewController" customModule="KhneuTime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B8a-F6-rtd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

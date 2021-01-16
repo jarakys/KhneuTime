@@ -12,7 +12,6 @@ protocol StoryboardInstantiable {
 
 extension StoryboardInstantiable where Self: UIViewController {
     static var className: String {
-        let gg = String(String(describing: Self.self).split(separator: "<")[0])
-        return String(String(describing: Self.self).split(separator: "<")[0])
+        return String(describing: Self.self)
     }
 }

@@ -20,6 +20,15 @@
 		11182C0925B233FC00C78B4F /* OptionsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11182C0825B233FC00C78B4F /* OptionsEnum.swift */; };
 		113F8BAE25B2473F00836EA4 /* DataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F8BAD25B2473F00836EA4 /* DataSourceDelegate.swift */; };
 		113F8BB125B24A0000836EA4 /* RoundedGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F8BB025B24A0000836EA4 /* RoundedGroupCell.swift */; };
+		11647B6C25B394A700D5E00A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11647B6B25B394A700D5E00A /* Coordinator.swift */; };
+		11647B6F25B394D100D5E00A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11647B6E25B394D100D5E00A /* MainCoordinator.swift */; };
+		11647B7225B3956800D5E00A /* CoordinableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11647B7125B3956800D5E00A /* CoordinableViewController.swift */; };
+		117EEE7625B37F3100100A4E /* FacultiesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EEE7525B37F3100100A4E /* FacultiesDataSource.swift */; };
+		117EEE7925B37F9E00100A4E /* FacultyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 117EEE7825B37F9E00100A4E /* FacultyCell.xib */; };
+		117EEE7C25B37FCA00100A4E /* FacultyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EEE7B25B37FCA00100A4E /* FacultyCell.swift */; };
+		117EEE7F25B380E400100A4E /* SpecialtiesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EEE7E25B380E400100A4E /* SpecialtiesDataSource.swift */; };
+		117EEE8225B383F300100A4E /* CoursesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EEE8125B383F300100A4E /* CoursesDataSource.swift */; };
+		117EEE8625B384FE00100A4E /* SelectableGroupsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EEE8525B384FE00100A4E /* SelectableGroupsDataSource.swift */; };
 		11895E1C2533074800480611 /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11895E1B2533074800480611 /* ConfigurableCell.swift */; };
 		11895E1F253308FC00480611 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11895E1E253308FC00480611 /* ReusableCell.swift */; };
 		11937FE92532FA7900639905 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11937FE82532FA7900639905 /* AppDelegate.swift */; };
@@ -61,6 +70,15 @@
 		11182C0825B233FC00C78B4F /* OptionsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsEnum.swift; sourceTree = "<group>"; };
 		113F8BAD25B2473F00836EA4 /* DataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceDelegate.swift; sourceTree = "<group>"; };
 		113F8BB025B24A0000836EA4 /* RoundedGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedGroupCell.swift; sourceTree = "<group>"; };
+		11647B6B25B394A700D5E00A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		11647B6E25B394D100D5E00A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		11647B7125B3956800D5E00A /* CoordinableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinableViewController.swift; sourceTree = "<group>"; };
+		117EEE7525B37F3100100A4E /* FacultiesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesDataSource.swift; sourceTree = "<group>"; };
+		117EEE7825B37F9E00100A4E /* FacultyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacultyCell.xib; sourceTree = "<group>"; };
+		117EEE7B25B37FCA00100A4E /* FacultyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultyCell.swift; sourceTree = "<group>"; };
+		117EEE7E25B380E400100A4E /* SpecialtiesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialtiesDataSource.swift; sourceTree = "<group>"; };
+		117EEE8125B383F300100A4E /* CoursesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesDataSource.swift; sourceTree = "<group>"; };
+		117EEE8525B384FE00100A4E /* SelectableGroupsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableGroupsDataSource.swift; sourceTree = "<group>"; };
 		11895E1B2533074800480611 /* ConfigurableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
 		11895E1E253308FC00480611 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 		11937FE52532FA7900639905 /* KhneuTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KhneuTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,8 +182,38 @@
 				11038A2C253325B300CB9F03 /* TableCell.xib */,
 				11038A342533753E00CB9F03 /* ScheduleCell.xib */,
 				11FACADC25B2389500B966FD /* OptionCell.xib */,
+				117EEE7825B37F9E00100A4E /* FacultyCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		11647B6A25B3947F00D5E00A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				11647B6B25B394A700D5E00A /* Coordinator.swift */,
+				11647B6E25B394D100D5E00A /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		117EEE7325B37ECE00100A4E /* GroupViewController */ = {
+			isa = PBXGroup;
+			children = (
+				117EEE7425B37F0700100A4E /* DataSources */,
+				11CEA185253314F000C628F5 /* FacultiesViewController.swift */,
+			);
+			path = GroupViewController;
+			sourceTree = "<group>";
+		};
+		117EEE7425B37F0700100A4E /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				117EEE7525B37F3100100A4E /* FacultiesDataSource.swift */,
+				117EEE7E25B380E400100A4E /* SpecialtiesDataSource.swift */,
+				117EEE8125B383F300100A4E /* CoursesDataSource.swift */,
+				117EEE8525B384FE00100A4E /* SelectableGroupsDataSource.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 		11895E1A2533073900480611 /* Protocols */ = {
@@ -233,6 +281,8 @@
 		119380082532FFA000639905 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				11647B6A25B3947F00D5E00A /* Coordinator */,
+				117EEE7325B37ECE00100A4E /* GroupViewController */,
 				1100E49825B2460B00285CD4 /* HeaderAndFooters */,
 				11FACAE725B241AF00B966FD /* MainViewController */,
 				11FACADF25B2390100B966FD /* Cells */,
@@ -240,6 +290,7 @@
 				119380092532FFB400639905 /* ScheduleViewController.swift */,
 				1193801A2533038200639905 /* TableViewController.swift */,
 				11038A282533181800CB9F03 /* BaseViewController.swift */,
+				11647B7125B3956800D5E00A /* CoordinableViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -266,7 +317,6 @@
 			isa = PBXGroup;
 			children = (
 				11CEA17F253312DD00C628F5 /* GroupsViewController.swift */,
-				11CEA185253314F000C628F5 /* FacultiesViewController.swift */,
 				11CEA1882533150600C628F5 /* SpecialtiesViewController.swift */,
 				11CEA18B2533151600C628F5 /* SelectGroupViewController.swift */,
 			);
@@ -278,6 +328,7 @@
 			children = (
 				11FACAE425B2392F00B966FD /* OptionCell.swift */,
 				113F8BB025B24A0000836EA4 /* RoundedGroupCell.swift */,
+				117EEE7B25B37FCA00100A4E /* FacultyCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -348,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				117EEE7925B37F9E00100A4E /* FacultyCell.xib in Resources */,
 				11FACADD25B2389500B966FD /* OptionCell.xib in Resources */,
 				11038A352533753E00CB9F03 /* ScheduleCell.xib in Resources */,
 				11038A2D253325B300CB9F03 /* TableCell.xib in Resources */,
@@ -378,24 +430,32 @@
 				11937FE92532FA7900639905 /* AppDelegate.swift in Sources */,
 				119380052532FF5B00639905 /* TabBarOptions.swift in Sources */,
 				11182C0925B233FC00C78B4F /* OptionsEnum.swift in Sources */,
+				117EEE7625B37F3100100A4E /* FacultiesDataSource.swift in Sources */,
 				113F8BB125B24A0000836EA4 /* RoundedGroupCell.swift in Sources */,
+				117EEE8225B383F300100A4E /* CoursesDataSource.swift in Sources */,
 				11038A292533181800CB9F03 /* BaseViewController.swift in Sources */,
 				11895E1C2533074800480611 /* ConfigurableCell.swift in Sources */,
 				1193800A2532FFB400639905 /* ScheduleViewController.swift in Sources */,
 				11CEA186253314F000C628F5 /* FacultiesViewController.swift in Sources */,
 				11112BFF25330C1C003CEEDA /* Storyboard+Type.swift in Sources */,
 				1193801B2533038200639905 /* TableViewController.swift in Sources */,
+				11647B7225B3956800D5E00A /* CoordinableViewController.swift in Sources */,
 				113F8BAE25B2473F00836EA4 /* DataSourceDelegate.swift in Sources */,
 				11937FEB2532FA7900639905 /* SceneDelegate.swift in Sources */,
 				119380002532FF2600639905 /* UIViewController+presentAlert.swift in Sources */,
 				1100E49A25B2462100285CD4 /* HeaderView.swift in Sources */,
+				117EEE7F25B380E400100A4E /* SpecialtiesDataSource.swift in Sources */,
+				11647B6F25B394D100D5E00A /* MainCoordinator.swift in Sources */,
 				11038A382533783E00CB9F03 /* ScheduleCell.swift in Sources */,
+				117EEE8625B384FE00100A4E /* SelectableGroupsDataSource.swift in Sources */,
+				11647B6C25B394A700D5E00A /* Coordinator.swift in Sources */,
 				11112BFC25330BCE003CEEDA /* StoryboardInstantiable.swift in Sources */,
 				11CEA17D25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift in Sources */,
 				11FACAEF25B242E600B966FD /* GroupsDataSource.swift in Sources */,
 				11938013253302D100639905 /* TextAlertView.swift in Sources */,
 				11CEA18C2533151600C628F5 /* SelectGroupViewController.swift in Sources */,
 				11CEA1892533150600C628F5 /* SpecialtiesViewController.swift in Sources */,
+				117EEE7C25B37FCA00100A4E /* FacultyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,7 +612,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jingero.KhneuTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -571,7 +631,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jingero.KhneuTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

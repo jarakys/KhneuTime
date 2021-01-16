@@ -16,21 +16,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6KZ-6m-QbK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="6KZ-6m-QbK">
                                 <rect key="frame" x="8" y="44" width="398" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d17-ru-z2B">
+                                <rect key="frame" x="0.0" y="496" width="414" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="CvP-AQ-4Fv"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2YX-YS-UFk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6KZ-6m-QbK" firstAttribute="top" secondItem="2YX-YS-UFk" secondAttribute="top" id="36W-db-8MM"/>
                             <constraint firstItem="6KZ-6m-QbK" firstAttribute="leading" secondItem="2YX-YS-UFk" secondAttribute="leading" constant="8" id="5Ch-kD-qG0"/>
+                            <constraint firstItem="d17-ru-z2B" firstAttribute="leading" secondItem="2YX-YS-UFk" secondAttribute="leading" id="9Xz-BT-s9I"/>
+                            <constraint firstAttribute="bottom" secondItem="d17-ru-z2B" secondAttribute="bottom" id="Dgm-6m-TF2"/>
                             <constraint firstItem="2YX-YS-UFk" firstAttribute="trailing" secondItem="6KZ-6m-QbK" secondAttribute="trailing" constant="8" id="JIL-ei-edU"/>
+                            <constraint firstItem="d17-ru-z2B" firstAttribute="trailing" secondItem="2YX-YS-UFk" secondAttribute="trailing" id="Yxb-ZY-d6w"/>
                             <constraint firstItem="2YX-YS-UFk" firstAttribute="bottom" secondItem="6KZ-6m-QbK" secondAttribute="bottom" id="yf7-7K-EBy"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="coursePicker" destination="d17-ru-z2B" id="Cjm-5r-sx4"/>
                         <outlet property="groupsTableView" destination="6KZ-6m-QbK" id="ZOK-O0-doj"/>
                     </connections>
                 </viewController>
@@ -51,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wqo-kz-1Zr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="843" y="60"/>
+            <point key="canvasLocation" x="2554" y="353"/>
         </scene>
         <!--Select Group View Controller-->
         <scene sceneID="ZvP-7l-0S5">

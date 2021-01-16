@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: CoordinableViewController {
 
     @IBOutlet weak var infoTableView: UITableView!
     
@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
         infoTableView.dataSource = self
         infoTableView.register(OptionCell.nib, forCellReuseIdentifier: OptionCell.reusableIndentify)
         infoTableView.register(HeaderView.nib, forHeaderFooterViewReuseIdentifier: HeaderView.reusableIndentify)
-        dataSources.append(OptionDataSource(options: OptionsEnum.allCases))
+        dataSources.append(OptionDataSource(options: OptionsEnum.allCases, delegate: self))
     }
 }
 
@@ -45,5 +45,21 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         dataSources[indexPath.section].tableView(tableView, cellForRowAt: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        dataSources[indexPath.section].tableView?(tableView, didSelectRowAt: indexPath)
+    }
+}
+
+//MARK: ConfigurableOptionOnPushCellDelegate
+extension MainViewController: ConfigurableOptionOnPushCellDelegate {
+    func didTap(indexPath: IndexPath, option: OptionsEnum) {
+        switch option {
+        case .groups:
+            coordinator?.startConfigureGroupVC()
+        case .teachers:
+            coordinator?.startConfigureTeacherVC()
+        }
     }
 }

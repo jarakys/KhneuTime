@@ -7,12 +7,19 @@
 
 import UIKit
 
+protocol ConfigurableOptionOnPushCellDelegate: class {
+    func didTap(indexPath: IndexPath, option: OptionsEnum)
+}
+
 class OptionDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
+    
+    private weak var delegate: ConfigurableOptionOnPushCellDelegate?
     
     private let options: [OptionsEnum]
     
-    init(options: [OptionsEnum]) {
+    init(options: [OptionsEnum], delegate: ConfigurableOptionOnPushCellDelegate) {
         self.options = options
+        self.delegate = delegate
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -40,5 +47,10 @@ class OptionDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         let model = options[indexPath.row]
         cell.configure(image: UIImage(named: model.iconName), title: model.description)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = options[indexPath.row]
+        delegate?.didTap(indexPath: indexPath, option: model)
     }
 }

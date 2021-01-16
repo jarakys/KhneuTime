@@ -8,7 +8,7 @@
 import UIKit
 
 class OptionCell: RoundedGroupCell, ReusableCell {
-
+    
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
