@@ -12,8 +12,9 @@ class SpecialtiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegat
     private var title: String
     private weak var delegate: ConfigurableOnPushCellDelegate?
     
-    init(title: String) {
+    init(title: String, delegate: ConfigurableOnPushCellDelegate) {
         self.title = title
+        self.delegate = delegate
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

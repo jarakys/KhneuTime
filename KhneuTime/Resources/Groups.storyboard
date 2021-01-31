@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="6KZ-6m-QbK">
-                                <rect key="frame" x="8" y="44" width="398" height="818"/>
+                                <rect key="frame" x="8" y="0.0" width="398" height="862"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d17-ru-z2B">
@@ -30,12 +30,12 @@
                         <viewLayoutGuide key="safeArea" id="2YX-YS-UFk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6KZ-6m-QbK" firstAttribute="top" secondItem="2YX-YS-UFk" secondAttribute="top" id="36W-db-8MM"/>
                             <constraint firstItem="6KZ-6m-QbK" firstAttribute="leading" secondItem="2YX-YS-UFk" secondAttribute="leading" constant="8" id="5Ch-kD-qG0"/>
                             <constraint firstItem="d17-ru-z2B" firstAttribute="leading" secondItem="2YX-YS-UFk" secondAttribute="leading" id="9Xz-BT-s9I"/>
                             <constraint firstAttribute="bottom" secondItem="d17-ru-z2B" secondAttribute="bottom" id="Dgm-6m-TF2"/>
                             <constraint firstItem="2YX-YS-UFk" firstAttribute="trailing" secondItem="6KZ-6m-QbK" secondAttribute="trailing" constant="8" id="JIL-ei-edU"/>
                             <constraint firstItem="d17-ru-z2B" firstAttribute="trailing" secondItem="2YX-YS-UFk" secondAttribute="trailing" id="Yxb-ZY-d6w"/>
+                            <constraint firstItem="6KZ-6m-QbK" firstAttribute="top" secondItem="IHM-Or-Hue" secondAttribute="top" id="p4e-vz-AGT"/>
                             <constraint firstItem="2YX-YS-UFk" firstAttribute="bottom" secondItem="6KZ-6m-QbK" secondAttribute="bottom" id="yf7-7K-EBy"/>
                         </constraints>
                     </view>
@@ -47,6 +47,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sjj-Ob-Edz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-49.275362318840585" y="72.991071428571431"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="c9P-Yh-o0m">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="currentContext" id="sXy-d2-eAO" customClass="DetailViewController" customModule="KhneuTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5bS-5R-awB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Sz-4G-c7v">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3JP-Ba-Nqs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8Sz-4G-c7v" firstAttribute="leading" secondItem="3JP-Ba-Nqs" secondAttribute="leading" id="7B3-Mp-eAh"/>
+                            <constraint firstItem="3JP-Ba-Nqs" firstAttribute="bottom" secondItem="8Sz-4G-c7v" secondAttribute="bottom" id="C2z-HD-KMP"/>
+                            <constraint firstItem="3JP-Ba-Nqs" firstAttribute="trailing" secondItem="8Sz-4G-c7v" secondAttribute="trailing" id="laP-dK-rWN"/>
+                            <constraint firstItem="8Sz-4G-c7v" firstAttribute="top" secondItem="3JP-Ba-Nqs" secondAttribute="top" id="nb1-CZ-1VM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailsViewController" destination="8Sz-4G-c7v" id="KfD-p4-85l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOY-5f-vtx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="716" y="73"/>
         </scene>
         <!--Specialties View Controller-->
         <scene sceneID="X8M-O3-JcZ">
@@ -62,21 +92,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wqo-kz-1Zr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2554" y="353"/>
-        </scene>
-        <!--Select Group View Controller-->
-        <scene sceneID="ZvP-7l-0S5">
-            <objects>
-                <viewController storyboardIdentifier="SelectGroupViewController" id="hnr-Sb-Fv6" customClass="SelectGroupViewController" customModule="KhneuTime" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="woI-Jo-Ber">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="A7u-wh-QDV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VPc-CC-nNJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1818" y="78"/>
         </scene>
     </scenes>
     <resources>

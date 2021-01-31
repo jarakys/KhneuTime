@@ -11,6 +11,7 @@ class MainCoordinator: Coordinator {
     
     var childCoordinators = [Coordinator]()
     var tabBarController: UITabBarController
+    weak var currentVC: UIViewController?
 
     init(tabBarController: UITabBarController) {
         self.tabBarController = tabBarController
@@ -25,7 +26,16 @@ class MainCoordinator: Coordinator {
     func startConfigureGroupVC() {
         let storyboard = UIStoryboard.storyboard(storyboard: .groups)
         let groupVC: FacultiesViewController = storyboard.instantiateViewController()
+        groupVC.coordinator = self
         (tabBarController.selectedViewController as? UINavigationController)?.pushViewController(groupVC, animated: true)
+    }
+    
+    func startSelectableDetail(data: [String], completion: @escaping(String) -> Void) {
+        let storyboard = UIStoryboard.storyboard(storyboard: .groups)
+        let detailVC: DetailViewController = storyboard.instantiateViewController()
+        detailVC.didClose = completion
+        let navVC = UINavigationController(rootViewController: detailVC)
+        currentVC?.navigationController?.present(navVC, animated: true, completion: nil)
     }
     
     func startConfigureTeacherVC() {

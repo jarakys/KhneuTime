@@ -49,6 +49,8 @@
 		11CEA186253314F000C628F5 /* FacultiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA185253314F000C628F5 /* FacultiesViewController.swift */; };
 		11CEA1892533150600C628F5 /* SpecialtiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA1882533150600C628F5 /* SpecialtiesViewController.swift */; };
 		11CEA18C2533151600C628F5 /* SelectGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA18B2533151600C628F5 /* SelectGroupViewController.swift */; };
+		11D061FD25BA9BEC00BBFC38 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D061FC25BA9BEC00BBFC38 /* DetailViewController.swift */; };
+		11D0620025BAA1AF00BBFC38 /* DataSource+UpdateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D061FF25BAA1AF00BBFC38 /* DataSource+UpdateData.swift */; };
 		11FACADD25B2389500B966FD /* OptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FACADC25B2389500B966FD /* OptionCell.xib */; };
 		11FACAE525B2392F00B966FD /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACAE425B2392F00B966FD /* OptionCell.swift */; };
 		11FACAE925B241CA00B966FD /* OptionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACAE825B241CA00B966FD /* OptionDataSource.swift */; };
@@ -101,6 +103,8 @@
 		11CEA185253314F000C628F5 /* FacultiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesViewController.swift; sourceTree = "<group>"; };
 		11CEA1882533150600C628F5 /* SpecialtiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialtiesViewController.swift; sourceTree = "<group>"; };
 		11CEA18B2533151600C628F5 /* SelectGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupViewController.swift; sourceTree = "<group>"; };
+		11D061FC25BA9BEC00BBFC38 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		11D061FF25BAA1AF00BBFC38 /* DataSource+UpdateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataSource+UpdateData.swift"; sourceTree = "<group>"; };
 		11FACADC25B2389500B966FD /* OptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionCell.xib; sourceTree = "<group>"; };
 		11FACAE425B2392F00B966FD /* OptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
 		11FACAE825B241CA00B966FD /* OptionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDataSource.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 				11937FFF2532FF2600639905 /* UIViewController+presentAlert.swift */,
 				11112BFE25330C1C003CEEDA /* Storyboard+Type.swift */,
 				11CEA17C25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift */,
+				11D061FF25BAA1AF00BBFC38 /* DataSource+UpdateData.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 		119380082532FFA000639905 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				11D061FB25BA9BD700BBFC38 /* DetailViewController */,
 				11647B6A25B3947F00D5E00A /* Coordinator */,
 				117EEE7325B37ECE00100A4E /* GroupViewController */,
 				1100E49825B2460B00285CD4 /* HeaderAndFooters */,
@@ -321,6 +327,14 @@
 				11CEA18B2533151600C628F5 /* SelectGroupViewController.swift */,
 			);
 			path = Groups;
+			sourceTree = "<group>";
+		};
+		11D061FB25BA9BD700BBFC38 /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				11D061FC25BA9BEC00BBFC38 /* DetailViewController.swift */,
+			);
+			path = DetailViewController;
 			sourceTree = "<group>";
 		};
 		11FACADF25B2390100B966FD /* Cells */ = {
@@ -447,7 +461,9 @@
 				117EEE7F25B380E400100A4E /* SpecialtiesDataSource.swift in Sources */,
 				11647B6F25B394D100D5E00A /* MainCoordinator.swift in Sources */,
 				11038A382533783E00CB9F03 /* ScheduleCell.swift in Sources */,
+				11D0620025BAA1AF00BBFC38 /* DataSource+UpdateData.swift in Sources */,
 				117EEE8625B384FE00100A4E /* SelectableGroupsDataSource.swift in Sources */,
+				11D061FD25BA9BEC00BBFC38 /* DetailViewController.swift in Sources */,
 				11647B6C25B394A700D5E00A /* Coordinator.swift in Sources */,
 				11112BFC25330BCE003CEEDA /* StoryboardInstantiable.swift in Sources */,
 				11CEA17D25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift in Sources */,

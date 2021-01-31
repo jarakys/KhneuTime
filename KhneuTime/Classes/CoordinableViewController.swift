@@ -13,5 +13,6 @@ class CoordinableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        coordinator?.currentVC = self
     }
 }

@@ -15,6 +15,8 @@ class MainViewController: CoordinableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.prefersLargeTitles = true
         infoTableView.delegate = self
         infoTableView.dataSource = self
         infoTableView.register(OptionCell.nib, forCellReuseIdentifier: OptionCell.reusableIndentify)

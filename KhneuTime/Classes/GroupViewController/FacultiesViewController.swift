@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FacultiesViewController: UIViewController {
+class FacultiesViewController: CoordinableViewController {
     
     @IBOutlet weak var coursePicker: UIPickerView!
     @IBOutlet weak var groupsTableView: UITableView!
@@ -27,14 +27,16 @@ class FacultiesViewController: UIViewController {
         groupsTableView.dataSource = self
         coursePicker.delegate = self
         coursePicker.dataSource = self
+        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         groupsTableView.register(FacultyCell.nib, forCellReuseIdentifier: FacultyCell.reusableIndentify)
         groupsTableView.register(HeaderView.nib, forHeaderFooterViewReuseIdentifier: HeaderView.reusableIndentify)
         
         coursesDataSource = CoursesDataSource(title: "1", delegate: self)
         selectableGroupsDataSource = SelectableGroupsDataSource()
-        facultiesDataSource = FacultiesDataSource(title: "IT")
-        specialtiesDataSource = SpecialtiesDataSource(title: "CS")
+        facultiesDataSource = FacultiesDataSource(title: "IT", delegate: self)
+        specialtiesDataSource = SpecialtiesDataSource(title: "CS", delegate: self)
         
         dataSources = [facultiesDataSource, specialtiesDataSource, coursesDataSource, selectableGroupsDataSource,]
     }
@@ -109,5 +111,16 @@ extension FacultiesViewController: CoursesDataSourceDelegate {
 extension FacultiesViewController: SelectableGroupsDataSourceDelegate {
     func groupDidTap(indexPath: IndexPath) {
         
+    }
+}
+
+//MARK: ConfigurableOnPushCellDelegate
+extension FacultiesViewController: ConfigurableOnPushCellDelegate {
+    func didTap(indexPath: IndexPath, cellType: CellType) {
+        coordinator?.startSelectableDetail(data: ["IT","PR","FR","GR"], completion: {[weak self] selectedItem in
+            guard let self = self else { return }
+            self.dataSources[indexPath.section].updateDataTitle(title: selectedItem)
+            self.groupsTableView.reloadRows(at: [indexPath], with: .automatic)
+        })
     }
 }
