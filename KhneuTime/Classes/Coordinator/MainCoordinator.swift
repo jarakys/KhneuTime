@@ -34,8 +34,7 @@ class MainCoordinator: Coordinator {
         let storyboard = UIStoryboard.storyboard(storyboard: .groups)
         let detailVC: DetailViewController = storyboard.instantiateViewController()
         detailVC.didClose = completion
-        let navVC = UINavigationController(rootViewController: detailVC)
-        currentVC?.navigationController?.present(navVC, animated: true, completion: nil)
+        currentVC?.present(detailVC, animated: true, completion: nil)
     }
     
     func startConfigureTeacherVC() {

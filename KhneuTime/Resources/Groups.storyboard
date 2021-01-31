@@ -51,32 +51,69 @@
         <!--Detail View Controller-->
         <scene sceneID="c9P-Yh-o0m">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="currentContext" id="sXy-d2-eAO" customClass="DetailViewController" customModule="KhneuTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="sXy-d2-eAO" customClass="DetailViewController" customModule="KhneuTime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5bS-5R-awB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Sz-4G-c7v">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Sz-4G-c7v">
+                                <rect key="frame" x="0.0" y="156" width="414" height="706"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="A3a-K6-ONi">
+                                <rect key="frame" x="0.0" y="54" width="414" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twt-Ka-1oa">
+                                        <rect key="frame" x="0.0" y="0.0" width="88" height="30"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelDidTap:" destination="sXy-d2-eAO" eventType="touchUpInside" id="7tN-ot-B5L"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1h-az-9r3">
+                                        <rect key="frame" x="340" y="0.0" width="74" height="30"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveDidTap:" destination="sXy-d2-eAO" eventType="touchUpInside" id="nJT-Ie-DcC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="49E-fM-RBt"/>
+                                </constraints>
+                            </stackView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="P5D-05-Pzw">
+                                <rect key="frame" x="0.0" y="92" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3JP-Ba-Nqs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="P5D-05-Pzw" firstAttribute="trailing" secondItem="3JP-Ba-Nqs" secondAttribute="trailing" id="0eW-9x-z8b"/>
                             <constraint firstItem="8Sz-4G-c7v" firstAttribute="leading" secondItem="3JP-Ba-Nqs" secondAttribute="leading" id="7B3-Mp-eAh"/>
+                            <constraint firstItem="3JP-Ba-Nqs" firstAttribute="trailing" secondItem="A3a-K6-ONi" secondAttribute="trailing" id="9Xb-FR-Fz1"/>
+                            <constraint firstItem="8Sz-4G-c7v" firstAttribute="top" secondItem="P5D-05-Pzw" secondAttribute="bottom" constant="8" id="A1a-Le-Y3f"/>
                             <constraint firstItem="3JP-Ba-Nqs" firstAttribute="bottom" secondItem="8Sz-4G-c7v" secondAttribute="bottom" id="C2z-HD-KMP"/>
+                            <constraint firstItem="A3a-K6-ONi" firstAttribute="leading" secondItem="3JP-Ba-Nqs" secondAttribute="leading" id="F6Y-7G-k43"/>
+                            <constraint firstItem="P5D-05-Pzw" firstAttribute="leading" secondItem="3JP-Ba-Nqs" secondAttribute="leading" id="KGG-8B-g5D"/>
+                            <constraint firstItem="P5D-05-Pzw" firstAttribute="top" secondItem="A3a-K6-ONi" secondAttribute="bottom" constant="8" id="Vx8-fx-NXZ"/>
                             <constraint firstItem="3JP-Ba-Nqs" firstAttribute="trailing" secondItem="8Sz-4G-c7v" secondAttribute="trailing" id="laP-dK-rWN"/>
-                            <constraint firstItem="8Sz-4G-c7v" firstAttribute="top" secondItem="3JP-Ba-Nqs" secondAttribute="top" id="nb1-CZ-1VM"/>
+                            <constraint firstItem="A3a-K6-ONi" firstAttribute="top" secondItem="3JP-Ba-Nqs" secondAttribute="top" constant="10" id="qRU-Lz-vfI"/>
+                            <constraint firstItem="A3a-K6-ONi" firstAttribute="trailing" secondItem="3JP-Ba-Nqs" secondAttribute="trailing" id="r7s-2B-4pB"/>
+                            <constraint firstItem="A3a-K6-ONi" firstAttribute="leading" secondItem="3JP-Ba-Nqs" secondAttribute="leading" id="sKh-WZ-yXG"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="detailsViewController" destination="8Sz-4G-c7v" id="KfD-p4-85l"/>
+                        <outlet property="searchBar" destination="P5D-05-Pzw" id="Ap7-3D-qWi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WOY-5f-vtx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="716" y="73"/>
+            <point key="canvasLocation" x="715.94202898550725" y="72.991071428571431"/>
         </scene>
         <!--Specialties View Controller-->
         <scene sceneID="X8M-O3-JcZ">
