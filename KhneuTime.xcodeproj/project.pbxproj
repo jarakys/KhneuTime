@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		11647B6C25B394A700D5E00A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11647B6B25B394A700D5E00A /* Coordinator.swift */; };
 		11647B6F25B394D100D5E00A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11647B6E25B394D100D5E00A /* MainCoordinator.swift */; };
 		11647B7225B3956800D5E00A /* CoordinableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11647B7125B3956800D5E00A /* CoordinableViewController.swift */; };
+		116AA0C925C75E45003016C1 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116AA0C825C75E45003016C1 /* DatabaseManager.swift */; };
 		117EEE7625B37F3100100A4E /* FacultiesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EEE7525B37F3100100A4E /* FacultiesDataSource.swift */; };
 		117EEE7925B37F9E00100A4E /* FacultyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 117EEE7825B37F9E00100A4E /* FacultyCell.xib */; };
 		117EEE7C25B37FCA00100A4E /* FacultyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EEE7B25B37FCA00100A4E /* FacultyCell.swift */; };
@@ -51,6 +52,8 @@
 		11CEA18C2533151600C628F5 /* SelectGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA18B2533151600C628F5 /* SelectGroupViewController.swift */; };
 		11D061FD25BA9BEC00BBFC38 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D061FC25BA9BEC00BBFC38 /* DetailViewController.swift */; };
 		11D0620025BAA1AF00BBFC38 /* DataSource+UpdateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D061FF25BAA1AF00BBFC38 /* DataSource+UpdateData.swift */; };
+		11F2F16825C9FCC600D63A22 /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F2F16725C9FCC600D63A22 /* DataRepository.swift */; };
+		11F2F16C25C9FE3600D63A22 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 11F2F16B25C9FE3600D63A22 /* Alamofire */; };
 		11FACADD25B2389500B966FD /* OptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FACADC25B2389500B966FD /* OptionCell.xib */; };
 		11FACAE525B2392F00B966FD /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACAE425B2392F00B966FD /* OptionCell.swift */; };
 		11FACAE925B241CA00B966FD /* OptionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACAE825B241CA00B966FD /* OptionDataSource.swift */; };
@@ -75,6 +78,7 @@
 		11647B6B25B394A700D5E00A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		11647B6E25B394D100D5E00A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		11647B7125B3956800D5E00A /* CoordinableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinableViewController.swift; sourceTree = "<group>"; };
+		116AA0C825C75E45003016C1 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		117EEE7525B37F3100100A4E /* FacultiesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesDataSource.swift; sourceTree = "<group>"; };
 		117EEE7825B37F9E00100A4E /* FacultyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacultyCell.xib; sourceTree = "<group>"; };
 		117EEE7B25B37FCA00100A4E /* FacultyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultyCell.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 		11CEA18B2533151600C628F5 /* SelectGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupViewController.swift; sourceTree = "<group>"; };
 		11D061FC25BA9BEC00BBFC38 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		11D061FF25BAA1AF00BBFC38 /* DataSource+UpdateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataSource+UpdateData.swift"; sourceTree = "<group>"; };
+		11F2F16725C9FCC600D63A22 /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
 		11FACADC25B2389500B966FD /* OptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionCell.xib; sourceTree = "<group>"; };
 		11FACAE425B2392F00B966FD /* OptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
 		11FACAE825B241CA00B966FD /* OptionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDataSource.swift; sourceTree = "<group>"; };
@@ -117,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11F2F16C25C9FE3600D63A22 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +204,15 @@
 				11647B6E25B394D100D5E00A /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		116AA0C725C75E30003016C1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				116AA0C825C75E45003016C1 /* DatabaseManager.swift */,
+				11F2F16725C9FCC600D63A22 /* DataRepository.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		117EEE7325B37ECE00100A4E /* GroupViewController */ = {
@@ -286,6 +301,7 @@
 		119380082532FFA000639905 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				116AA0C725C75E30003016C1 /* Managers */,
 				11D061FB25BA9BD700BBFC38 /* DetailViewController */,
 				11647B6A25B3947F00D5E00A /* Coordinator */,
 				117EEE7325B37ECE00100A4E /* GroupViewController */,
@@ -372,6 +388,9 @@
 			dependencies = (
 			);
 			name = KhneuTime;
+			packageProductDependencies = (
+				11F2F16B25C9FE3600D63A22 /* Alamofire */,
+			);
 			productName = KhneuTime;
 			productReference = 11937FE52532FA7900639905 /* KhneuTime.app */;
 			productType = "com.apple.product-type.application";
@@ -399,6 +418,9 @@
 				Base,
 			);
 			mainGroup = 11937FDC2532FA7900639905;
+			packageReferences = (
+				11F2F16A25C9FE3600D63A22 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 11937FE62532FA7900639905 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -465,6 +487,8 @@
 				117EEE8625B384FE00100A4E /* SelectableGroupsDataSource.swift in Sources */,
 				11D061FD25BA9BEC00BBFC38 /* DetailViewController.swift in Sources */,
 				11647B6C25B394A700D5E00A /* Coordinator.swift in Sources */,
+				116AA0C925C75E45003016C1 /* DatabaseManager.swift in Sources */,
+				11F2F16825C9FCC600D63A22 /* DataRepository.swift in Sources */,
 				11112BFC25330BCE003CEEDA /* StoryboardInstantiable.swift in Sources */,
 				11CEA17D25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift in Sources */,
 				11FACAEF25B242E600B966FD /* GroupsDataSource.swift in Sources */,
@@ -673,6 +697,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		11F2F16A25C9FE3600D63A22 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		11F2F16B25C9FE3600D63A22 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11F2F16A25C9FE3600D63A22 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 11937FDD2532FA7900639905 /* Project object */;
 }

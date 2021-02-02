@@ -64,7 +64,6 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .none
     }
-    
 }
 
 //MARK: UISearchResultsUpdating
