@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		11038A382533783E00CB9F03 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11038A372533783E00CB9F03 /* ScheduleCell.swift */; };
 		11112BFC25330BCE003CEEDA /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11112BFB25330BCE003CEEDA /* StoryboardInstantiable.swift */; };
 		11112BFF25330C1C003CEEDA /* Storyboard+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11112BFE25330C1C003CEEDA /* Storyboard+Type.swift */; };
+		1111B7F825CB4FBC00508B52 /* ScheduleDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1111B7F625CB4FBC00508B52 /* ScheduleDB.xcdatamodeld */; };
 		11182C0625B232C600C78B4F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11182C0525B232C600C78B4F /* MainViewController.swift */; };
 		11182C0925B233FC00C78B4F /* OptionsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11182C0825B233FC00C78B4F /* OptionsEnum.swift */; };
 		113F8BAE25B2473F00836EA4 /* DataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F8BAD25B2473F00836EA4 /* DataSourceDelegate.swift */; };
@@ -44,6 +45,8 @@
 		1193800F2533010400639905 /* TextAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1193800E2533010400639905 /* TextAlertView.xib */; };
 		11938013253302D100639905 /* TextAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11938012253302D100639905 /* TextAlertView.swift */; };
 		1193801B2533038200639905 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1193801A2533038200639905 /* TableViewController.swift */; };
+		11AB6A6325CB56D200EF25A4 /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A6225CB56D200EF25A4 /* SyncManager.swift */; };
+		11AB6A6725CB572D00EF25A4 /* DataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A6625CB572D00EF25A4 /* DataStack.swift */; };
 		11CEA17D25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA17C25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift */; };
 		11CEA180253312DD00C628F5 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA17F253312DD00C628F5 /* GroupsViewController.swift */; };
 		11CEA183253314B000C628F5 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CEA182253314B000C628F5 /* Groups.storyboard */; };
@@ -52,8 +55,6 @@
 		11CEA18C2533151600C628F5 /* SelectGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA18B2533151600C628F5 /* SelectGroupViewController.swift */; };
 		11D061FD25BA9BEC00BBFC38 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D061FC25BA9BEC00BBFC38 /* DetailViewController.swift */; };
 		11D0620025BAA1AF00BBFC38 /* DataSource+UpdateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D061FF25BAA1AF00BBFC38 /* DataSource+UpdateData.swift */; };
-		11F2F16825C9FCC600D63A22 /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F2F16725C9FCC600D63A22 /* DataRepository.swift */; };
-		11F2F16C25C9FE3600D63A22 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 11F2F16B25C9FE3600D63A22 /* Alamofire */; };
 		11FACADD25B2389500B966FD /* OptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FACADC25B2389500B966FD /* OptionCell.xib */; };
 		11FACAE525B2392F00B966FD /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACAE425B2392F00B966FD /* OptionCell.swift */; };
 		11FACAE925B241CA00B966FD /* OptionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACAE825B241CA00B966FD /* OptionDataSource.swift */; };
@@ -71,6 +72,7 @@
 		11038A372533783E00CB9F03 /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		11112BFB25330BCE003CEEDA /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		11112BFE25330C1C003CEEDA /* Storyboard+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Type.swift"; sourceTree = "<group>"; };
+		1111B7F725CB4FBC00508B52 /* ScheduleDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScheduleDB.xcdatamodel; sourceTree = "<group>"; };
 		11182C0525B232C600C78B4F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		11182C0825B233FC00C78B4F /* OptionsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsEnum.swift; sourceTree = "<group>"; };
 		113F8BAD25B2473F00836EA4 /* DataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,8 @@
 		1193800E2533010400639905 /* TextAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextAlertView.xib; sourceTree = "<group>"; };
 		11938012253302D100639905 /* TextAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAlertView.swift; sourceTree = "<group>"; };
 		1193801A2533038200639905 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		11AB6A6225CB56D200EF25A4 /* SyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
+		11AB6A6625CB572D00EF25A4 /* DataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStack.swift; sourceTree = "<group>"; };
 		11CEA17C25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+StoryboardInstantiable.swift"; sourceTree = "<group>"; };
 		11CEA17F253312DD00C628F5 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		11CEA182253314B000C628F5 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
@@ -109,7 +113,6 @@
 		11CEA18B2533151600C628F5 /* SelectGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupViewController.swift; sourceTree = "<group>"; };
 		11D061FC25BA9BEC00BBFC38 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		11D061FF25BAA1AF00BBFC38 /* DataSource+UpdateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataSource+UpdateData.swift"; sourceTree = "<group>"; };
-		11F2F16725C9FCC600D63A22 /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
 		11FACADC25B2389500B966FD /* OptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionCell.xib; sourceTree = "<group>"; };
 		11FACAE425B2392F00B966FD /* OptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
 		11FACAE825B241CA00B966FD /* OptionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDataSource.swift; sourceTree = "<group>"; };
@@ -122,7 +125,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11F2F16C25C9FE3600D63A22 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +183,7 @@
 				11937FEE2532FA7900639905 /* Main.storyboard */,
 				11CEA182253314B000C628F5 /* Groups.storyboard */,
 				11937FF12532FA7B00639905 /* Assets.xcassets */,
+				1111B7F625CB4FBC00508B52 /* ScheduleDB.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -210,7 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				116AA0C825C75E45003016C1 /* DatabaseManager.swift */,
-				11F2F16725C9FCC600D63A22 /* DataRepository.swift */,
+				11AB6A6225CB56D200EF25A4 /* SyncManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 		119380082532FFA000639905 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				11AB6A6525CB572000EF25A4 /* Helpers */,
 				116AA0C725C75E30003016C1 /* Managers */,
 				11D061FB25BA9BD700BBFC38 /* DetailViewController */,
 				11647B6A25B3947F00D5E00A /* Coordinator */,
@@ -333,6 +337,14 @@
 				11938012253302D100639905 /* TextAlertView.swift */,
 			);
 			path = TextAlertView;
+			sourceTree = "<group>";
+		};
+		11AB6A6525CB572000EF25A4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				11AB6A6625CB572D00EF25A4 /* DataStack.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		11CEA18E253315A000C628F5 /* Groups */ = {
@@ -389,7 +401,6 @@
 			);
 			name = KhneuTime;
 			packageProductDependencies = (
-				11F2F16B25C9FE3600D63A22 /* Alamofire */,
 			);
 			productName = KhneuTime;
 			productReference = 11937FE52532FA7900639905 /* KhneuTime.app */;
@@ -419,7 +430,6 @@
 			);
 			mainGroup = 11937FDC2532FA7900639905;
 			packageReferences = (
-				11F2F16A25C9FE3600D63A22 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 11937FE62532FA7900639905 /* Products */;
 			projectDirPath = "";
@@ -463,6 +473,7 @@
 				11FACAE925B241CA00B966FD /* OptionDataSource.swift in Sources */,
 				11FACAEC25B242A600B966FD /* TeachersDataSource.swift in Sources */,
 				11937FED2532FA7900639905 /* ViewController.swift in Sources */,
+				1111B7F825CB4FBC00508B52 /* ScheduleDB.xcdatamodeld in Sources */,
 				11937FE92532FA7900639905 /* AppDelegate.swift in Sources */,
 				119380052532FF5B00639905 /* TabBarOptions.swift in Sources */,
 				11182C0925B233FC00C78B4F /* OptionsEnum.swift in Sources */,
@@ -479,16 +490,17 @@
 				113F8BAE25B2473F00836EA4 /* DataSourceDelegate.swift in Sources */,
 				11937FEB2532FA7900639905 /* SceneDelegate.swift in Sources */,
 				119380002532FF2600639905 /* UIViewController+presentAlert.swift in Sources */,
+				11AB6A6325CB56D200EF25A4 /* SyncManager.swift in Sources */,
 				1100E49A25B2462100285CD4 /* HeaderView.swift in Sources */,
 				117EEE7F25B380E400100A4E /* SpecialtiesDataSource.swift in Sources */,
 				11647B6F25B394D100D5E00A /* MainCoordinator.swift in Sources */,
 				11038A382533783E00CB9F03 /* ScheduleCell.swift in Sources */,
+				11AB6A6725CB572D00EF25A4 /* DataStack.swift in Sources */,
 				11D0620025BAA1AF00BBFC38 /* DataSource+UpdateData.swift in Sources */,
 				117EEE8625B384FE00100A4E /* SelectableGroupsDataSource.swift in Sources */,
 				11D061FD25BA9BEC00BBFC38 /* DetailViewController.swift in Sources */,
 				11647B6C25B394A700D5E00A /* Coordinator.swift in Sources */,
 				116AA0C925C75E45003016C1 /* DatabaseManager.swift in Sources */,
-				11F2F16825C9FCC600D63A22 /* DataRepository.swift in Sources */,
 				11112BFC25330BCE003CEEDA /* StoryboardInstantiable.swift in Sources */,
 				11CEA17D25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift in Sources */,
 				11FACAEF25B242E600B966FD /* GroupsDataSource.swift in Sources */,
@@ -698,24 +710,18 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		11F2F16A25C9FE3600D63A22 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.4.1;
-			};
+/* Begin XCVersionGroup section */
+		1111B7F625CB4FBC00508B52 /* ScheduleDB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1111B7F725CB4FBC00508B52 /* ScheduleDB.xcdatamodel */,
+			);
+			currentVersion = 1111B7F725CB4FBC00508B52 /* ScheduleDB.xcdatamodel */;
+			path = ScheduleDB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
 		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		11F2F16B25C9FE3600D63A22 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 11F2F16A25C9FE3600D63A22 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
+/* End XCVersionGroup section */
 	};
 	rootObject = 11937FDD2532FA7900639905 /* Project object */;
 }

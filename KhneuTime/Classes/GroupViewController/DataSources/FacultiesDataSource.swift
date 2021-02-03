@@ -15,9 +15,10 @@ class FacultiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate 
     
     private var title: String
     private weak var delegate: ConfigurableOnPushCellDelegate?
+    let facultiesFetchController = DatabaseManager.shared.getFaculties()
     
     init(title: String, delegate: ConfigurableOnPushCellDelegate) {
-        self.title = title
+        self.title = facultiesFetchController.fetchedObjects?.first?.name ?? ""
         self.delegate = delegate
     }
     
@@ -32,14 +33,15 @@ class FacultiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        facultiesFetchController.fetchedObjects?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FacultyCell.reusableIndentify, for: indexPath) as! FacultyCell
         cell.top = true
         cell.bottom = true
-        cell.configure(title: title, cellType: .specialty)
+        let model = facultiesFetchController.object(at: indexPath)
+        cell.configure(title: model.name ?? "", cellType: .specialty)
         return cell
     }
     

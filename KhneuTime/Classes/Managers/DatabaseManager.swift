@@ -9,33 +9,43 @@ import CoreData
 
 class DatabaseManager {
     
-    static let sharder = DatabaseManager()
-    
-    private init() { }
-    
-    lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "ScheduleDB")
-        container.loadPersistentStores { description, error in
-            if let error = error {
-                fatalError("Unable to load persistent stores: \(error)")
-            }
-        }
-        return container
-    }()
-    
-    var context: NSManagedObjectContext {
-        persistentContainer.viewContext
-    }
+    static let shared = DatabaseManager()
+
+    let dataStack = DataStack()
     
     func insertOrUpdateSchedule(groupId: String, specialtyId: String, completion: @escaping(Bool) -> Void) {
-        
         saveContext()
     }
     
+    func insertOrUpdateFaculties() {
+        
+    }
+    
+    func inserOrUpdateSpecialties() {
+        
+    }
+    
+    func getFaculties() -> NSFetchedResultsController<SpecialtyDB> {
+        let request: NSFetchRequest<SpecialtyDB> = SpecialtyDB.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: false)]
+        let controller = NSFetchedResultsController(fetchRequest: request,
+                                                    managedObjectContext: dataStack.context,
+                                                    sectionNameKeyPath: nil, cacheName: nil)
+        return controller
+    }
+    
+    func getSpecialties() {
+        
+    }
+    
+    func getGroups() {
+        
+    }
+    
     func saveContext() {
-        if context.hasChanges {
+        if dataStack.context.hasChanges {
             do {
-                try context.save()
+                try dataStack.context.save()
             } catch {
                 print("Error")
             }
