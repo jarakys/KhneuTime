@@ -48,6 +48,14 @@
 		11AB6A6325CB56D200EF25A4 /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A6225CB56D200EF25A4 /* SyncManager.swift */; };
 		11AB6A6725CB572D00EF25A4 /* DataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A6625CB572D00EF25A4 /* DataStack.swift */; };
 		11AB6A6D25CC9E4500EF25A4 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A6C25CC9E4500EF25A4 /* APIRouter.swift */; };
+		11AB6A7225CF3B4400EF25A4 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A7125CF3B4400EF25A4 /* AsynchronousOperation.swift */; };
+		11AB6A7525CF432300EF25A4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A7425CF432300EF25A4 /* NetworkManager.swift */; };
+		11AB6A7925CF43BB00EF25A4 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A7825CF43BB00EF25A4 /* APIError.swift */; };
+		11AB6A7C25CF4A9700EF25A4 /* PrefsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A7B25CF4A9700EF25A4 /* PrefsManager.swift */; };
+		11AB6A7F25CFE63B00EF25A4 /* Data+ToDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A7E25CFE63B00EF25A4 /* Data+ToDictionary.swift */; };
+		11AB6A8325CFE7CE00EF25A4 /* RouteEntitiesForUpdateFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A8225CFE7CE00EF25A4 /* RouteEntitiesForUpdateFabric.swift */; };
+		11AB6A8825CFEFA300EF25A4 /* FacultyDB+DetailedModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A8725CFEFA300EF25A4 /* FacultyDB+DetailedModelProtocol.swift */; };
+		11AB6A8B25CFEFC000EF25A4 /* DetailedModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A8A25CFEFC000EF25A4 /* DetailedModelProtocol.swift */; };
 		11CEA17D25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA17C25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift */; };
 		11CEA180253312DD00C628F5 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA17F253312DD00C628F5 /* GroupsViewController.swift */; };
 		11CEA183253314B000C628F5 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CEA182253314B000C628F5 /* Groups.storyboard */; };
@@ -107,6 +115,14 @@
 		11AB6A6225CB56D200EF25A4 /* SyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
 		11AB6A6625CB572D00EF25A4 /* DataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStack.swift; sourceTree = "<group>"; };
 		11AB6A6C25CC9E4500EF25A4 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		11AB6A7125CF3B4400EF25A4 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
+		11AB6A7425CF432300EF25A4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		11AB6A7825CF43BB00EF25A4 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		11AB6A7B25CF4A9700EF25A4 /* PrefsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsManager.swift; sourceTree = "<group>"; };
+		11AB6A7E25CFE63B00EF25A4 /* Data+ToDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+ToDictionary.swift"; sourceTree = "<group>"; };
+		11AB6A8225CFE7CE00EF25A4 /* RouteEntitiesForUpdateFabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteEntitiesForUpdateFabric.swift; sourceTree = "<group>"; };
+		11AB6A8725CFEFA300EF25A4 /* FacultyDB+DetailedModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FacultyDB+DetailedModelProtocol.swift"; sourceTree = "<group>"; };
+		11AB6A8A25CFEFC000EF25A4 /* DetailedModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedModelProtocol.swift; sourceTree = "<group>"; };
 		11CEA17C25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+StoryboardInstantiable.swift"; sourceTree = "<group>"; };
 		11CEA17F253312DD00C628F5 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		11CEA182253314B000C628F5 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
@@ -216,6 +232,8 @@
 			children = (
 				116AA0C825C75E45003016C1 /* DatabaseManager.swift */,
 				11AB6A6225CB56D200EF25A4 /* SyncManager.swift */,
+				11AB6A7425CF432300EF25A4 /* NetworkManager.swift */,
+				11AB6A7B25CF4A9700EF25A4 /* PrefsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -246,6 +264,7 @@
 				11895E1B2533074800480611 /* ConfigurableCell.swift */,
 				11895E1E253308FC00480611 /* ReusableCell.swift */,
 				11112BFB25330BCE003CEEDA /* StoryboardInstantiable.swift */,
+				11AB6A8A25CFEFC000EF25A4 /* DetailedModelProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -286,10 +305,12 @@
 		11937FFE2532FF1200639905 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				11AB6A8625CFEF8F00EF25A4 /* Db */,
 				11937FFF2532FF2600639905 /* UIViewController+presentAlert.swift */,
 				11112BFE25330C1C003CEEDA /* Storyboard+Type.swift */,
 				11CEA17C25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift */,
 				11D061FF25BAA1AF00BBFC38 /* DataSource+UpdateData.swift */,
+				11AB6A7E25CFE63B00EF25A4 /* Data+ToDictionary.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -306,6 +327,8 @@
 		119380082532FFA000639905 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				11AB6A8525CFEF6F00EF25A4 /* Model */,
+				11AB6A7725CF43B100EF25A4 /* Errors */,
 				11AB6A6B25CC9CFD00EF25A4 /* Networking */,
 				11AB6A6525CB572000EF25A4 /* Helpers */,
 				116AA0C725C75E30003016C1 /* Managers */,
@@ -346,6 +369,8 @@
 			isa = PBXGroup;
 			children = (
 				11AB6A6625CB572D00EF25A4 /* DataStack.swift */,
+				11AB6A7125CF3B4400EF25A4 /* AsynchronousOperation.swift */,
+				11AB6A8225CFE7CE00EF25A4 /* RouteEntitiesForUpdateFabric.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -356,6 +381,29 @@
 				11AB6A6C25CC9E4500EF25A4 /* APIRouter.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		11AB6A7725CF43B100EF25A4 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				11AB6A7825CF43BB00EF25A4 /* APIError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		11AB6A8525CFEF6F00EF25A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11AB6A8625CFEF8F00EF25A4 /* Db */ = {
+			isa = PBXGroup;
+			children = (
+				11AB6A8725CFEFA300EF25A4 /* FacultyDB+DetailedModelProtocol.swift */,
+			);
+			path = Db;
 			sourceTree = "<group>";
 		};
 		11CEA18E253315A000C628F5 /* Groups */ = {
@@ -484,6 +532,7 @@
 				11FACAE925B241CA00B966FD /* OptionDataSource.swift in Sources */,
 				11FACAEC25B242A600B966FD /* TeachersDataSource.swift in Sources */,
 				11937FED2532FA7900639905 /* ViewController.swift in Sources */,
+				11AB6A7C25CF4A9700EF25A4 /* PrefsManager.swift in Sources */,
 				1111B7F825CB4FBC00508B52 /* ScheduleDB.xcdatamodeld in Sources */,
 				11937FE92532FA7900639905 /* AppDelegate.swift in Sources */,
 				119380052532FF5B00639905 /* TabBarOptions.swift in Sources */,
@@ -494,11 +543,14 @@
 				11038A292533181800CB9F03 /* BaseViewController.swift in Sources */,
 				11895E1C2533074800480611 /* ConfigurableCell.swift in Sources */,
 				1193800A2532FFB400639905 /* ScheduleViewController.swift in Sources */,
+				11AB6A8825CFEFA300EF25A4 /* FacultyDB+DetailedModelProtocol.swift in Sources */,
 				11CEA186253314F000C628F5 /* FacultiesViewController.swift in Sources */,
 				11112BFF25330C1C003CEEDA /* Storyboard+Type.swift in Sources */,
 				1193801B2533038200639905 /* TableViewController.swift in Sources */,
 				11647B7225B3956800D5E00A /* CoordinableViewController.swift in Sources */,
 				113F8BAE25B2473F00836EA4 /* DataSourceDelegate.swift in Sources */,
+				11AB6A8B25CFEFC000EF25A4 /* DetailedModelProtocol.swift in Sources */,
+				11AB6A7525CF432300EF25A4 /* NetworkManager.swift in Sources */,
 				11937FEB2532FA7900639905 /* SceneDelegate.swift in Sources */,
 				119380002532FF2600639905 /* UIViewController+presentAlert.swift in Sources */,
 				11AB6A6325CB56D200EF25A4 /* SyncManager.swift in Sources */,
@@ -508,15 +560,19 @@
 				11AB6A6D25CC9E4500EF25A4 /* APIRouter.swift in Sources */,
 				11038A382533783E00CB9F03 /* ScheduleCell.swift in Sources */,
 				11AB6A6725CB572D00EF25A4 /* DataStack.swift in Sources */,
+				11AB6A7F25CFE63B00EF25A4 /* Data+ToDictionary.swift in Sources */,
+				11AB6A7225CF3B4400EF25A4 /* AsynchronousOperation.swift in Sources */,
 				11D0620025BAA1AF00BBFC38 /* DataSource+UpdateData.swift in Sources */,
 				117EEE8625B384FE00100A4E /* SelectableGroupsDataSource.swift in Sources */,
 				11D061FD25BA9BEC00BBFC38 /* DetailViewController.swift in Sources */,
 				11647B6C25B394A700D5E00A /* Coordinator.swift in Sources */,
 				116AA0C925C75E45003016C1 /* DatabaseManager.swift in Sources */,
+				11AB6A7925CF43BB00EF25A4 /* APIError.swift in Sources */,
 				11112BFC25330BCE003CEEDA /* StoryboardInstantiable.swift in Sources */,
 				11CEA17D25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift in Sources */,
 				11FACAEF25B242E600B966FD /* GroupsDataSource.swift in Sources */,
 				11938013253302D100639905 /* TextAlertView.swift in Sources */,
+				11AB6A8325CFE7CE00EF25A4 /* RouteEntitiesForUpdateFabric.swift in Sources */,
 				11CEA18C2533151600C628F5 /* SelectGroupViewController.swift in Sources */,
 				11CEA1892533150600C628F5 /* SpecialtiesViewController.swift in Sources */,
 				117EEE7C25B37FCA00100A4E /* FacultyCell.swift in Sources */,

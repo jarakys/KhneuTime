@@ -14,7 +14,7 @@ class DetailViewController: UIViewController {
     
     var didClose: ((String) -> Void)?
     
-    var data = ["Data","Here","Must","Be","Real","Data"]
+    var data = [DetailedModelProtocol]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FacultyCell.reusableIndentify, for: indexPath) as! FacultyCell
         let model = data[indexPath.row]
-        cell.configure(title: model, cellType: .faculty)
+        cell.configure(title: model.nameDetailed, cellType: .faculty)
         cell.accessoryType = .none
         return cell
     }

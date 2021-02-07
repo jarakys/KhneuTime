@@ -41,6 +41,6 @@ class SpecialtiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! FacultyCell
-        delegate?.didTap(indexPath: indexPath, cellType: cell.cellType)
+        delegate?.didTap(indexPath: indexPath, cellType: cell.cellType, data: [])
     }
 }

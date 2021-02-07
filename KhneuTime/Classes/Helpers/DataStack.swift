@@ -18,6 +18,10 @@ class DataStack {
         return container
     }()
     
+    lazy var privateContext: NSManagedObjectContext = {
+        return persistentContainer.newBackgroundContext()
+    }()
+    
     var context: NSManagedObjectContext {
         persistentContainer.viewContext
     }

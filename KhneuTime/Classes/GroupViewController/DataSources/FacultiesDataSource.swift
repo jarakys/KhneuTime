@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ConfigurableOnPushCellDelegate: class {
-    func didTap(indexPath: IndexPath, cellType: CellType)
+    func didTap(indexPath: IndexPath, cellType: CellType, data: [DetailedModelProtocol])
 }
 
 class FacultiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
@@ -18,6 +18,7 @@ class FacultiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate 
     let facultiesFetchController = DatabaseManager.shared.getFaculties()
     
     init(title: String, delegate: ConfigurableOnPushCellDelegate) {
+        try? facultiesFetchController.performFetch()
         self.title = facultiesFetchController.fetchedObjects?.first?.name ?? ""
         self.delegate = delegate
     }
@@ -33,7 +34,7 @@ class FacultiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        facultiesFetchController.fetchedObjects?.count ?? 0
+        1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,6 +48,6 @@ class FacultiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! FacultyCell
-        delegate?.didTap(indexPath: indexPath, cellType: cell.cellType)
+        delegate?.didTap(indexPath: indexPath, cellType: cell.cellType, data: facultiesFetchController.fetchedObjects ?? [])
     }
 }

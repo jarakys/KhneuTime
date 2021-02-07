@@ -10,12 +10,13 @@ import Foundation
 enum APIRouter {
     
     case faculties
-    case specialties(facultetId: Int)
-    case groups(facultetId: Int,specialitId: Int, course: Int)
+    case specialties
+    case groups
+    case shedule(groupId: Int)
     
     private var method: String {
         switch self {
-        case .faculties, .specialties, .groups:
+        case .faculties, .specialties, .groups, .shedule:
             return "GET"
         }
     }
@@ -24,9 +25,11 @@ enum APIRouter {
         switch self {
         case .faculties:
             return "/Faculties"
-        case .specialties(let facultetId):
+        case .specialties:
             return ""
-        case .groups(let facultetId, let specialitId, let course):
+        case .groups:
+            return ""
+        case .shedule(let groupId):
             return ""
         }
     }
@@ -38,13 +41,13 @@ enum APIRouter {
     // MARK: - Parameters
     private var parameters: [String:Any]? {
         switch self {
-        case .faculties, .specialties, .groups:
+        case .faculties, .specialties, .groups, .shedule:
             return nil
         }
     }
     
     func asURLRequest() throws -> URLRequest {
-        guard let url = URL(string: "http://www.dovidkaei.hneu.edu.ua/api/StudentAPI") else {
+        guard let url = URL(string: "http://www.dovidkaei.hneu.edu.ua/api/StudentAPI" + path) else {
             throw URLError(URLError.Code.unsupportedURL)
         }
         var urlRequest = URLRequest(url: url)

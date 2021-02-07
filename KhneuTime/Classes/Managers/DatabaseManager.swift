@@ -17,16 +17,19 @@ class DatabaseManager {
         saveContext()
     }
     
-    func insertOrUpdateFaculties() {
-        
+    func insertOrUpdateObject(entity: SyncEntitiesEnum, data: Data) {
+        guard let dictionaries = data.convertToDictionary() else { return }
+        for dictionary in dictionaries {
+            let object = NSEntityDescription.insertNewObject(forEntityName: entity.entityName, into: dataStack.context)
+            for key in Array(dictionary.keys) {
+                object.setValue(dictionary[key], forKey: key)
+            }
+        }
+        saveContext()
     }
     
-    func inserOrUpdateSpecialties() {
-        
-    }
-    
-    func getFaculties() -> NSFetchedResultsController<SpecialtyDB> {
-        let request: NSFetchRequest<SpecialtyDB> = SpecialtyDB.fetchRequest()
+    func getFaculties() -> NSFetchedResultsController<FacultyDB> {
+        let request: NSFetchRequest<FacultyDB> = FacultyDB.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: false)]
         let controller = NSFetchedResultsController(fetchRequest: request,
                                                     managedObjectContext: dataStack.context,
@@ -34,11 +37,15 @@ class DatabaseManager {
         return controller
     }
     
-    func getSpecialties() {
+    func getSpecialties(facultyId: Int) {
         
     }
     
-    func getGroups() {
+    func getGroups(specialtyId: Int) {
+        
+    }
+    
+    func getSchedule(groupId: Int) {
         
     }
     
