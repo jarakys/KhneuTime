@@ -45,7 +45,6 @@ class FacultiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate,
         let cell = tableView.dequeueReusableCell(withIdentifier: FacultyCell.reusableIndentify, for: indexPath) as! FacultyCell
         cell.top = true
         cell.bottom = true
-        let model = facultiesFetchController.object(at: indexPath)
         cell.configure(title: title, cellType: .specialty)
         return cell
     }

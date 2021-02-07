@@ -121,7 +121,7 @@ extension FacultiesViewController: ConfigurableOnPushCellDelegate {
             guard let self = self else { return }
             (self.dataSources[indexPath.section] as? TitleUpdatable)?.updateTitle(title: selectedItem)
             self.groupsTableView.reloadSections(IndexSet(indexPath.section...self.dataSources.count-1), with: .none)
-            self.groupsTableView.reloadRows(at: [indexPath], with: .automatic)
+//            self.groupsTableView.reloadRows(at: [indexPath], with: .none)
         })
     }
 }

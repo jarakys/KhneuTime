@@ -29,7 +29,8 @@ class DetailViewController: UIViewController {
         definesPresentationContext = true
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         didClose?(selectedData?.nameDetailed ?? "")
     }
     
