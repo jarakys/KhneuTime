@@ -56,6 +56,7 @@
 		11AB6A8325CFE7CE00EF25A4 /* RouteEntitiesForUpdateFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A8225CFE7CE00EF25A4 /* RouteEntitiesForUpdateFabric.swift */; };
 		11AB6A8825CFEFA300EF25A4 /* FacultyDB+DetailedModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A8725CFEFA300EF25A4 /* FacultyDB+DetailedModelProtocol.swift */; };
 		11AB6A8B25CFEFC000EF25A4 /* DetailedModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A8A25CFEFC000EF25A4 /* DetailedModelProtocol.swift */; };
+		11AB6A8E25CFF63A00EF25A4 /* TitleUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A8D25CFF63A00EF25A4 /* TitleUpdatable.swift */; };
 		11CEA17D25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA17C25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift */; };
 		11CEA180253312DD00C628F5 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA17F253312DD00C628F5 /* GroupsViewController.swift */; };
 		11CEA183253314B000C628F5 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CEA182253314B000C628F5 /* Groups.storyboard */; };
@@ -63,7 +64,6 @@
 		11CEA1892533150600C628F5 /* SpecialtiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA1882533150600C628F5 /* SpecialtiesViewController.swift */; };
 		11CEA18C2533151600C628F5 /* SelectGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA18B2533151600C628F5 /* SelectGroupViewController.swift */; };
 		11D061FD25BA9BEC00BBFC38 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D061FC25BA9BEC00BBFC38 /* DetailViewController.swift */; };
-		11D0620025BAA1AF00BBFC38 /* DataSource+UpdateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D061FF25BAA1AF00BBFC38 /* DataSource+UpdateData.swift */; };
 		11FACADD25B2389500B966FD /* OptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FACADC25B2389500B966FD /* OptionCell.xib */; };
 		11FACAE525B2392F00B966FD /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACAE425B2392F00B966FD /* OptionCell.swift */; };
 		11FACAE925B241CA00B966FD /* OptionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACAE825B241CA00B966FD /* OptionDataSource.swift */; };
@@ -123,6 +123,7 @@
 		11AB6A8225CFE7CE00EF25A4 /* RouteEntitiesForUpdateFabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteEntitiesForUpdateFabric.swift; sourceTree = "<group>"; };
 		11AB6A8725CFEFA300EF25A4 /* FacultyDB+DetailedModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FacultyDB+DetailedModelProtocol.swift"; sourceTree = "<group>"; };
 		11AB6A8A25CFEFC000EF25A4 /* DetailedModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedModelProtocol.swift; sourceTree = "<group>"; };
+		11AB6A8D25CFF63A00EF25A4 /* TitleUpdatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleUpdatable.swift; sourceTree = "<group>"; };
 		11CEA17C25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+StoryboardInstantiable.swift"; sourceTree = "<group>"; };
 		11CEA17F253312DD00C628F5 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		11CEA182253314B000C628F5 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
@@ -130,7 +131,6 @@
 		11CEA1882533150600C628F5 /* SpecialtiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialtiesViewController.swift; sourceTree = "<group>"; };
 		11CEA18B2533151600C628F5 /* SelectGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupViewController.swift; sourceTree = "<group>"; };
 		11D061FC25BA9BEC00BBFC38 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		11D061FF25BAA1AF00BBFC38 /* DataSource+UpdateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataSource+UpdateData.swift"; sourceTree = "<group>"; };
 		11FACADC25B2389500B966FD /* OptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionCell.xib; sourceTree = "<group>"; };
 		11FACAE425B2392F00B966FD /* OptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
 		11FACAE825B241CA00B966FD /* OptionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDataSource.swift; sourceTree = "<group>"; };
@@ -265,6 +265,7 @@
 				11895E1E253308FC00480611 /* ReusableCell.swift */,
 				11112BFB25330BCE003CEEDA /* StoryboardInstantiable.swift */,
 				11AB6A8A25CFEFC000EF25A4 /* DetailedModelProtocol.swift */,
+				11AB6A8D25CFF63A00EF25A4 /* TitleUpdatable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -309,7 +310,6 @@
 				11937FFF2532FF2600639905 /* UIViewController+presentAlert.swift */,
 				11112BFE25330C1C003CEEDA /* Storyboard+Type.swift */,
 				11CEA17C25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift */,
-				11D061FF25BAA1AF00BBFC38 /* DataSource+UpdateData.swift */,
 				11AB6A7E25CFE63B00EF25A4 /* Data+ToDictionary.swift */,
 			);
 			path = Extensions;
@@ -562,7 +562,6 @@
 				11AB6A6725CB572D00EF25A4 /* DataStack.swift in Sources */,
 				11AB6A7F25CFE63B00EF25A4 /* Data+ToDictionary.swift in Sources */,
 				11AB6A7225CF3B4400EF25A4 /* AsynchronousOperation.swift in Sources */,
-				11D0620025BAA1AF00BBFC38 /* DataSource+UpdateData.swift in Sources */,
 				117EEE8625B384FE00100A4E /* SelectableGroupsDataSource.swift in Sources */,
 				11D061FD25BA9BEC00BBFC38 /* DetailViewController.swift in Sources */,
 				11647B6C25B394A700D5E00A /* Coordinator.swift in Sources */,
@@ -575,6 +574,7 @@
 				11AB6A8325CFE7CE00EF25A4 /* RouteEntitiesForUpdateFabric.swift in Sources */,
 				11CEA18C2533151600C628F5 /* SelectGroupViewController.swift in Sources */,
 				11CEA1892533150600C628F5 /* SpecialtiesViewController.swift in Sources */,
+				11AB6A8E25CFF63A00EF25A4 /* TitleUpdatable.swift in Sources */,
 				117EEE7C25B37FCA00100A4E /* FacultyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

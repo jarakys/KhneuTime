@@ -11,7 +11,7 @@ protocol ConfigurableOnPushCellDelegate: class {
     func didTap(indexPath: IndexPath, cellType: CellType, data: [DetailedModelProtocol])
 }
 
-class FacultiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
+class FacultiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate, TitleUpdatable {
     
     private var title: String
     private weak var delegate: ConfigurableOnPushCellDelegate?
@@ -21,6 +21,10 @@ class FacultiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate 
         try? facultiesFetchController.performFetch()
         self.title = facultiesFetchController.fetchedObjects?.first?.name ?? ""
         self.delegate = delegate
+    }
+    
+    func updateTitle(title: String) {
+        self.title = title
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -42,7 +46,7 @@ class FacultiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate 
         cell.top = true
         cell.bottom = true
         let model = facultiesFetchController.object(at: indexPath)
-        cell.configure(title: model.name ?? "", cellType: .specialty)
+        cell.configure(title: title, cellType: .specialty)
         return cell
     }
     

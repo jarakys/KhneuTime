@@ -15,6 +15,8 @@ class DetailViewController: UIViewController {
     var didClose: ((String) -> Void)?
     
     var data = [DetailedModelProtocol]()
+    
+    var selectedData: DetailedModelProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,7 @@ class DetailViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        didClose?("hi")
+        didClose?(selectedData?.nameDetailed ?? "")
     }
     
     @IBAction func cancelDidTap(_ sender: Any) {
@@ -58,6 +60,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
+        selectedData = data[indexPath.row]
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

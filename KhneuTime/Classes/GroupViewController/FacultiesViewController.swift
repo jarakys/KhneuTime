@@ -119,7 +119,7 @@ extension FacultiesViewController: ConfigurableOnPushCellDelegate {
     func didTap(indexPath: IndexPath, cellType: CellType, data: [DetailedModelProtocol]) {
         coordinator?.startSelectableDetail(data: data, completion: {[weak self] selectedItem in
             guard let self = self else { return }
-            self.dataSources[indexPath.section].updateDataTitle(title: selectedItem)
+            (self.dataSources[indexPath.section] as? TitleUpdatable)?.updateTitle(title: selectedItem)
             self.groupsTableView.reloadSections(IndexSet(indexPath.section...self.dataSources.count-1), with: .none)
             self.groupsTableView.reloadRows(at: [indexPath], with: .automatic)
         })
