@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailsViewController: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var didClose: ((String) -> Void)?
+    var didClose: ((DetailedModelProtocol?) -> Void)?
     
     var data = [DetailedModelProtocol]()
     
@@ -31,10 +31,11 @@ class DetailViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        didClose?(selectedData?.nameDetailed ?? "")
+        didClose?(selectedData)
     }
     
     @IBAction func cancelDidTap(_ sender: Any) {
+        selectedData = nil
         dismiss(animated: true, completion: nil)
     }
     

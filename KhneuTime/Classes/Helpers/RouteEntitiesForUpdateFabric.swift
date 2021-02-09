@@ -13,10 +13,10 @@ class RouteEntitiesForUpdateFabric {
         switch entity {
         case .faculties:
             routes = [.faculties]
-//        case .groups:
-//            routes = [.groups]
-//        case .specialties:
-//            routes = [.specialties]
+        case .groups:
+            routes = [.groups]
+        case .specialties:
+            routes = [.specialties]
 //        case .schedule:
 //            let ids = PrefsManager.shared.get(pref: .selectedGroups)
 //            for id in ids {

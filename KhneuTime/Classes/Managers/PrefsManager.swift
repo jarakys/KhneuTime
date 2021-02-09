@@ -11,6 +11,7 @@ enum Prefs: String {
     case selectedGroups
     case selectedFaculties
     case synced
+    case notFirstLaunch
 }
 
 class PrefsManager {
@@ -21,13 +22,17 @@ class PrefsManager {
     
     private init() { }
     
-    func set(pref: Prefs, id: Int) {
-        var array = get(pref: pref)
-        array.append(id)
-        prefs.setValue(array, forKey: pref.rawValue)
+    func addSelectedGroud(with id: Int) {
+        var array:[Int]? = get(pref: .selectedGroups)
+        array?.append(id)
+        prefs.setValue(array, forKey: Prefs.selectedGroups.rawValue)
     }
     
-    func get(pref: Prefs) -> [Int] {
-        prefs.array(forKey: pref.rawValue)?.compactMap({$0 as? Int}) ?? []
+    func set<T>(pref: Prefs, value: T) {
+        prefs.setValue(value, forKey: pref.rawValue)
+    }
+    
+    func get<T>(pref: Prefs) -> T? {
+        prefs.object(forKey: pref.rawValue) as? T
     }
 }

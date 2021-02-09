@@ -6,15 +6,27 @@
 //
 
 import UIKit
+import CoreData
 
-class SpecialtiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
-    
+class SpecialtiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate, Updatable {
+
     private var title: String
     private weak var delegate: ConfigurableOnPushCellDelegate?
+    private var specialtiesFetchController = DatabaseManager.shared.getSpecialties(facultyId: -1)
     
     init(title: String, delegate: ConfigurableOnPushCellDelegate) {
         self.title = title
         self.delegate = delegate
+        
+    }
+    
+    func updateTitle(title: String) {
+        self.title = title
+    }
+    
+    func updateData(subsectionId: Int) {
+        specialtiesFetchController = DatabaseManager.shared.getSpecialties(facultyId: subsectionId)
+        try? specialtiesFetchController.performFetch()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -41,6 +53,7 @@ class SpecialtiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! FacultyCell
-        delegate?.didTap(indexPath: indexPath, cellType: cell.cellType, data: [])
+        let data = specialtiesFetchController.fetchedObjects ?? []
+        delegate?.didTap(indexPath: indexPath, cellType: cell.cellType, data: data)
     }
 }

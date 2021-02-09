@@ -20,26 +20,40 @@
                                 <rect key="frame" x="8" y="0.0" width="398" height="862"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d17-ru-z2B">
-                                <rect key="frame" x="0.0" y="496" width="414" height="400"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qtv-Zr-dF8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d17-ru-z2B">
+                                        <rect key="frame" x="0.0" y="476" width="414" height="400"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="400" id="CvP-AQ-4Fv"/>
+                                        </constraints>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="CvP-AQ-4Fv"/>
+                                    <constraint firstAttribute="trailing" secondItem="d17-ru-z2B" secondAttribute="trailing" id="Nto-hz-1QE"/>
+                                    <constraint firstAttribute="bottom" secondItem="d17-ru-z2B" secondAttribute="bottom" constant="20" id="ftM-Ri-jsI"/>
+                                    <constraint firstItem="d17-ru-z2B" firstAttribute="leading" secondItem="qtv-Zr-dF8" secondAttribute="leading" id="tYG-jf-BzA"/>
                                 </constraints>
-                            </pickerView>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2YX-YS-UFk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6KZ-6m-QbK" firstAttribute="leading" secondItem="2YX-YS-UFk" secondAttribute="leading" constant="8" id="5Ch-kD-qG0"/>
-                            <constraint firstItem="d17-ru-z2B" firstAttribute="leading" secondItem="2YX-YS-UFk" secondAttribute="leading" id="9Xz-BT-s9I"/>
-                            <constraint firstAttribute="bottom" secondItem="d17-ru-z2B" secondAttribute="bottom" id="Dgm-6m-TF2"/>
+                            <constraint firstItem="qtv-Zr-dF8" firstAttribute="leading" secondItem="IHM-Or-Hue" secondAttribute="leading" id="DuD-it-N2G"/>
                             <constraint firstItem="2YX-YS-UFk" firstAttribute="trailing" secondItem="6KZ-6m-QbK" secondAttribute="trailing" constant="8" id="JIL-ei-edU"/>
-                            <constraint firstItem="d17-ru-z2B" firstAttribute="trailing" secondItem="2YX-YS-UFk" secondAttribute="trailing" id="Yxb-ZY-d6w"/>
+                            <constraint firstItem="qtv-Zr-dF8" firstAttribute="top" secondItem="IHM-Or-Hue" secondAttribute="top" id="XEV-Ge-gHn"/>
+                            <constraint firstAttribute="bottom" secondItem="qtv-Zr-dF8" secondAttribute="bottom" id="lnC-Mr-3Nr"/>
                             <constraint firstItem="6KZ-6m-QbK" firstAttribute="top" secondItem="IHM-Or-Hue" secondAttribute="top" id="p4e-vz-AGT"/>
+                            <constraint firstAttribute="trailing" secondItem="qtv-Zr-dF8" secondAttribute="trailing" id="pKg-Jz-cJc"/>
                             <constraint firstItem="2YX-YS-UFk" firstAttribute="bottom" secondItem="6KZ-6m-QbK" secondAttribute="bottom" id="yf7-7K-EBy"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundPickerView" destination="qtv-Zr-dF8" id="Hn5-Vd-xzX"/>
                         <outlet property="coursePicker" destination="d17-ru-z2B" id="Cjm-5r-sx4"/>
                         <outlet property="groupsTableView" destination="6KZ-6m-QbK" id="ZOK-O0-doj"/>
                     </connections>

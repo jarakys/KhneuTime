@@ -57,6 +57,8 @@
 		11AB6A8825CFEFA300EF25A4 /* FacultyDB+DetailedModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A8725CFEFA300EF25A4 /* FacultyDB+DetailedModelProtocol.swift */; };
 		11AB6A8B25CFEFC000EF25A4 /* DetailedModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A8A25CFEFC000EF25A4 /* DetailedModelProtocol.swift */; };
 		11AB6A8E25CFF63A00EF25A4 /* TitleUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A8D25CFF63A00EF25A4 /* TitleUpdatable.swift */; };
+		11AB6A9225D1D03E00EF25A4 /* SpecialtyDB+DetailedModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A9125D1D03E00EF25A4 /* SpecialtyDB+DetailedModelProtocol.swift */; };
+		11AB6A9625D2A37200EF25A4 /* UIView+addBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6A9525D2A37100EF25A4 /* UIView+addBlur.swift */; };
 		11CEA17D25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA17C25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift */; };
 		11CEA180253312DD00C628F5 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA17F253312DD00C628F5 /* GroupsViewController.swift */; };
 		11CEA183253314B000C628F5 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CEA182253314B000C628F5 /* Groups.storyboard */; };
@@ -124,6 +126,8 @@
 		11AB6A8725CFEFA300EF25A4 /* FacultyDB+DetailedModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FacultyDB+DetailedModelProtocol.swift"; sourceTree = "<group>"; };
 		11AB6A8A25CFEFC000EF25A4 /* DetailedModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedModelProtocol.swift; sourceTree = "<group>"; };
 		11AB6A8D25CFF63A00EF25A4 /* TitleUpdatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleUpdatable.swift; sourceTree = "<group>"; };
+		11AB6A9125D1D03E00EF25A4 /* SpecialtyDB+DetailedModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpecialtyDB+DetailedModelProtocol.swift"; sourceTree = "<group>"; };
+		11AB6A9525D2A37100EF25A4 /* UIView+addBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addBlur.swift"; sourceTree = "<group>"; };
 		11CEA17C25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+StoryboardInstantiable.swift"; sourceTree = "<group>"; };
 		11CEA17F253312DD00C628F5 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		11CEA182253314B000C628F5 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
@@ -311,6 +315,7 @@
 				11112BFE25330C1C003CEEDA /* Storyboard+Type.swift */,
 				11CEA17C25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift */,
 				11AB6A7E25CFE63B00EF25A4 /* Data+ToDictionary.swift */,
+				11AB6A9525D2A37100EF25A4 /* UIView+addBlur.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				11AB6A8725CFEFA300EF25A4 /* FacultyDB+DetailedModelProtocol.swift */,
+				11AB6A9125D1D03E00EF25A4 /* SpecialtyDB+DetailedModelProtocol.swift */,
 			);
 			path = Db;
 			sourceTree = "<group>";
@@ -541,6 +547,7 @@
 				113F8BB125B24A0000836EA4 /* RoundedGroupCell.swift in Sources */,
 				117EEE8225B383F300100A4E /* CoursesDataSource.swift in Sources */,
 				11038A292533181800CB9F03 /* BaseViewController.swift in Sources */,
+				11AB6A9625D2A37200EF25A4 /* UIView+addBlur.swift in Sources */,
 				11895E1C2533074800480611 /* ConfigurableCell.swift in Sources */,
 				1193800A2532FFB400639905 /* ScheduleViewController.swift in Sources */,
 				11AB6A8825CFEFA300EF25A4 /* FacultyDB+DetailedModelProtocol.swift in Sources */,
@@ -550,6 +557,7 @@
 				11647B7225B3956800D5E00A /* CoordinableViewController.swift in Sources */,
 				113F8BAE25B2473F00836EA4 /* DataSourceDelegate.swift in Sources */,
 				11AB6A8B25CFEFC000EF25A4 /* DetailedModelProtocol.swift in Sources */,
+				11AB6A9225D1D03E00EF25A4 /* SpecialtyDB+DetailedModelProtocol.swift in Sources */,
 				11AB6A7525CF432300EF25A4 /* NetworkManager.swift in Sources */,
 				11937FEB2532FA7900639905 /* SceneDelegate.swift in Sources */,
 				119380002532FF2600639905 /* UIViewController+presentAlert.swift in Sources */,

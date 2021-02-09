@@ -11,6 +11,7 @@ class FacultiesViewController: CoordinableViewController {
     
     @IBOutlet weak var coursePicker: UIPickerView!
     @IBOutlet weak var groupsTableView: UITableView!
+    @IBOutlet weak var backgroundPickerView: UIView!
     
     private var dataSources = [UITableViewDataSource & UITableViewDelegate]()
     private var coursesDataSource: CoursesDataSource!
@@ -27,6 +28,8 @@ class FacultiesViewController: CoordinableViewController {
         groupsTableView.dataSource = self
         coursePicker.delegate = self
         coursePicker.dataSource = self
+        backgroundPickerView.addBlur()
+        backgroundPickerView.bringSubviewToFront(coursePicker)
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
         
@@ -35,8 +38,8 @@ class FacultiesViewController: CoordinableViewController {
         
         coursesDataSource = CoursesDataSource(title: "1", delegate: self)
         selectableGroupsDataSource = SelectableGroupsDataSource()
-        facultiesDataSource = FacultiesDataSource(title: "IT", delegate: self)
-        specialtiesDataSource = SpecialtiesDataSource(title: "CS", delegate: self)
+        facultiesDataSource = FacultiesDataSource(title: "Select faculty", delegate: self)
+        specialtiesDataSource = SpecialtiesDataSource(title: "Select specialty", delegate: self)
         
         dataSources = [facultiesDataSource, specialtiesDataSource, coursesDataSource, selectableGroupsDataSource,]
     }
@@ -96,14 +99,14 @@ extension FacultiesViewController: UIPickerViewDelegate, UIPickerViewDataSource 
         coursesDataSource.updateTitle(title: (row + 1).description)
         groupsTableView.reloadRows(at: [courseIndexPath], with: .none)
         selectetCourse = row + 1
-        pickerView.isHidden = true
+        backgroundPickerView.isHidden = true
     }
 }
 
 //MARK: CoursesDataSourceDelegate
 extension FacultiesViewController: CoursesDataSourceDelegate {
     func courseDidTap(indexPath: IndexPath) {
-        coursePicker.isHidden = false
+        backgroundPickerView.isHidden = false
     }
 }
 
@@ -119,9 +122,15 @@ extension FacultiesViewController: ConfigurableOnPushCellDelegate {
     func didTap(indexPath: IndexPath, cellType: CellType, data: [DetailedModelProtocol]) {
         coordinator?.startSelectableDetail(data: data, completion: {[weak self] selectedItem in
             guard let self = self else { return }
-            (self.dataSources[indexPath.section] as? TitleUpdatable)?.updateTitle(title: selectedItem)
+            guard let detailedResult = selectedItem else {
+                self.groupsTableView.reloadSections([indexPath.section], with: .none)
+                return
+            }
+            (self.dataSources[indexPath.section] as? Updatable)?.updateTitle(title: detailedResult.nameDetailed)
+            if (self.dataSources.count-1) > indexPath.section {
+                (self.dataSources[indexPath.section + 1] as? Updatable)?.updateData(subsectionId: detailedResult.idDetailed)
+            }
             self.groupsTableView.reloadSections(IndexSet(indexPath.section...self.dataSources.count-1), with: .none)
-//            self.groupsTableView.reloadRows(at: [indexPath], with: .none)
         })
     }
 }

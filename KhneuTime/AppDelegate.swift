@@ -9,12 +9,13 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        SyncManager.shared.startInit()
-        // Override point for customization after application launch.
+        let isNotFirstLaunch: Bool? = PrefsManager.shared.get(pref: .notFirstLaunch)
+        if isNotFirstLaunch == nil || (isNotFirstLaunch ?? false) == false {
+            SyncManager.shared.startInit()
+            PrefsManager.shared.set(pref: .notFirstLaunch, value: true)
+        }
         return true
     }
 

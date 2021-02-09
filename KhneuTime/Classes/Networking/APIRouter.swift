@@ -26,9 +26,9 @@ enum APIRouter {
         case .faculties:
             return "/Faculties"
         case .specialties:
-            return ""
+            return "/Specialties"
         case .groups:
-            return ""
+            return "/AllGroups"
         case .shedule(let groupId):
             return ""
         }

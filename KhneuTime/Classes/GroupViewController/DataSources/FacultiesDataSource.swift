@@ -11,7 +11,7 @@ protocol ConfigurableOnPushCellDelegate: class {
     func didTap(indexPath: IndexPath, cellType: CellType, data: [DetailedModelProtocol])
 }
 
-class FacultiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate, TitleUpdatable {
+class FacultiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate, Updatable {
     
     private var title: String
     private weak var delegate: ConfigurableOnPushCellDelegate?
@@ -26,6 +26,8 @@ class FacultiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate,
     func updateTitle(title: String) {
         self.title = title
     }
+    
+    func updateData(subsectionId: Int) { }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         40

@@ -30,7 +30,7 @@ class MainCoordinator: Coordinator {
         (tabBarController.selectedViewController as? UINavigationController)?.pushViewController(groupVC, animated: true)
     }
     
-    func startSelectableDetail(data: [DetailedModelProtocol], completion: @escaping(String) -> Void) {
+    func startSelectableDetail(data: [DetailedModelProtocol], completion: @escaping(DetailedModelProtocol?) -> Void) {
         let storyboard = UIStoryboard.storyboard(storyboard: .groups)
         let detailVC: DetailViewController = storyboard.instantiateViewController()
         detailVC.didClose = completion

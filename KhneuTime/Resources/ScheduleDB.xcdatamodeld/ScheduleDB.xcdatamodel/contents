@@ -4,12 +4,20 @@
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
     </entity>
+    <entity name="GroupDB" representedClassName=".GroupDB" syncable="YES" codeGenerationType="class">
+        <attribute name="course" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="specialtyId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
     <entity name="SpecialtyDB" representedClassName=".SpecialtyDB" syncable="YES" codeGenerationType="class">
+        <attribute name="facultyId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
     </entity>
     <elements>
         <element name="FacultyDB" positionX="-63" positionY="0" width="128" height="59"/>
-        <element name="SpecialtyDB" positionX="-63" positionY="-18" width="128" height="59"/>
+        <element name="SpecialtyDB" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="GroupDB" positionX="-54" positionY="18" width="128" height="89"/>
     </elements>
 </model>

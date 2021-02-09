@@ -7,6 +7,7 @@
 
 import Foundation
 
-@objc protocol TitleUpdatable {
+@objc protocol Updatable {
     func updateTitle(title: String)
+    func updateData(subsectionId: Int)
 }

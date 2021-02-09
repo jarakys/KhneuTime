@@ -37,8 +37,13 @@ class DatabaseManager {
         return controller
     }
     
-    func getSpecialties(facultyId: Int) {
-        
+    func getSpecialties(facultyId: Int) -> NSFetchedResultsController<SpecialtyDB> {
+        let request: NSFetchRequest<SpecialtyDB> = SpecialtyDB.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: false)]
+        let controller = NSFetchedResultsController(fetchRequest: request,
+                                                    managedObjectContext: dataStack.context,
+                                                    sectionNameKeyPath: nil, cacheName: nil)
+        return controller
     }
     
     func getGroups(specialtyId: Int) {
