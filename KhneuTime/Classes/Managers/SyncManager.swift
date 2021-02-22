@@ -11,6 +11,7 @@ enum SyncEntitiesEnum: CaseIterable {
     case specialties
     case faculties
     case groups
+    case studentTypes
     //    case schedule(groupId: Int)
     
     static var allCases: [SyncEntitiesEnum] {
@@ -39,6 +40,8 @@ enum SyncEntitiesEnum: CaseIterable {
             return "SpecialtyDB"
         case .groups:
             return "GroupDB"
+        case .studentTypes:
+            return "StudentTypeDB"
         default:
             return ""
         }
@@ -52,6 +55,8 @@ enum SyncEntitiesEnum: CaseIterable {
             return [.specialties]
         case .groups:
             return [.groups]
+        case .studentTypes:
+            return [.studentTypes]
         default: return [.faculties]
         }
     }
@@ -65,7 +70,7 @@ class SyncManager {
     
     private init() { }
     
-    func startInit() {
+    func startInit(completion: @escaping() -> Void) {
         var currentOperation: Operation?
         let operationQueue = OperationQueue()
         for entity in entities {
@@ -84,6 +89,9 @@ class SyncManager {
                     })
                 }
                 sem.wait()
+                if operation == operationQueue.operations.last {
+                    completion()
+                }
             }
             currentOperation = operation
             operationQueue.addOperation(operation)

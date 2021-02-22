@@ -14,6 +14,11 @@ class RoundedGroupCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        if !top && !bottom {
+            layer.mask = nil
+            return
+        }
 
         if top && bottom {
             layer.cornerRadius = 10

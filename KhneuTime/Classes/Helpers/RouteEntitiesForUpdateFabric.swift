@@ -17,6 +17,7 @@ class RouteEntitiesForUpdateFabric {
             routes = [.groups]
         case .specialties:
             routes = [.specialties]
+        default: routes = []
 //        case .schedule:
 //            let ids = PrefsManager.shared.get(pref: .selectedGroups)
 //            for id in ids {

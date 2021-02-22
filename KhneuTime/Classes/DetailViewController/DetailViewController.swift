@@ -17,13 +17,14 @@ class DetailViewController: UIViewController {
     var data = [DetailedModelProtocol]()
     
     var selectedData: DetailedModelProtocol?
+    var closeOnClick = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.largeTitleDisplayMode = .never
         detailsViewController.delegate = self
         detailsViewController.dataSource = self
-        detailsViewController.register(FacultyCell.nib, forCellReuseIdentifier: FacultyCell.reusableIndentify)
+        detailsViewController.register(DetailedCell.nib, forCellReuseIdentifier: DetailedCell.reusableIndentify)
         searchBar.delegate = self
         navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
@@ -31,7 +32,6 @@ class DetailViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        didClose?(selectedData)
     }
     
     @IBAction func cancelDidTap(_ sender: Any) {
@@ -39,7 +39,8 @@ class DetailViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func saveDidTap(_ sender: Any) {
+    @IBAction func saveDidTap(_ sender: Any?) {
+        didClose?(selectedData)
         dismiss(animated: true, completion: nil)
     }
     
@@ -52,9 +53,8 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FacultyCell.reusableIndentify, for: indexPath) as! FacultyCell
-        let model = data[indexPath.row]
-        cell.configure(title: model.nameDetailed, cellType: .faculty)
+        let cell = tableView.dequeueReusableCell(withIdentifier: DetailedCell.reusableIndentify, for: indexPath) as! DetailedCell
+        cell.configure(data: data[indexPath.row])
         cell.accessoryType = .none
         return cell
     }
@@ -63,6 +63,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
         selectedData = data[indexPath.row]
+        if closeOnClick { saveDidTap(nil) }
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

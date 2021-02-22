@@ -13,11 +13,15 @@ enum APIRouter {
     case specialties
     case groups
     case shedule(groupId: Int)
+    case studentTypes
+    case document(facultyId: Int, specialtyId: Int, groupId: Int, studentTypeId: Int, studentName: String, email: String, destination: String)
     
     private var method: String {
         switch self {
-        case .faculties, .specialties, .groups, .shedule:
+        case .faculties, .specialties, .groups, .shedule, .studentTypes:
             return "GET"
+        case .document:
+            return "POST"
         }
     }
     
@@ -29,7 +33,11 @@ enum APIRouter {
             return "/Specialties"
         case .groups:
             return "/AllGroups"
+        case .studentTypes:
+            return "/StudentTypes"
         case .shedule(let groupId):
+            return ""
+        case  .document:
             return ""
         }
     }
@@ -41,13 +49,20 @@ enum APIRouter {
     // MARK: - Parameters
     private var parameters: [String:Any]? {
         switch self {
-        case .faculties, .specialties, .groups, .shedule:
+        case .faculties, .specialties, .groups, .shedule, .studentTypes:
             return nil
+        case let .document(facultyId, specialtyId, groupId, studentTypeId, studentName, email, destination):
+            return ["FIO":studentName,
+                    "SpecialtyId": specialtyId,
+                    "GroupId": groupId,
+                    "Destination": destination,
+                    "EmailAddress": email,
+                    "StudentTypeId": studentTypeId]
         }
     }
     
     func asURLRequest() throws -> URLRequest {
-        guard let url = URL(string: "http://www.dovidkaei.hneu.edu.ua/api/StudentAPI" + path) else {
+        guard let url = URL(string: "http://www.dovidkaei.hneu.edu.ua/api/main" + path) else {
             throw URLError(URLError.Code.unsupportedURL)
         }
         var urlRequest = URLRequest(url: url)

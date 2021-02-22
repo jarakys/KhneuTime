@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dLv-mU-K5k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dLv-mU-K5k">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,17 +29,32 @@
             </objects>
             <point key="canvasLocation" x="-745" y="735"/>
         </scene>
-        <!--Groups View Controller-->
+        <!--Documents-->
         <scene sceneID="LaD-fH-0Zl">
             <objects>
-                <viewController id="D0L-5G-9nB" customClass="GroupsViewController" customModule="KhneuTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="D0L-5G-9nB" customClass="DocumentViewController" customModule="KhneuTime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Yr-Cu-Lg6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="DQU-g0-u7T">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1sW-ub-d7w"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DQU-g0-u7T" firstAttribute="top" secondItem="1sW-ub-d7w" secondAttribute="top" id="Cot-QY-b92"/>
+                            <constraint firstItem="1sW-ub-d7w" firstAttribute="bottom" secondItem="DQU-g0-u7T" secondAttribute="bottom" id="Naw-XZ-Ouq"/>
+                            <constraint firstItem="DQU-g0-u7T" firstAttribute="leading" secondItem="1sW-ub-d7w" secondAttribute="leading" id="Ook-nn-pGe"/>
+                            <constraint firstItem="1sW-ub-d7w" firstAttribute="trailing" secondItem="DQU-g0-u7T" secondAttribute="trailing" id="pkp-Yg-qhY"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="g0B-aY-DaB"/>
+                    <navigationItem key="navigationItem" title="Documents" id="g0B-aY-DaB"/>
+                    <connections>
+                        <outlet property="documentTableView" destination="DQU-g0-u7T" id="mDC-VA-GdK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4eh-Di-3Nc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,8 +147,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8vk-AD-4Nl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Document" image="doc.fill" catalog="system" id="oak-Om-V0S"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Dro-T9-ARr">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dro-T9-ARr">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="0.65490196079999996" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>

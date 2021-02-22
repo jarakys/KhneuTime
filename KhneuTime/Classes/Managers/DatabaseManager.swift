@@ -21,6 +21,19 @@ class DatabaseManager {
         guard let dictionaries = data.convertToDictionary() else { return }
         for dictionary in dictionaries {
             let object = NSEntityDescription.insertNewObject(forEntityName: entity.entityName, into: dataStack.context)
+            
+            if dictionary is [String: [Dictionary<String, Any>]] {
+                guard let relationshipName = dictionary.keys.first else { continue }
+                let entity = NSEntityDescription.entity(forEntityName: entity.entityName, in: dataStack.context)
+                guard let relationship = entity?.relationshipsByName.first(where: { $0.key == relationshipName}), let destinationEntityName = relationship.value.destinationEntity?.name else { continue }
+                let arrayData = dictionary.values as! [Dictionary<String, Any>]
+//                for child in arrayData {
+//                    let childObject = NSEntityDescription.entity(forEntityName: destinationEntityName, in: dataStack.context)
+//                    for key in Array(child.keys) {
+//                        childObject.setValue(dictionary[key], forKey: key)
+//                    }
+//                }
+            }
             for key in Array(dictionary.keys) {
                 object.setValue(dictionary[key], forKey: key)
             }
@@ -28,26 +41,27 @@ class DatabaseManager {
         saveContext()
     }
     
-    func getFaculties() -> NSFetchedResultsController<FacultyDB> {
+    func getFaculties() -> [FacultyDB] {
         let request: NSFetchRequest<FacultyDB> = FacultyDB.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: false)]
-        let controller = NSFetchedResultsController(fetchRequest: request,
-                                                    managedObjectContext: dataStack.context,
-                                                    sectionNameKeyPath: nil, cacheName: nil)
-        return controller
+        let faculties = try? dataStack.context.fetch(request)
+        return faculties ?? []
     }
     
-    func getSpecialties(facultyId: Int) -> NSFetchedResultsController<SpecialtyDB> {
+    func getSpecialties(facultyId: Int) -> [SpecialtyDB] {
         let request: NSFetchRequest<SpecialtyDB> = SpecialtyDB.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: false)]
-        let controller = NSFetchedResultsController(fetchRequest: request,
-                                                    managedObjectContext: dataStack.context,
-                                                    sectionNameKeyPath: nil, cacheName: nil)
-        return controller
+        request.predicate = NSPredicate(format: "facultyId == %i", facultyId)
+        let specialties = try? dataStack.context.fetch(request)
+        return specialties ?? []
     }
     
-    func getGroups(specialtyId: Int) {
-        
+    func getGroups(specialtyId: Int, course: Int) -> [GroupDB] {
+        let request: NSFetchRequest<GroupDB> = GroupDB.fetchRequest()
+//        let specialtyPredicate = NSPredicate(format: "specialtyId ==%i", specialtyId)
+//        let coursePredicate = NSPredicate(format: "course ==%i", course)
+//        let andPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [specialtyPredicate, coursePredicate])
+//        request.predicate = andPredicate
+        let groups = try! dataStack.context.fetch(request)
+        return groups
     }
     
     func getSchedule(groupId: Int) {

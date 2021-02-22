@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="95" id="Xwv-xo-BhE" customClass="SelectableCell" customModule="KhneuTime" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xwv-xo-BhE" id="epI-H0-xzr">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sk-cO-TWm">
+                        <rect key="frame" x="8" y="8" width="398" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" systemColor="systemGrayColor"/>
+                        <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q3U-wG-6Ob">
+                        <rect key="frame" x="0.0" y="34" width="414" height="61"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2N-Cs-P1Y">
+                                <rect key="frame" x="8" y="8" width="398" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                <state key="normal" title="dsfdsf">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectorDidTap:" destination="Xwv-xo-BhE" eventType="touchUpInside" id="9S1-ix-MEb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="L2N-Cs-P1Y" secondAttribute="trailing" constant="8" id="9sY-f9-0xc"/>
+                            <constraint firstItem="L2N-Cs-P1Y" firstAttribute="leading" secondItem="q3U-wG-6Ob" secondAttribute="leading" constant="8" id="bG5-gO-xbl"/>
+                            <constraint firstItem="L2N-Cs-P1Y" firstAttribute="top" secondItem="q3U-wG-6Ob" secondAttribute="top" constant="8" id="czS-m7-o35"/>
+                            <constraint firstAttribute="bottom" secondItem="L2N-Cs-P1Y" secondAttribute="bottom" constant="8" id="i8U-De-Sll"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="q3U-wG-6Ob" firstAttribute="top" secondItem="4Sk-cO-TWm" secondAttribute="bottom" constant="8" id="CS5-8Q-2x2"/>
+                    <constraint firstItem="4Sk-cO-TWm" firstAttribute="top" secondItem="epI-H0-xzr" secondAttribute="top" constant="8" id="EIe-Ik-hhr"/>
+                    <constraint firstAttribute="bottom" secondItem="q3U-wG-6Ob" secondAttribute="bottom" id="I5y-rP-aw0"/>
+                    <constraint firstAttribute="trailing" secondItem="q3U-wG-6Ob" secondAttribute="trailing" id="JqU-yL-nbf"/>
+                    <constraint firstAttribute="trailing" secondItem="4Sk-cO-TWm" secondAttribute="trailing" constant="8" id="RCR-yp-ab3"/>
+                    <constraint firstItem="q3U-wG-6Ob" firstAttribute="leading" secondItem="epI-H0-xzr" secondAttribute="leading" id="q4a-MS-97z"/>
+                    <constraint firstItem="4Sk-cO-TWm" firstAttribute="leading" secondItem="epI-H0-xzr" secondAttribute="leading" constant="8" id="uQF-OL-Une"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="containerView" destination="q3U-wG-6Ob" id="25J-8L-K4F"/>
+                <outlet property="slectorButton" destination="L2N-Cs-P1Y" id="qU8-p4-nwN"/>
+                <outlet property="titleLabel" destination="4Sk-cO-TWm" id="301-zA-moP"/>
+            </connections>
+            <point key="canvasLocation" x="340.57971014492756" y="102.79017857142857"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

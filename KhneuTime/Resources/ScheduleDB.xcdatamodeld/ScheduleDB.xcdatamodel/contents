@@ -9,15 +9,37 @@
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="specialtyId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="shedules" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ScheduleDB" inverseName="groups" inverseEntity="ScheduleDB"/>
+    </entity>
+    <entity name="ScheduleDB" representedClassName=".ScheduleDb" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="day" optional="YES" attributeType="String"/>
+        <attribute name="endUnix" optional="YES" attributeType="String"/>
+        <attribute name="groupId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="startUnix" optional="YES" attributeType="String"/>
+        <attribute name="subjectFullName" optional="YES" attributeType="String"/>
+        <attribute name="subjectShortName" optional="YES" attributeType="String"/>
+        <attribute name="teacherFullName" optional="YES" attributeType="String"/>
+        <attribute name="teacherShortName" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="groups" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GroupDB" inverseName="shedules" inverseEntity="GroupDB"/>
     </entity>
     <entity name="SpecialtyDB" representedClassName=".SpecialtyDB" syncable="YES" codeGenerationType="class">
         <attribute name="facultyId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
+        <attribute name="specialtyId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="StudentTypeDB" representedClassName="StudentTypeDB" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="FacultyDB" positionX="-63" positionY="0" width="128" height="59"/>
-        <element name="SpecialtyDB" positionX="-63" positionY="-18" width="128" height="74"/>
-        <element name="GroupDB" positionX="-54" positionY="18" width="128" height="89"/>
+        <element name="GroupDB" positionX="-54" positionY="18" width="128" height="104"/>
+        <element name="ScheduleDB" positionX="-36" positionY="45" width="128" height="209"/>
+        <element name="SpecialtyDB" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="StudentTypeDB" positionX="-45" positionY="108" width="128" height="59"/>
     </elements>
 </model>

@@ -8,6 +8,13 @@
 import UIKit
 
 class GroupsDataSource: DataSourceDelegate {
+    
+    var title: String
+    
+    init(title: String) {
+        self.title = title
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         0
     }
