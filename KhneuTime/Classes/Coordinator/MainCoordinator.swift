@@ -8,7 +8,6 @@
 import UIKit
 
 class MainCoordinator: Coordinator {
-    
     var childCoordinators = [Coordinator]()
     var tabBarController: UITabBarController
     weak var currentVC: UIViewController?
@@ -35,6 +34,17 @@ class MainCoordinator: Coordinator {
         let detailVC: DetailViewController = storyboard.instantiateViewController()
         detailVC.didClose = completion
         detailVC.data = data
+        currentVC?.present(detailVC, animated: true, completion: nil)
+    }
+    
+    func startSelectableCourse(data: [DetailedModelProtocol], completion: @escaping (DetailedModelProtocol?) -> Void) {
+        let storyboard = UIStoryboard.storyboard(storyboard: .groups)
+        let detailVC: CourseViewController = storyboard.instantiateViewController()
+        detailVC.didClose = completion
+        detailVC.data = data
+        let transition = PanelTransition()
+        detailVC.transitioningDelegate = transition
+        detailVC.modalPresentationStyle = .custom
         currentVC?.present(detailVC, animated: true, completion: nil)
     }
     

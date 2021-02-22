@@ -42,6 +42,13 @@
 		1169D80525E2F6F30070B3DE /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169D80425E2F6F30070B3DE /* LabelCell.swift */; };
 		1169D80825E2FD620070B3DE /* SelectableGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1169D80725E2FD620070B3DE /* SelectableGroupCell.xib */; };
 		1169D80B25E2FE0D0070B3DE /* SelectableGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169D80A25E2FE0D0070B3DE /* SelectableGroupCell.swift */; };
+		1169D81925E4506E0070B3DE /* TransitionDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169D81425E4506D0070B3DE /* TransitionDriver.swift */; };
+		1169D81A25E4506E0070B3DE /* PresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169D81525E4506D0070B3DE /* PresentAnimation.swift */; };
+		1169D81B25E4506E0070B3DE /* PanelTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169D81625E4506D0070B3DE /* PanelTransition.swift */; };
+		1169D81C25E4506E0070B3DE /* DismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169D81725E4506E0070B3DE /* DismissAnimation.swift */; };
+		1169D81D25E4506E0070B3DE /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169D81825E4506E0070B3DE /* PresentationController.swift */; };
+		1169D82125E451060070B3DE /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169D82025E451060070B3DE /* CourseViewController.swift */; };
+		1169D82425E453310070B3DE /*  UIPanGestureRecognizer+presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169D82325E453310070B3DE /*  UIPanGestureRecognizer+presentation.swift */; };
 		116AA0C925C75E45003016C1 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116AA0C825C75E45003016C1 /* DatabaseManager.swift */; };
 		117EEE7925B37F9E00100A4E /* SelectableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 117EEE7825B37F9E00100A4E /* SelectableCell.xib */; };
 		117EEE7C25B37FCA00100A4E /* SelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EEE7B25B37FCA00100A4E /* SelectableCell.swift */; };
@@ -113,6 +120,13 @@
 		1169D80425E2F6F30070B3DE /* LabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
 		1169D80725E2FD620070B3DE /* SelectableGroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectableGroupCell.xib; sourceTree = "<group>"; };
 		1169D80A25E2FE0D0070B3DE /* SelectableGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableGroupCell.swift; sourceTree = "<group>"; };
+		1169D81425E4506D0070B3DE /* TransitionDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionDriver.swift; sourceTree = "<group>"; };
+		1169D81525E4506D0070B3DE /* PresentAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentAnimation.swift; sourceTree = "<group>"; };
+		1169D81625E4506D0070B3DE /* PanelTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelTransition.swift; sourceTree = "<group>"; };
+		1169D81725E4506E0070B3DE /* DismissAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissAnimation.swift; sourceTree = "<group>"; };
+		1169D81825E4506E0070B3DE /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		1169D82025E451060070B3DE /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
+		1169D82325E453310070B3DE /*  UIPanGestureRecognizer+presentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " UIPanGestureRecognizer+presentation.swift"; sourceTree = "<group>"; };
 		116AA0C825C75E45003016C1 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		117EEE7825B37F9E00100A4E /* SelectableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectableCell.xib; sourceTree = "<group>"; };
 		117EEE7B25B37FCA00100A4E /* SelectableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCell.swift; sourceTree = "<group>"; };
@@ -275,6 +289,26 @@
 			path = ConfigureGroup;
 			sourceTree = "<group>";
 		};
+		1169D81325E450510070B3DE /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				1169D81725E4506E0070B3DE /* DismissAnimation.swift */,
+				1169D81625E4506D0070B3DE /* PanelTransition.swift */,
+				1169D81525E4506D0070B3DE /* PresentAnimation.swift */,
+				1169D81825E4506E0070B3DE /* PresentationController.swift */,
+				1169D81425E4506D0070B3DE /* TransitionDriver.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		1169D81F25E450EE0070B3DE /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				1169D82025E451060070B3DE /* CourseViewController.swift */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
 		116AA0C725C75E30003016C1 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +368,7 @@
 		11937FE72532FA7900639905 /* KhneuTime */ = {
 			isa = PBXGroup;
 			children = (
+				1169D81325E450510070B3DE /* Transactions */,
 				11895E1A2533073900480611 /* Protocols */,
 				1193800D253300F300639905 /* Views */,
 				119380082532FFA000639905 /* Classes */,
@@ -357,6 +392,7 @@
 				11AB6A7E25CFE63B00EF25A4 /* Data+ToDictionary.swift */,
 				11AB6A9525D2A37100EF25A4 /* UIView+addBlur.swift */,
 				1169D7EC25E2DD730070B3DE /* Int+DetailedModelProtocol.swift */,
+				1169D82325E453310070B3DE /*  UIPanGestureRecognizer+presentation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -373,6 +409,7 @@
 		119380082532FFA000639905 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1169D81F25E450EE0070B3DE /* Course */,
 				1169D7DC25E2A4DE0070B3DE /* ViewModels */,
 				117EEE7425B37F0700100A4E /* DataSources */,
 				111E378625D9253B00FD9BF5 /* DocumentViewControllers */,
@@ -569,6 +606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11182C0625B232C600C78B4F /* MainViewController.swift in Sources */,
+				1169D81B25E4506E0070B3DE /* PanelTransition.swift in Sources */,
 				11038A31253325E100CB9F03 /* TableCell.swift in Sources */,
 				1169D7FF25E2DF800070B3DE /* DetailedCell.swift in Sources */,
 				11895E1F253308FC00480611 /* ReusableCell.swift in Sources */,
@@ -582,10 +620,14 @@
 				11182C0925B233FC00C78B4F /* OptionsEnum.swift in Sources */,
 				113F8BB125B24A0000836EA4 /* RoundedGroupCell.swift in Sources */,
 				11AB6A9625D2A37200EF25A4 /* UIView+addBlur.swift in Sources */,
+				1169D82125E451060070B3DE /* CourseViewController.swift in Sources */,
+				1169D81D25E4506E0070B3DE /* PresentationController.swift in Sources */,
 				11895E1C2533074800480611 /* ConfigurableCell.swift in Sources */,
 				11AB6A8825CFEFA300EF25A4 /* FacultyDB+DetailedModelProtocol.swift in Sources */,
+				1169D81A25E4506E0070B3DE /* PresentAnimation.swift in Sources */,
 				1169D80B25E2FE0D0070B3DE /* SelectableGroupCell.swift in Sources */,
 				1169D7DE25E2A4FB0070B3DE /* ConfigureGroupViewModel.swift in Sources */,
+				1169D81925E4506E0070B3DE /* TransitionDriver.swift in Sources */,
 				11CEA186253314F000C628F5 /* FacultiesViewController.swift in Sources */,
 				11112BFF25330C1C003CEEDA /* Storyboard+Type.swift in Sources */,
 				1169D7E225E2A5240070B3DE /* ConfigureGroupViewModel+Models.swift in Sources */,
@@ -606,6 +648,7 @@
 				1157147125D936360090C8CF /* DocumentDataSource.swift in Sources */,
 				11AB6A6D25CC9E4500EF25A4 /* APIRouter.swift in Sources */,
 				11038A382533783E00CB9F03 /* ScheduleCell.swift in Sources */,
+				1169D81C25E4506E0070B3DE /* DismissAnimation.swift in Sources */,
 				111E378825D9256A00FD9BF5 /* DocumentViewController.swift in Sources */,
 				11AB6A6725CB572D00EF25A4 /* DataStack.swift in Sources */,
 				11AB6A7F25CFE63B00EF25A4 /* Data+ToDictionary.swift in Sources */,
@@ -615,6 +658,7 @@
 				116AA0C925C75E45003016C1 /* DatabaseManager.swift in Sources */,
 				11AB6A7925CF43BB00EF25A4 /* APIError.swift in Sources */,
 				11112BFC25330BCE003CEEDA /* StoryboardInstantiable.swift in Sources */,
+				1169D82425E453310070B3DE /*  UIPanGestureRecognizer+presentation.swift in Sources */,
 				11CEA17D25330CEE00C628F5 /* UIViewController+StoryboardInstantiable.swift in Sources */,
 				1169D7E525E2A5CF0070B3DE /* Binding.swift in Sources */,
 				11FACAEF25B242E600B966FD /* GroupsDataSource.swift in Sources */,

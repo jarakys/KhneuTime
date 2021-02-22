@@ -20,41 +20,17 @@
                                 <rect key="frame" x="8" y="0.0" width="398" height="862"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qtv-Zr-dF8">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <subviews>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d17-ru-z2B">
-                                        <rect key="frame" x="0.0" y="476" width="414" height="400"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="400" id="CvP-AQ-4Fv"/>
-                                        </constraints>
-                                    </pickerView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="d17-ru-z2B" secondAttribute="trailing" id="Nto-hz-1QE"/>
-                                    <constraint firstAttribute="bottom" secondItem="d17-ru-z2B" secondAttribute="bottom" constant="20" id="ftM-Ri-jsI"/>
-                                    <constraint firstItem="d17-ru-z2B" firstAttribute="leading" secondItem="qtv-Zr-dF8" secondAttribute="leading" id="tYG-jf-BzA"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2YX-YS-UFk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6KZ-6m-QbK" firstAttribute="leading" secondItem="2YX-YS-UFk" secondAttribute="leading" constant="8" id="5Ch-kD-qG0"/>
-                            <constraint firstItem="qtv-Zr-dF8" firstAttribute="leading" secondItem="IHM-Or-Hue" secondAttribute="leading" id="DuD-it-N2G"/>
                             <constraint firstItem="2YX-YS-UFk" firstAttribute="trailing" secondItem="6KZ-6m-QbK" secondAttribute="trailing" constant="8" id="JIL-ei-edU"/>
-                            <constraint firstItem="qtv-Zr-dF8" firstAttribute="top" secondItem="IHM-Or-Hue" secondAttribute="top" id="XEV-Ge-gHn"/>
-                            <constraint firstAttribute="bottom" secondItem="qtv-Zr-dF8" secondAttribute="bottom" id="lnC-Mr-3Nr"/>
                             <constraint firstItem="6KZ-6m-QbK" firstAttribute="top" secondItem="IHM-Or-Hue" secondAttribute="top" id="p4e-vz-AGT"/>
-                            <constraint firstAttribute="trailing" secondItem="qtv-Zr-dF8" secondAttribute="trailing" id="pKg-Jz-cJc"/>
                             <constraint firstItem="2YX-YS-UFk" firstAttribute="bottom" secondItem="6KZ-6m-QbK" secondAttribute="bottom" id="yf7-7K-EBy"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backgroundPickerView" destination="qtv-Zr-dF8" id="Hn5-Vd-xzX"/>
-                        <outlet property="coursePicker" destination="d17-ru-z2B" id="Cjm-5r-sx4"/>
                         <outlet property="groupsTableView" destination="6KZ-6m-QbK" id="ZOK-O0-doj"/>
                     </connections>
                 </viewController>
@@ -129,6 +105,46 @@
             </objects>
             <point key="canvasLocation" x="715.94202898550725" y="72.991071428571431"/>
         </scene>
+        <!--Course View Controller-->
+        <scene sceneID="Aac-C9-QC9">
+            <objects>
+                <viewController storyboardIdentifier="CourseViewController" id="bCK-Rd-uK2" customClass="CourseViewController" customModule="KhneuTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ajA-pM-nn2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QFl-SA-NMp">
+                                <rect key="frame" x="0.0" y="84" width="414" height="778"/>
+                            </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWK-XT-59o">
+                                <rect key="frame" x="177" y="54" width="60" height="10"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="GBE-FI-hPT"/>
+                                    <constraint firstAttribute="height" constant="10" id="rcc-eN-bcS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7Su-jF-rHL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BWK-XT-59o" firstAttribute="centerX" secondItem="ajA-pM-nn2" secondAttribute="centerX" id="38d-dA-xIY"/>
+                            <constraint firstItem="QFl-SA-NMp" firstAttribute="leading" secondItem="7Su-jF-rHL" secondAttribute="leading" id="IgV-au-85H"/>
+                            <constraint firstItem="QFl-SA-NMp" firstAttribute="top" secondItem="BWK-XT-59o" secondAttribute="bottom" constant="20" id="WE2-dZ-tgK"/>
+                            <constraint firstItem="7Su-jF-rHL" firstAttribute="bottom" secondItem="QFl-SA-NMp" secondAttribute="bottom" id="b7U-PE-sHA"/>
+                            <constraint firstItem="BWK-XT-59o" firstAttribute="top" secondItem="7Su-jF-rHL" secondAttribute="top" constant="10" id="jW9-AG-ysK"/>
+                            <constraint firstAttribute="trailing" secondItem="QFl-SA-NMp" secondAttribute="trailing" id="oIK-Is-eyb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="coursePicker" destination="QFl-SA-NMp" id="div-7N-PHF"/>
+                        <outlet property="decoratorView" destination="BWK-XT-59o" id="9th-Y7-P8z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TT3-ao-SDm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1413.0434782608697" y="68.973214285714278"/>
+        </scene>
         <!--Specialties View Controller-->
         <scene sceneID="X8M-O3-JcZ">
             <objects>
@@ -148,6 +164,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

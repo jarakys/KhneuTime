@@ -9,13 +9,11 @@ import UIKit
 
 class FacultiesViewController: CoordinableViewController {
     
-    @IBOutlet weak var coursePicker: UIPickerView!
     @IBOutlet weak var groupsTableView: UITableView!
-    @IBOutlet weak var backgroundPickerView: UIView!
     
     private lazy var viewModel: ConfigureGroupViewModel = {
         let dataSource = ConfigureGroupDataSource()
-        return ConfigureGroupViewModel(dataSource: dataSource)
+        return ConfigureGroupViewModel(dataSource: dataSource, coordinator: coordinator!)
     }()
     
     override func viewDidLoad() {
@@ -23,10 +21,6 @@ class FacultiesViewController: CoordinableViewController {
         title = "Groups"
         groupsTableView.delegate = self
         groupsTableView.dataSource = self
-        //        coursePicker.delegate = self
-        //        coursePicker.dataSource = self
-        backgroundPickerView.addBlur()
-        backgroundPickerView.bringSubviewToFront(coursePicker)
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
         
@@ -48,9 +42,6 @@ class FacultiesViewController: CoordinableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-    
-    
-    
 }
 
 //MARK: UITableViewDelegate, UITableViewDataSource
@@ -66,7 +57,6 @@ extension FacultiesViewController: UITableViewDelegate, UITableViewDataSource {
         
         if node is ConfigureGroupViewModel.SelectableDropdownNode {
             cell = tableView.dequeueReusableCell(withIdentifier: SelectableCell.reusableIndentify, for: indexPath)
-            (cell as! SelectableCell).delegate = self
         } else if node is ConfigureGroupViewModel.LabelSeparator {
             cell = tableView.dequeueReusableCell(withIdentifier: LabelCell.reusableIndentify, for: indexPath)
         } else if node is ConfigureGroupViewModel.SelectableGroupNode {
@@ -78,20 +68,8 @@ extension FacultiesViewController: UITableViewDelegate, UITableViewDataSource {
         if viewModel.nodes.count - 1 == indexPath.row {
             (cell as? RoundedGroupCell)?.bottom = true
         }
-        print(viewModel.nodes.endIndex)
-        print(indexPath.row)
         (cell as? GroupConfigurableNode)?.config(node: node)
         return cell
-    }
-}
-
-extension FacultiesViewController: SelectableDelegate {
-    func didTap(node: ConfigureGroupViewModel.SelectableDropdownNode) {
-        coordinator?.startSelectableDetail(data: node.options, completion: {result in
-            guard let detailedModel = result else { return }
-            node.state.id = detailedModel.idDetailed
-            node.state.value = detailedModel.nameDetailed
-        })
     }
 }
 

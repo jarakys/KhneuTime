@@ -20,4 +20,7 @@ protocol Coordinator {
     func startSelectSpecialty()
     func startSelectGroup()
     
+    func startSelectableDetail(data: [DetailedModelProtocol], completion: @escaping(DetailedModelProtocol?) -> Void)
+    
+    func startSelectableCourse(data: [DetailedModelProtocol], completion: @escaping(DetailedModelProtocol?) -> Void)
 }

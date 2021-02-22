@@ -21,18 +21,12 @@ extension NodeExtendable where Self: UITableViewCell {
     }
 }
 
-protocol SelectableDelegate: class {
-    func didTap(node: ConfigureGroupViewModel.SelectableDropdownNode)
-}
-
 class SelectableCell: RoundedGroupCell, GroupConfigurableNode, NodeExtendable, ReusableCell {
     typealias NodeType = ConfigureGroupViewModel.SelectableDropdownNode
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet weak var slectorButton: UIButton!
-    
-    weak var delegate: SelectableDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -57,6 +51,6 @@ class SelectableCell: RoundedGroupCell, GroupConfigurableNode, NodeExtendable, R
     
     @IBAction func selectorDidTap(_ sender: Any) {
         guard let node = self.node else { return }
-        delegate?.didTap(node: node)
+        node.didTapAction()
     }
 }

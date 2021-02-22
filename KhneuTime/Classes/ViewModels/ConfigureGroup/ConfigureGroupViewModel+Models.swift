@@ -26,6 +26,7 @@ extension ConfigureGroupViewModel {
         let placeholder: String
         let options: [DetailedModelProtocol]
         let state: SelectableDropdownNodeState
+        let didTapAction: () -> Void
     }
     
     class SelectableNodeState {
