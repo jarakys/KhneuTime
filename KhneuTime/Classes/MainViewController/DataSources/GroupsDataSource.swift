@@ -7,20 +7,40 @@
 
 import UIKit
 
-class GroupsDataSource: DataSourceDelegate {
+class GroupsDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
-    var title: String
+    let fetchController = DatabaseManager.shared.getGroups(by: PrefsManager.shared.get(pref: .selectedGroups) ?? [])
+    weak var coordinator: Coordinator?
     
-    init(title: String) {
-        self.title = title
+    init(coordinator: Coordinator) {
+        self.coordinator = coordinator
+        try? fetchController.performFetch()
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        40
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderView.reusableIndentify) as! HeaderView
+        view.headerTitleLabel.text = "Selected groups"
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        fetchController.fetchedObjects?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: OptionCell.reusableIndentify, for: indexPath) as! OptionCell
+        let model = fetchController.fetchedObjects![indexPath.row]
+        cell.configure(image: UIImage(named: "calendar"), title: model.name ?? "")
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = fetchController.object(at: indexPath)
+        coordinator?.openSchedule(for: Int(model.id))
     }
 }
 

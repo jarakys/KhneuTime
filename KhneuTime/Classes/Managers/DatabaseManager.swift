@@ -66,6 +66,14 @@ class DatabaseManager {
         return groups
     }
     
+    func getGroups(by ids: [Int]) -> NSFetchedResultsController<GroupDB> {
+        let request: NSFetchRequest<GroupDB> = GroupDB.fetchRequest()
+        request.predicate = NSPredicate(format: "id IN %@", ids)
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        let fetchController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: dataStack.context, sectionNameKeyPath: nil, cacheName: nil)
+        return fetchController
+    }
+    
     func getSchedule(groupId: Int) {
         
     }

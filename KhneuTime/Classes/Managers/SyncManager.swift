@@ -100,6 +100,10 @@ class SyncManager {
     }
     
     
+    func removeSchedule(for groupId: Int) {
+        
+    }
+    
     func setSchedule(for groupId: Int, completion: @escaping(Bool) -> Void) {
         NetworkManager.shared.sendRequest(route: .shedule(groupId: groupId), completion: { result in
             if case let .success(schedule) = result {

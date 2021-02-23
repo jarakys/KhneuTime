@@ -44,11 +44,20 @@ class ConfigureGroupViewModel {
         })
         
         state.groupsState.$values.subscribe(self, callback: {[weak self] values in
-            self?.updateDataSourceProperty(\.selectedGroups, with: values)
-            SyncManager.shared.setSchedule(for: values.last!, completion: {success in
-                print("Success")
-            })
-            self?.composeNodes()
+            guard let self = self else { return }
+            let differences = self.dataSource.selectedGroups.difference(from: values)
+            for difference in differences {
+                switch difference {
+                case .remove(_, let element, _):
+                    SyncManager.shared.removeSchedule(for: element)
+                case .insert(_, let element, _):
+                    SyncManager.shared.setSchedule(for: element, completion: {success in
+                        print("Success")
+                    })
+                }
+            }
+            self.updateDataSourceProperty(\.selectedGroups, with: values)
+            self.composeNodes()
         })
     }
     

@@ -21,7 +21,7 @@ class MainViewController: CoordinableViewController {
         infoTableView.dataSource = self
         infoTableView.register(OptionCell.nib, forCellReuseIdentifier: OptionCell.reusableIndentify)
         infoTableView.register(HeaderView.nib, forHeaderFooterViewReuseIdentifier: HeaderView.reusableIndentify)
-        dataSources.append(OptionDataSource(options: OptionsEnum.allCases, delegate: self))
+        dataSources = [OptionDataSource(options: OptionsEnum.allCases, delegate: self), GroupsDataSource(coordinator: coordinator!)]
     }
 }
 

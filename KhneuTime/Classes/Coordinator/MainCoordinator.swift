@@ -48,6 +48,10 @@ class MainCoordinator: Coordinator {
         currentVC?.present(detailVC, animated: true, completion: nil)
     }
     
+    func openSchedule(for groupId: Int) {
+        
+    }
+    
     func startConfigureTeacherVC() {
     }
     
