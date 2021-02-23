@@ -25,8 +25,6 @@ class DocumentViewController: CoordinableViewController {
         documentTableView.register(SelectableCell.nib, forCellReuseIdentifier: SelectableCell.reusableIndentify)
         documentTableView.register(FieldCell.nib, forCellReuseIdentifier: FieldCell.reusableIndentify)
         documentTableView.register(HeaderView.nib, forHeaderFooterViewReuseIdentifier: HeaderView.reusableIndentify)
-        
-        selectedDataSource = dataSources[0]
     }
 
 }

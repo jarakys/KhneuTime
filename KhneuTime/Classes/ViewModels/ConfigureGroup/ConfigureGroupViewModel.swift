@@ -45,6 +45,9 @@ class ConfigureGroupViewModel {
         
         state.groupsState.$values.subscribe(self, callback: {[weak self] values in
             self?.updateDataSourceProperty(\.selectedGroups, with: values)
+            SyncManager.shared.setSchedule(for: values.last!, completion: {success in
+                print("Success")
+            })
             self?.composeNodes()
         })
     }

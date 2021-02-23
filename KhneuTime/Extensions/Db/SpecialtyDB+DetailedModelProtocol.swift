@@ -9,7 +9,7 @@ import Foundation
 
 extension SpecialtyDB: DetailedModelProtocol {
     var idDetailed: Int {
-        return Int(self.id)
+        return Int(self.specialtyId)
     }
     
     var nameDetailed: String {

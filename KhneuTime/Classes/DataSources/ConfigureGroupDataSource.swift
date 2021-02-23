@@ -36,7 +36,12 @@ class ConfigureGroupDataSource {
     public var selectedFaculty = 1
     public var selectedSpecialty = 1
     public var selectedCourse = 1
-    public var selectedGroups = [Int]()
+    public var selectedGroups: [Int] {
+        get { PrefsManager.shared.get(pref: .selectedGroups) ?? [] }
+        set {
+            PrefsManager.shared.set(pref: .selectedGroups, value: newValue)
+        }
+    }
 }
 
 extension ConfigureGroupDataSource {

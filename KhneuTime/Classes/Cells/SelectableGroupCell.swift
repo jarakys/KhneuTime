@@ -22,15 +22,17 @@ class SelectableGroupCell: RoundedGroupCell, ReusableCell, GroupConfigurableNode
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        selectionButton.addTarget(self, action: #selector(didTap(_:)), for: .touchUpInside)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    
+    @objc private func didTap(_ sender: UIButton) {
         guard let node = self.node else { return }
-        if selected {
+        if !node.state.values.contains(node.id) {
             node.state.values.append(node.id)
+        } else {
+            node.state.values.removeAll(where: { $0 == node.id})
         }
+        checkmarkImageView.image = node.state.values.contains(node.id) ? UIImage(systemName: "checkmark.circle.fill") : nil
     }
     
     func config(node: SettingNode) {

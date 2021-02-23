@@ -36,7 +36,7 @@ enum APIRouter {
         case .studentTypes:
             return "/StudentTypes"
         case .shedule(let groupId):
-            return ""
+            return "/Schedule?groupId=\(groupId)"
         case  .document:
             return ""
         }

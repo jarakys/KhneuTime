@@ -17,39 +17,40 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5c-rm-KBg">
-                        <rect key="frame" x="8" y="8" width="406" height="28"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOK-C7-9TQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                         <state key="normal" title="Button">
                             <color key="titleColor" systemColor="labelColor"/>
                         </state>
                     </button>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fiC-vm-BxO">
-                        <rect key="frame" x="386" y="12.5" width="20" height="19"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="84A-On-9xN">
+                        <rect key="frame" x="386" y="12" width="20" height="20"/>
                         <color key="tintColor" name="TableCellColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="20" id="HNC-ww-nA2"/>
-                            <constraint firstAttribute="height" constant="20" id="W0B-Sv-UUj"/>
+                            <constraint firstAttribute="width" constant="20" id="E8V-so-5ri"/>
+                            <constraint firstAttribute="height" constant="20" id="Zsy-FT-Lnu"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="s5c-rm-KBg" secondAttribute="trailing" id="Q7u-io-fOo"/>
-                    <constraint firstItem="s5c-rm-KBg" firstAttribute="leading" secondItem="cs8-BO-IZO" secondAttribute="leading" constant="8" id="b9q-mU-344"/>
-                    <constraint firstAttribute="bottom" secondItem="s5c-rm-KBg" secondAttribute="bottom" constant="8" id="cS5-GM-hed"/>
-                    <constraint firstItem="s5c-rm-KBg" firstAttribute="top" secondItem="cs8-BO-IZO" secondAttribute="top" constant="8" id="hSo-tW-UdW"/>
-                    <constraint firstAttribute="trailing" secondItem="fiC-vm-BxO" secondAttribute="trailing" constant="8" id="jnd-dx-byG"/>
-                    <constraint firstItem="fiC-vm-BxO" firstAttribute="centerY" secondItem="cs8-BO-IZO" secondAttribute="centerY" id="y6l-bz-fAN"/>
+                    <constraint firstAttribute="trailing" secondItem="eOK-C7-9TQ" secondAttribute="trailing" id="Csw-K0-BBb"/>
+                    <constraint firstItem="eOK-C7-9TQ" firstAttribute="top" secondItem="cs8-BO-IZO" secondAttribute="top" id="FjE-Kp-uVt"/>
+                    <constraint firstAttribute="trailing" secondItem="84A-On-9xN" secondAttribute="trailing" constant="8" id="Mgv-Tt-LPn"/>
+                    <constraint firstItem="eOK-C7-9TQ" firstAttribute="leading" secondItem="cs8-BO-IZO" secondAttribute="leading" id="ON2-68-pDq"/>
+                    <constraint firstAttribute="bottom" secondItem="eOK-C7-9TQ" secondAttribute="bottom" id="ce0-JV-HFy"/>
+                    <constraint firstItem="84A-On-9xN" firstAttribute="centerY" secondItem="cs8-BO-IZO" secondAttribute="centerY" id="gN7-in-ThL"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="checkmarkImageView" destination="fiC-vm-BxO" id="dZ4-l4-8qt"/>
-                <outlet property="selectionButton" destination="s5c-rm-KBg" id="5Iu-uo-upE"/>
+                <outlet property="checkmarkImageView" destination="84A-On-9xN" id="Jvn-Mk-UpN"/>
+                <outlet property="selectionButton" destination="eOK-C7-9TQ" id="n8v-4v-jzU"/>
             </connections>
             <point key="canvasLocation" x="-613.04347826086962" y="93.75"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="TableCellColor">
             <color red="0.99599999189376831" green="0.71399998664855957" blue="0.3880000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -12,11 +12,7 @@ enum SyncEntitiesEnum: CaseIterable {
     case faculties
     case groups
     case studentTypes
-    //    case schedule(groupId: Int)
-    
-    static var allCases: [SyncEntitiesEnum] {
-        return [.faculties, .specialties, .groups /*, .schedule(groupId: -1)*/]
-    }
+    case schedule
     
     var description: String {
         switch self {
@@ -40,6 +36,8 @@ enum SyncEntitiesEnum: CaseIterable {
             return "SpecialtyDB"
         case .groups:
             return "GroupDB"
+        case .schedule:
+            return "ScheduleDB"
         case .studentTypes:
             return "StudentTypeDB"
         default:
@@ -100,4 +98,16 @@ class SyncManager {
     
     func startSync() {
     }
+    
+    
+    func setSchedule(for groupId: Int, completion: @escaping(Bool) -> Void) {
+        NetworkManager.shared.sendRequest(route: .shedule(groupId: groupId), completion: { result in
+            if case let .success(schedule) = result {
+                DatabaseManager.shared.insertOrUpdateObject(entity: .schedule, data: schedule)
+            } else {
+                completion(false)
+            }
+        })
+    }
+    
 }

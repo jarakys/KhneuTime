@@ -15,6 +15,7 @@ class DataStack {
                 fatalError("Unable to load persistent stores: \(error)")
             }
         }
+        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         return container
     }()
     

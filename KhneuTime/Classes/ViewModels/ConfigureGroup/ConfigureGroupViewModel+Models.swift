@@ -65,6 +65,7 @@ extension ConfigureGroupViewModel {
         let groupsState = SelectableGroupNodeState()
         
         init(dataSource: ConfigureGroupDataSource) {
+            groupsState.values = dataSource.selectedGroups
         }
     }
 }

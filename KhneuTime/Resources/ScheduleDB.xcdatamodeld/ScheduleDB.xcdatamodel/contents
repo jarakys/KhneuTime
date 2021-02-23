@@ -10,6 +10,11 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="specialtyId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="shedules" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ScheduleDB" inverseName="groups" inverseEntity="ScheduleDB"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="ScheduleDB" representedClassName=".ScheduleDb" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="String"/>
