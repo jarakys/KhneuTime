@@ -45,7 +45,7 @@ class ConfigureGroupViewModel {
         
         state.groupsState.$values.subscribe(self, callback: {[weak self] values in
             guard let self = self else { return }
-            let differences = self.dataSource.selectedGroups.difference(from: values)
+            let differences = values.difference(from: self.dataSource.selectedGroups)
             for difference in differences {
                 switch difference {
                 case .remove(_, let element, _):
