@@ -30,10 +30,13 @@ class SelectableCell: RoundedGroupCell, GroupConfigurableNode, NodeExtendable, R
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        let view = UIView()
+        view.backgroundColor = .clear
+        self.selectedBackgroundView = view
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        super.setSelected(false, animated: animated)
     }
     
     func config(node: SettingNode) {
