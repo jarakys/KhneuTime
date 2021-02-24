@@ -22,12 +22,6 @@ class PrefsManager {
     
     private init() { }
     
-    func addSelectedGroud(with id: Int) {
-        var array:[Int]? = get(pref: .selectedGroups)
-        array?.append(id)
-        prefs.setValue(array, forKey: Prefs.selectedGroups.rawValue)
-    }
-    
     func set<T>(pref: Prefs, value: T) {
         prefs.setValue(value, forKey: pref.rawValue)
     }

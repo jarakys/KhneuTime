@@ -60,8 +60,6 @@ extension MainViewController: ConfigurableOptionOnPushCellDelegate {
         switch option {
         case .groups:
             coordinator?.startConfigureGroupVC()
-        case .teachers:
-            coordinator?.startConfigureTeacherVC()
         }
     }
 }

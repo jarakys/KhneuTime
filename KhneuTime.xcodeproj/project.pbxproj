@@ -17,9 +17,7 @@
 		1111B7F825CB4FBC00508B52 /* ScheduleDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1111B7F625CB4FBC00508B52 /* ScheduleDB.xcdatamodeld */; };
 		11182C0625B232C600C78B4F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11182C0525B232C600C78B4F /* MainViewController.swift */; };
 		11182C0925B233FC00C78B4F /* OptionsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11182C0825B233FC00C78B4F /* OptionsEnum.swift */; };
-		111E378125D9212100FD9BF5 /* FormEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111E378025D9212100FD9BF5 /* FormEnum.swift */; };
 		111E378825D9256A00FD9BF5 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111E378725D9256A00FD9BF5 /* DocumentViewController.swift */; };
-		113F8BAE25B2473F00836EA4 /* DataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F8BAD25B2473F00836EA4 /* DataSourceDelegate.swift */; };
 		113F8BB125B24A0000836EA4 /* RoundedGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F8BB025B24A0000836EA4 /* RoundedGroupCell.swift */; };
 		1157147125D936360090C8CF /* DocumentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1157147025D936360090C8CF /* DocumentDataSource.swift */; };
 		11647B6C25B394A700D5E00A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11647B6B25B394A700D5E00A /* Coordinator.swift */; };
@@ -80,7 +78,6 @@
 		11CEA186253314F000C628F5 /* FacultiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA185253314F000C628F5 /* FacultiesViewController.swift */; };
 		11D061FD25BA9BEC00BBFC38 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D061FC25BA9BEC00BBFC38 /* DetailViewController.swift */; };
 		11FACAE925B241CA00B966FD /* OptionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACAE825B241CA00B966FD /* OptionDataSource.swift */; };
-		11FACAEC25B242A600B966FD /* TeachersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACAEB25B242A600B966FD /* TeachersDataSource.swift */; };
 		11FACAEF25B242E600B966FD /* GroupsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACAEE25B242E600B966FD /* GroupsDataSource.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,9 +92,7 @@
 		1111B7F725CB4FBC00508B52 /* ScheduleDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScheduleDB.xcdatamodel; sourceTree = "<group>"; };
 		11182C0525B232C600C78B4F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		11182C0825B233FC00C78B4F /* OptionsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsEnum.swift; sourceTree = "<group>"; };
-		111E378025D9212100FD9BF5 /* FormEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormEnum.swift; sourceTree = "<group>"; };
 		111E378725D9256A00FD9BF5 /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
-		113F8BAD25B2473F00836EA4 /* DataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceDelegate.swift; sourceTree = "<group>"; };
 		113F8BB025B24A0000836EA4 /* RoundedGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedGroupCell.swift; sourceTree = "<group>"; };
 		1157147025D936360090C8CF /* DocumentDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDataSource.swift; sourceTree = "<group>"; };
 		11647B6B25B394A700D5E00A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -160,7 +155,6 @@
 		11CEA185253314F000C628F5 /* FacultiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesViewController.swift; sourceTree = "<group>"; };
 		11D061FC25BA9BEC00BBFC38 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		11FACAE825B241CA00B966FD /* OptionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDataSource.swift; sourceTree = "<group>"; };
-		11FACAEB25B242A600B966FD /* TeachersDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersDataSource.swift; sourceTree = "<group>"; };
 		11FACAEE25B242E600B966FD /* GroupsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,9 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				11FACAE825B241CA00B966FD /* OptionDataSource.swift */,
-				11FACAEB25B242A600B966FD /* TeachersDataSource.swift */,
 				11FACAEE25B242E600B966FD /* GroupsDataSource.swift */,
-				113F8BAD25B2473F00836EA4 /* DataSourceDelegate.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -401,7 +393,6 @@
 			isa = PBXGroup;
 			children = (
 				11182C0825B233FC00C78B4F /* OptionsEnum.swift */,
-				111E378025D9212100FD9BF5 /* FormEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -612,7 +603,6 @@
 				11895E1F253308FC00480611 /* ReusableCell.swift in Sources */,
 				11FACAE925B241CA00B966FD /* OptionDataSource.swift in Sources */,
 				1169D7E825E2B3A90070B3DE /* WeakObject.swift in Sources */,
-				11FACAEC25B242A600B966FD /* TeachersDataSource.swift in Sources */,
 				1169D7CF25DC61FA0070B3DE /* FieldCell.swift in Sources */,
 				11AB6A7C25CF4A9700EF25A4 /* PrefsManager.swift in Sources */,
 				1111B7F825CB4FBC00508B52 /* ScheduleDB.xcdatamodeld in Sources */,
@@ -632,7 +622,6 @@
 				11112BFF25330C1C003CEEDA /* Storyboard+Type.swift in Sources */,
 				1169D7E225E2A5240070B3DE /* ConfigureGroupViewModel+Models.swift in Sources */,
 				11647B7225B3956800D5E00A /* CoordinableViewController.swift in Sources */,
-				113F8BAE25B2473F00836EA4 /* DataSourceDelegate.swift in Sources */,
 				1169D7DA25E2A1810070B3DE /* ConfigureGroupDataSource.swift in Sources */,
 				11AB6A8B25CFEFC000EF25A4 /* DetailedModelProtocol.swift in Sources */,
 				1169D7F825E2DEF50070B3DE /* OptionCell.swift in Sources */,
@@ -643,7 +632,6 @@
 				119380002532FF2600639905 /* UIViewController+presentAlert.swift in Sources */,
 				11AB6A6325CB56D200EF25A4 /* SyncManager.swift in Sources */,
 				1100E49A25B2462100285CD4 /* HeaderView.swift in Sources */,
-				111E378125D9212100FD9BF5 /* FormEnum.swift in Sources */,
 				11647B6F25B394D100D5E00A /* MainCoordinator.swift in Sources */,
 				1157147125D936360090C8CF /* DocumentDataSource.swift in Sources */,
 				11AB6A6D25CC9E4500EF25A4 /* APIRouter.swift in Sources */,

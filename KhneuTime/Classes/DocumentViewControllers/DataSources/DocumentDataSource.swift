@@ -9,8 +9,6 @@ import UIKit
 
 class DocumentDataSource: NSObject {
     
-    let docField = Document.allCases
-    
 //    let dataSources: [UITableViewDelegate & UITableViewDataSource] = [FacultiesDataSource(title: "Select faculty", delegate: nil), SpecialtiesDataSource(title: "Select specialty", delegate: nil), GroupsDataSource(title: "Select Group"), FieldDataSource(title: "Name"), FieldDataSource(title: "Email"), FieldDataSource(title: "Destination")]
 //    
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

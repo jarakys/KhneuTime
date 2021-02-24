@@ -9,7 +9,6 @@ import UIKit
 
 class DocumentViewController: CoordinableViewController {
     
-    var form = FormEnum.document
     
     let dataSources: [UITableViewDataSource & UITableViewDelegate] = []
     
