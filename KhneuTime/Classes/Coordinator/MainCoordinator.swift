@@ -48,6 +48,16 @@ class MainCoordinator: Coordinator {
         currentVC?.present(detailVC, animated: true, completion: nil)
     }
     
+    func presentAlert(title: String, message: String, actiions: [String], callback: @escaping (String) -> Void) {
+        currentVC?.presentAlert(withTitle: title, message: message, actions: actiions, callback: callback)
+    }
+    
+    func hideAlert() {
+        if currentVC?.presentedViewController is UIAlertController {
+            currentVC?.presentedViewController?.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     func openSchedule(for groupId: Int) {
         
     }

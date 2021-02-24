@@ -22,6 +22,9 @@ protocol Coordinator: class {
     
     func openSchedule(for groupId: Int)
     
+    func presentAlert(title: String, message: String, actiions: [String], callback: @escaping(String) -> Void)
+    func hideAlert()
+    
     func startSelectableDetail(data: [DetailedModelProtocol], completion: @escaping(DetailedModelProtocol?) -> Void)
     
     func startSelectableCourse(data: [DetailedModelProtocol], completion: @escaping(DetailedModelProtocol?) -> Void)

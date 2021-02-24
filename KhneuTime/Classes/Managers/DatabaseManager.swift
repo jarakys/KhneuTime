@@ -17,7 +17,7 @@ class DatabaseManager {
         saveContext()
     }
     
-    func insertOrUpdateObject(entity: SyncEntitiesEnum, data: Data) {
+    func insertOrUpdateObject(entity: SyncEntitiesEnum, data: Data, completion: (() -> Void)? = nil) {
         guard let dictionaries = data.convertToDictionary() else { return }
         for dictionary in dictionaries {
             let object = NSEntityDescription.insertNewObject(forEntityName: entity.entityName, into: dataStack.context)
@@ -41,6 +41,7 @@ class DatabaseManager {
             }
         }
         saveContext()
+        completion?()
     }
     
     func getFaculties() -> [FacultyDB] {

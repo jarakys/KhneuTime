@@ -107,7 +107,9 @@ class SyncManager {
     func setSchedule(for groupId: Int, completion: @escaping(Bool) -> Void) {
         NetworkManager.shared.sendRequest(route: .shedule(groupId: groupId), completion: { result in
             if case let .success(schedule) = result {
-                DatabaseManager.shared.insertOrUpdateObject(entity: .schedule, data: schedule)
+                DatabaseManager.shared.insertOrUpdateObject(entity: .schedule, data: schedule, completion: {
+                    completion(true)
+                })
             } else {
                 completion(false)
             }

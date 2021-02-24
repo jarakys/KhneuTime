@@ -8,13 +8,15 @@
 import UIKit
 
 extension UIViewController {
-
-    func presentAlert(withTitle title: String, message : String, callback: (()->Void)? = nil) {
-    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    let OKAction = UIAlertAction(title: "OK", style: .default) { action in
-        callback?()
+    
+    func presentAlert(withTitle title: String, message : String, actions: [String], callback: ((String)->Void)? = nil) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        for action in actions {
+            let alertAction = UIAlertAction(title: action, style: .default) { _ in
+                callback?(action)
+            }
+            alertController.addAction(alertAction)
+        }
+        self.present(alertController, animated: true, completion: nil)
     }
-    alertController.addAction(OKAction)
-    self.present(alertController, animated: true, completion: nil)
-  }
 }
