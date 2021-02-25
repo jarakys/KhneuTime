@@ -20,7 +20,7 @@ protocol Coordinator: class {
     func startSelectSpecialty()
     func startSelectGroup()
     
-    func openSchedule(for groupId: Int)
+    func openSchedule(for group: GroupDB)
     
     func presentAlert(title: String, message: String, actiions: [String], callback: @escaping(String) -> Void)
     func hideAlert()

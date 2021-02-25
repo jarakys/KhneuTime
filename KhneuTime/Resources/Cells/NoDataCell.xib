@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="174" id="xgh-iS-hEj" customClass="NoDataCell" customModule="KhneuTime" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="491" height="174"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xgh-iS-hEj" id="JZs-89-NW6">
+                <rect key="frame" x="0.0" y="0.0" width="491" height="174"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mikki" translatesAutoresizingMaskIntoConstraints="NO" id="X0T-wb-VRD">
+                        <rect key="frame" x="0.0" y="0.0" width="491" height="170"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="170" id="aWC-SQ-gR3"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="X0T-wb-VRD" secondAttribute="bottom" id="I4t-vN-LAZ"/>
+                    <constraint firstItem="X0T-wb-VRD" firstAttribute="top" secondItem="JZs-89-NW6" secondAttribute="top" id="Uh2-M2-bIA"/>
+                    <constraint firstItem="X0T-wb-VRD" firstAttribute="leading" secondItem="JZs-89-NW6" secondAttribute="leading" id="f3w-kY-kg6"/>
+                    <constraint firstAttribute="trailing" secondItem="X0T-wb-VRD" secondAttribute="trailing" id="xhZ-Er-yCW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-215.21739130434784" y="107.14285714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="mikki" width="600" height="561"/>
+    </resources>
+</document>

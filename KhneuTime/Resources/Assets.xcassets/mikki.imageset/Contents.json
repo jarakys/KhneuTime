@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "mikki.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

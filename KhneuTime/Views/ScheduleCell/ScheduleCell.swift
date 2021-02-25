@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ScheduleCell: UICollectionViewCell, ReusableCell {
+class ScheduleCell: UITableViewCell, ReusableCell {
     @IBOutlet weak var nameSubjectLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!

@@ -58,8 +58,12 @@ class MainCoordinator: Coordinator {
         }
     }
     
-    func openSchedule(for groupId: Int) {
-        
+    func openSchedule(for group: GroupDB) {
+        let storyboard = UIStoryboard.storyboard(storyboard: .main)
+        let scheduleVC: ScheduleViewController = storyboard.instantiateViewController()
+        scheduleVC.group = group
+        scheduleVC.coordinator = self
+        (tabBarController.selectedViewController as? UINavigationController)?.pushViewController(scheduleVC, animated: true)
     }
     
     func startConfigureTeacherVC() {

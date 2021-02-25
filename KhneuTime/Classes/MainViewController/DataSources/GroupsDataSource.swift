@@ -39,8 +39,8 @@ class GroupsDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = fetchController.object(at: indexPath)
-        coordinator?.openSchedule(for: Int(model.id))
+        let model = fetchController.fetchedObjects![indexPath.row]
+        coordinator?.openSchedule(for: model)
     }
 }
 

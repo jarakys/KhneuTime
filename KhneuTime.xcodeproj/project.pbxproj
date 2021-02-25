@@ -47,6 +47,9 @@
 		1169D81D25E4506E0070B3DE /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169D81825E4506E0070B3DE /* PresentationController.swift */; };
 		1169D82125E451060070B3DE /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169D82025E451060070B3DE /* CourseViewController.swift */; };
 		1169D82425E453310070B3DE /*  UIPanGestureRecognizer+presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169D82325E453310070B3DE /*  UIPanGestureRecognizer+presentation.swift */; };
+		1169D82C25E83ED60070B3DE /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169D82B25E83ED60070B3DE /* ScheduleViewController.swift */; };
+		1169D82F25E8457C0070B3DE /* NoDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1169D82E25E8457C0070B3DE /* NoDataCell.xib */; };
+		1169D83325E846750070B3DE /* NoDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169D83225E846750070B3DE /* NoDataCell.swift */; };
 		116AA0C925C75E45003016C1 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116AA0C825C75E45003016C1 /* DatabaseManager.swift */; };
 		117EEE7925B37F9E00100A4E /* SelectableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 117EEE7825B37F9E00100A4E /* SelectableCell.xib */; };
 		117EEE7C25B37FCA00100A4E /* SelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EEE7B25B37FCA00100A4E /* SelectableCell.swift */; };
@@ -122,6 +125,9 @@
 		1169D81825E4506E0070B3DE /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		1169D82025E451060070B3DE /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		1169D82325E453310070B3DE /*  UIPanGestureRecognizer+presentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " UIPanGestureRecognizer+presentation.swift"; sourceTree = "<group>"; };
+		1169D82B25E83ED60070B3DE /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		1169D82E25E8457C0070B3DE /* NoDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDataCell.xib; sourceTree = "<group>"; };
+		1169D83225E846750070B3DE /* NoDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataCell.swift; sourceTree = "<group>"; };
 		116AA0C825C75E45003016C1 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		117EEE7825B37F9E00100A4E /* SelectableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectableCell.xib; sourceTree = "<group>"; };
 		117EEE7B25B37FCA00100A4E /* SelectableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCell.swift; sourceTree = "<group>"; };
@@ -234,6 +240,7 @@
 				1169D7FB25E2DF490070B3DE /* DetailedCell.xib */,
 				1169D80125E2F6BD0070B3DE /* LabelCell.xib */,
 				1169D80725E2FD620070B3DE /* SelectableGroupCell.xib */,
+				1169D82E25E8457C0070B3DE /* NoDataCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -299,6 +306,14 @@
 				1169D82025E451060070B3DE /* CourseViewController.swift */,
 			);
 			path = Course;
+			sourceTree = "<group>";
+		};
+		1169D82A25E83EC20070B3DE /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				1169D82B25E83ED60070B3DE /* ScheduleViewController.swift */,
+			);
+			path = Schedule;
 			sourceTree = "<group>";
 		};
 		116AA0C725C75E30003016C1 /* Managers */ = {
@@ -400,6 +415,7 @@
 		119380082532FFA000639905 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1169D82A25E83EC20070B3DE /* Schedule */,
 				1169D81F25E450EE0070B3DE /* Course */,
 				1169D7DC25E2A4DE0070B3DE /* ViewModels */,
 				117EEE7425B37F0700100A4E /* DataSources */,
@@ -500,6 +516,7 @@
 				1169D7FE25E2DF800070B3DE /* DetailedCell.swift */,
 				1169D80425E2F6F30070B3DE /* LabelCell.swift */,
 				1169D80A25E2FE0D0070B3DE /* SelectableGroupCell.swift */,
+				1169D83225E846750070B3DE /* NoDataCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -581,6 +598,7 @@
 				1169D7FC25E2DF490070B3DE /* DetailedCell.xib in Resources */,
 				11CEA183253314B000C628F5 /* Groups.storyboard in Resources */,
 				11937FF52532FA7B00639905 /* LaunchScreen.storyboard in Resources */,
+				1169D82F25E8457C0070B3DE /* NoDataCell.xib in Resources */,
 				11937FF22532FA7B00639905 /* Assets.xcassets in Resources */,
 				1100E49625B2459F00285CD4 /* HeaderView.xib in Resources */,
 				1169D80825E2FD620070B3DE /* SelectableGroupCell.xib in Resources */,
@@ -620,6 +638,7 @@
 				1169D81925E4506E0070B3DE /* TransitionDriver.swift in Sources */,
 				11CEA186253314F000C628F5 /* FacultiesViewController.swift in Sources */,
 				11112BFF25330C1C003CEEDA /* Storyboard+Type.swift in Sources */,
+				1169D82C25E83ED60070B3DE /* ScheduleViewController.swift in Sources */,
 				1169D7E225E2A5240070B3DE /* ConfigureGroupViewModel+Models.swift in Sources */,
 				11647B7225B3956800D5E00A /* CoordinableViewController.swift in Sources */,
 				1169D7DA25E2A1810070B3DE /* ConfigureGroupDataSource.swift in Sources */,
@@ -631,6 +650,7 @@
 				11937FEB2532FA7900639905 /* SceneDelegate.swift in Sources */,
 				119380002532FF2600639905 /* UIViewController+presentAlert.swift in Sources */,
 				11AB6A6325CB56D200EF25A4 /* SyncManager.swift in Sources */,
+				1169D83325E846750070B3DE /* NoDataCell.swift in Sources */,
 				1100E49A25B2462100285CD4 /* HeaderView.swift in Sources */,
 				11647B6F25B394D100D5E00A /* MainCoordinator.swift in Sources */,
 				1157147125D936360090C8CF /* DocumentDataSource.swift in Sources */,

@@ -18,7 +18,10 @@ class DatabaseManager {
     }
     
     func insertOrUpdateObject(entity: SyncEntitiesEnum, data: Data, completion: (() -> Void)? = nil) {
-        guard let dictionaries = data.convertToDictionary() else { return }
+        guard let dictionaries = data.convertToDictionary() else {
+            completion?()
+            return
+        }
         for dictionary in dictionaries {
             let object = NSEntityDescription.insertNewObject(forEntityName: entity.entityName, into: dataStack.context)
             for key in Array(dictionary.keys) {
@@ -75,8 +78,15 @@ class DatabaseManager {
         return fetchController
     }
     
-    func getSchedule(groupId: Int) {
-        
+    func getSchedule(groupId: Int, date: Date) -> NSFetchedResultsController<ScheduleDb> {
+        let request: NSFetchRequest<ScheduleDb> = ScheduleDb.fetchRequest()
+        let groupPredicate = NSPredicate(format: "groupId == %i", groupId)
+        let datePredicate = NSPredicate(format: "date == %@", date.description)
+        let andPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [groupPredicate, datePredicate])
+        request.predicate = andPredicate
+        request.sortDescriptors = [NSSortDescriptor(key: "startUnix", ascending: false)]
+        let fetchController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: dataStack.context, sectionNameKeyPath: nil, cacheName: nil)
+        return fetchController
     }
     
     func saveContext() {

@@ -64,7 +64,7 @@ class SyncManager {
     
     static let shared = SyncManager()
     
-    let entities = SyncEntitiesEnum.allCases
+    let entities: [SyncEntitiesEnum] = [.specialties, .faculties, .groups, .studentTypes]
     
     private init() { }
     
