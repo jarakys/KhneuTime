@@ -12,6 +12,7 @@ class ScheduleCell: UITableViewCell, ReusableCell {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var teacherLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     class var reusableIndentify: String{
         return String(describing: self)
@@ -22,11 +23,12 @@ class ScheduleCell: UITableViewCell, ReusableCell {
     }
     
     
-    func configure(name: String, type: String, location: String, teacher: String) {
+    func configure(name: String, type: String, location: String, teacher: String, time: String) {
         nameSubjectLabel.text = name
         typeLabel.text = type
         locationLabel.text = location
         teacherLabel.text = teacher
+        timeLabel.text = time
     }
     
 }

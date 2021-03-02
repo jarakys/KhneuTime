@@ -33,7 +33,7 @@ class ScheduleViewController: CoordinableViewController {
         scheduleTableView.dataSource = self
         scheduleTableView.register(ScheduleCell.nib, forCellReuseIdentifier: ScheduleCell.reusableIndentify)
         scheduleTableView.register(NoDataCell.nib, forCellReuseIdentifier: NoDataCell.reusableIndentify)
-        dateLabel.text = selectedData.description
+        dateLabel.text = selectedData.getDescription(by: "dd-MMM")
         
         let updateItem = UIBarButtonItem(image: UIImage(systemName: "arrow.clockwise"), style: .plain, target: self, action: #selector(updateSchedule(_:)))
         navigationItem.rightBarButtonItems = [updateItem]
@@ -80,7 +80,7 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: ScheduleCell.reusableIndentify, for: indexPath) as! ScheduleCell
         let model = fetchController.object(at: indexPath)
-        cell.configure(name: model.subjectFullName ?? "", type: model.type ?? "", location: model.subjectShortName ?? "", teacher: model.teacherShortName ?? "")
+        cell.configure(name: model.subjectFullName ?? "", type: model.type ?? "", location: model.subjectShortName ?? "", teacher: model.teacherShortName ?? "", time: Date(timeIntervalSince1970: TimeInterval(Int(model.startUnix!)!)).getDescription(by: "HH:mm"))
         return cell
     }
 }
