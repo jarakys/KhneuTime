@@ -33,7 +33,7 @@ class ScheduleViewController: CoordinableViewController {
         scheduleTableView.dataSource = self
         scheduleTableView.register(ScheduleCell.nib, forCellReuseIdentifier: ScheduleCell.reusableIndentify)
         scheduleTableView.register(NoDataCell.nib, forCellReuseIdentifier: NoDataCell.reusableIndentify)
-        dateLabel.text = selectedDate.getDescription(by: "dd-MMM")
+        dateLabel.text = selectedDate.getDescription(by: "E, dd MMM")
         
         let updateItem = UIBarButtonItem(image: UIImage(systemName: "arrow.clockwise"), style: .plain, target: self, action: #selector(updateSchedule(_:)))
         navigationItem.rightBarButtonItems = [updateItem]
