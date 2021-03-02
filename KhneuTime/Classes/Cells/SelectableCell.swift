@@ -31,7 +31,7 @@ class SelectableCell: RoundedGroupCell, GroupConfigurableNode, NodeExtendable, R
     override func awakeFromNib() {
         super.awakeFromNib()
         let view = UIView()
-        view.backgroundColor = .clear
+        view.backgroundColor = .clear 
         self.selectedBackgroundView = view
     }
 

@@ -78,11 +78,11 @@ class DatabaseManager {
         return fetchController
     }
     
-    func getSchedule(groupId: Int, date: Date) -> NSFetchedResultsController<ScheduleDb> {
+    func getSchedule(groupId: Int, unixDate: Int64) -> NSFetchedResultsController<ScheduleDb> {
         let request: NSFetchRequest<ScheduleDb> = ScheduleDb.fetchRequest()
-        let groupPredicate = NSPredicate(format: "groupId == %i", groupId)
-        let datePredicate = NSPredicate(format: "date == %@", date.description)
-        let andPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [groupPredicate, datePredicate])
+        let groupPredicate = NSPredicate(format: "id == %i", groupId)
+        //let datePredicate = NSPredicate(format: "date == %l", unixDate + 200) //FIXME
+        let andPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [groupPredicate])
         request.predicate = andPredicate
         request.sortDescriptors = [NSSortDescriptor(key: "startUnix", ascending: false)]
         let fetchController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: dataStack.context, sectionNameKeyPath: nil, cacheName: nil)

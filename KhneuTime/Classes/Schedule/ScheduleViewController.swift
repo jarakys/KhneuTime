@@ -27,7 +27,8 @@ class ScheduleViewController: CoordinableViewController {
         navigationItem.largeTitleDisplayMode = .always
         scheduleTableView.contentInsetAdjustmentBehavior = .never
         title = group.name ?? ""
-        fetchController = DatabaseManager.shared.getSchedule(groupId: Int(group.id), date: selectedData)
+        fetchController = DatabaseManager.shared.getSchedule(groupId: Int(group.id), unixDate: Int64(selectedData.startOfDay.timeIntervalSince1970))
+        try? fetchController.performFetch()
         scheduleTableView.delegate = self
         scheduleTableView.dataSource = self
         scheduleTableView.register(ScheduleCell.nib, forCellReuseIdentifier: ScheduleCell.reusableIndentify)
@@ -39,7 +40,8 @@ class ScheduleViewController: CoordinableViewController {
     }
     
     private func getSchedule() {
-        fetchController = DatabaseManager.shared.getSchedule(groupId: Int(group.id), date: selectedData)
+        fetchController = DatabaseManager.shared.getSchedule(groupId: Int(group.id), unixDate: Int64(selectedData.startOfDay.timeIntervalSince1970))
+        try? fetchController.performFetch()
         scheduleTableView.reloadData()
     }
     
@@ -73,12 +75,12 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if fetchController.fetchedObjects?.count == nil {
+        if fetchController.fetchedObjects?.count == nil || fetchController.fetchedObjects?.count == 0  {
             return tableView.dequeueReusableCell(withIdentifier: NoDataCell.reusableIndentify, for: indexPath)
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: ScheduleCell.reusableIndentify, for: indexPath) as! ScheduleCell
         let model = fetchController.object(at: indexPath)
-        cell.configure(name: model.subjectShortName ?? "", type: model.type ?? "", location: model.subjectShortName ?? "", teacher: model.teacherShortName ?? "")
+        cell.configure(name: model.subjectFullName ?? "", type: model.type ?? "", location: model.subjectShortName ?? "", teacher: model.teacherShortName ?? "")
         return cell
     }
 }

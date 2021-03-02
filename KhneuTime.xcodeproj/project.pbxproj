@@ -80,6 +80,7 @@
 		11CEA183253314B000C628F5 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CEA182253314B000C628F5 /* Groups.storyboard */; };
 		11CEA186253314F000C628F5 /* FacultiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEA185253314F000C628F5 /* FacultiesViewController.swift */; };
 		11D061FD25BA9BEC00BBFC38 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D061FC25BA9BEC00BBFC38 /* DetailViewController.swift */; };
+		11D79EBF25EEE32A00B78648 /* Date+startOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D79EBE25EEE32A00B78648 /* Date+startOfDay.swift */; };
 		11FACAE925B241CA00B966FD /* OptionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACAE825B241CA00B966FD /* OptionDataSource.swift */; };
 		11FACAEF25B242E600B966FD /* GroupsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FACAEE25B242E600B966FD /* GroupsDataSource.swift */; };
 /* End PBXBuildFile section */
@@ -160,6 +161,7 @@
 		11CEA182253314B000C628F5 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
 		11CEA185253314F000C628F5 /* FacultiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesViewController.swift; sourceTree = "<group>"; };
 		11D061FC25BA9BEC00BBFC38 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		11D79EBE25EEE32A00B78648 /* Date+startOfDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+startOfDay.swift"; sourceTree = "<group>"; };
 		11FACAE825B241CA00B966FD /* OptionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDataSource.swift; sourceTree = "<group>"; };
 		11FACAEE25B242E600B966FD /* GroupsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -400,6 +402,7 @@
 				11AB6A9525D2A37100EF25A4 /* UIView+addBlur.swift */,
 				1169D7EC25E2DD730070B3DE /* Int+DetailedModelProtocol.swift */,
 				1169D82325E453310070B3DE /*  UIPanGestureRecognizer+presentation.swift */,
+				11D79EBE25EEE32A00B78648 /* Date+startOfDay.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				1169D81925E4506E0070B3DE /* TransitionDriver.swift in Sources */,
 				11CEA186253314F000C628F5 /* FacultiesViewController.swift in Sources */,
 				11112BFF25330C1C003CEEDA /* Storyboard+Type.swift in Sources */,
+				11D79EBF25EEE32A00B78648 /* Date+startOfDay.swift in Sources */,
 				1169D82C25E83ED60070B3DE /* ScheduleViewController.swift in Sources */,
 				1169D7E225E2A5240070B3DE /* ConfigureGroupViewModel+Models.swift in Sources */,
 				11647B7225B3956800D5E00A /* CoordinableViewController.swift in Sources */,
