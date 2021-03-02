@@ -18,7 +18,7 @@ class ScheduleViewController: CoordinableViewController {
     
     var group: GroupDB!
     
-    private var selectedData: Date = Date()
+    private var selectedDate: Date = Date()
     
     private var fetchController: NSFetchedResultsController<ScheduleDb>!
     
@@ -27,20 +27,20 @@ class ScheduleViewController: CoordinableViewController {
         navigationItem.largeTitleDisplayMode = .always
         scheduleTableView.contentInsetAdjustmentBehavior = .never
         title = group.name ?? ""
-        fetchController = DatabaseManager.shared.getSchedule(groupId: Int(group.id), unixDate: Int64(selectedData.startOfDay.timeIntervalSince1970))
+        fetchController = DatabaseManager.shared.getSchedule(groupId: Int(group.id), unixDate: Int64(selectedDate.startOfDay.timeIntervalSince1970))
         try? fetchController.performFetch()
         scheduleTableView.delegate = self
         scheduleTableView.dataSource = self
         scheduleTableView.register(ScheduleCell.nib, forCellReuseIdentifier: ScheduleCell.reusableIndentify)
         scheduleTableView.register(NoDataCell.nib, forCellReuseIdentifier: NoDataCell.reusableIndentify)
-        dateLabel.text = selectedData.getDescription(by: "dd-MMM")
+        dateLabel.text = selectedDate.getDescription(by: "dd-MMM")
         
         let updateItem = UIBarButtonItem(image: UIImage(systemName: "arrow.clockwise"), style: .plain, target: self, action: #selector(updateSchedule(_:)))
         navigationItem.rightBarButtonItems = [updateItem]
     }
     
     private func getSchedule() {
-        fetchController = DatabaseManager.shared.getSchedule(groupId: Int(group.id), unixDate: Int64(selectedData.startOfDay.timeIntervalSince1970))
+        fetchController = DatabaseManager.shared.getSchedule(groupId: Int(group.id), unixDate: Int64(selectedDate.startOfDay.timeIntervalSince1970))
         try? fetchController.performFetch()
         scheduleTableView.reloadData()
     }
@@ -64,6 +64,10 @@ class ScheduleViewController: CoordinableViewController {
     }
     
     @IBAction func calendarDidTap(_ sender: Any) {
+        coordinator?.openCalendar(selectedDate: selectedDate, doneAction: {[weak self] selectedDate in
+            self?.selectedDate = selectedDate
+            self?.getSchedule()
+        })
         getSchedule()
     }
     

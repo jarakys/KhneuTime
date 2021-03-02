@@ -8,6 +8,7 @@
 import UIKit
 
 class MainCoordinator: Coordinator {
+    
     var childCoordinators = [Coordinator]()
     var tabBarController: UITabBarController
     weak var currentVC: UIViewController?
@@ -66,15 +67,29 @@ class MainCoordinator: Coordinator {
         (tabBarController.selectedViewController as? UINavigationController)?.pushViewController(scheduleVC, animated: true)
     }
     
+    func openCalendar(selectedDate: Date, doneAction: @escaping (Date) -> Void) {
+        let storyboard = UIStoryboard.storyboard(storyboard: .main)
+        let calendarVC: CalendarViewController = storyboard.instantiateViewController()
+        calendarVC.doneAction = doneAction
+        calendarVC.initDate = selectedDate
+        let transition = PanelTransition()
+        calendarVC.transitioningDelegate = transition
+        calendarVC.modalPresentationStyle = .custom
+        currentVC?.present(calendarVC, animated: true, completion: nil)
+    }
+    
     func startConfigureTeacherVC() {
     }
     
     func startSelectFaculty() {
+        
     }
     
     func startSelectSpecialty() {
+        
     }
     
     func startSelectGroup() {
+        
     }
 }
