@@ -278,12 +278,18 @@
                                         <rect key="frame" x="0.0" y="0.0" width="83" height="30"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                         <state key="normal" title=" Close"/>
+                                        <connections>
+                                            <action selector="closeDidTap:" destination="abX-uy-Cr8" eventType="touchUpInside" id="M0x-Td-oQQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="as6-dS-2Sa">
                                         <rect key="frame" x="336" y="0.0" width="78" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                         <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="doneDidTap:" destination="abX-uy-Cr8" eventType="touchUpInside" id="amt-GM-SHb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

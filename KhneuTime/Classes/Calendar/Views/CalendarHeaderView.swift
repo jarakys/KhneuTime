@@ -22,7 +22,8 @@ class CalendarPickerHeaderView: UIView {
     lazy var dayOfWeekStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fillEqually
+        stackView.spacing = 0
         return stackView
     }()
     

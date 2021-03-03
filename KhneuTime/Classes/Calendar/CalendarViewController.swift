@@ -20,10 +20,14 @@ class CalendarViewController: UIViewController {
     private var days = [Day]()
     
     
-    var doneAction: ((Date) -> Void)!
+    var doneAction: ((Date) -> Void)?
     public var initDate: Date!
     
-    private var selectedDate: Date?
+    private var selectedDate: Date = Date() {
+        didSet {
+            headerView.baseDate = selectedDate
+        }
+    }
     private var selectedDateChanged: ((Date) -> Void)?
     private var baseDate = Date() {
         didSet {
@@ -126,6 +130,16 @@ class CalendarViewController: UIViewController {
             isWithinDisplayedMonth: isWithinDisplayedMonth
         )
     }
+    
+    @IBAction func doneDidTap(_ sender: Any) {
+        doneAction?(selectedDate)
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func closeDidTap(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -150,8 +164,7 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let day = days[indexPath.row]
-        dismiss(animated: true, completion: nil)
+        selectedDate = days[indexPath.row].date
     }
     
 }
