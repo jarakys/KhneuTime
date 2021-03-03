@@ -84,7 +84,7 @@ class DatabaseManager {
         let datePredicate = NSPredicate(format: "date == %i", unixDate)
         let andPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [groupPredicate, datePredicate])
         request.predicate = andPredicate
-        request.sortDescriptors = [NSSortDescriptor(key: "startUnix", ascending: false)]
+        request.sortDescriptors = [NSSortDescriptor(key: "startUnix", ascending: true)]
         let fetchController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: dataStack.context, sectionNameKeyPath: nil, cacheName: nil)
         return fetchController
     }
