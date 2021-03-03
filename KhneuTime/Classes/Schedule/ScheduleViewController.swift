@@ -18,7 +18,11 @@ class ScheduleViewController: CoordinableViewController {
     
     var group: GroupDB!
     
-    private var selectedDate: Date = Date()
+    private var selectedDate: Date = Date() {
+        didSet {
+            dateLabel.text = selectedDate.getDescription(by: "E, dd MMM")
+        }
+    }
     
     private var fetchController: NSFetchedResultsController<ScheduleDb>!
     
