@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController: UITabBarController = storyboard.instantiateViewController()
         coordinator = MainCoordinator(tabBarController: tabBarController)
         coordinator?.initVCs()
+        window?.overrideUserInterfaceStyle = .dark
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
     }
