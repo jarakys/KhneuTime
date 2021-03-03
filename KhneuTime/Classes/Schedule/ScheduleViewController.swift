@@ -84,7 +84,7 @@ extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: ScheduleCell.reusableIndentify, for: indexPath) as! ScheduleCell
         let model = fetchController.object(at: indexPath)
-        cell.configure(name: model.subjectFullName ?? "", type: model.type ?? "", location: model.subjectShortName ?? "", teacher: model.teacherShortName ?? "", time: Date(timeIntervalSince1970: TimeInterval(Int(model.startUnix!)!)).getDescription(by: "HH:mm"))
+        cell.configure(name: model.subjectFullName ?? "", type: model.type ?? "", location: model.location ?? "", teacher: model.teacherShortName ?? "", time: Date(timeIntervalSince1970: TimeInterval(Int(model.startUnix!)!)).getDescription(by: "HH:mm"))
         return cell
     }
 }
