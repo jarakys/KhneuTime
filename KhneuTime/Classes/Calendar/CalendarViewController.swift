@@ -13,10 +13,12 @@ protocol CalendarViewControllerDelegate: class {
 
 class CalendarViewController: UIViewController {
     
+    @IBOutlet weak var actionStackView: UIStackView!
     @IBOutlet weak var calendarCollectionView: UICollectionView!
     
     private var calendar = Calendar.iso8601UTC
     private var days = [Day]()
+    
     
     var doneAction: ((Date) -> Void)!
     public var initDate: Date!
@@ -47,7 +49,7 @@ class CalendarViewController: UIViewController {
         let constraints = [
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            headerView.topAnchor.constraint(equalTo: view.topAnchor),
+            headerView.topAnchor.constraint(equalTo: actionStackView.bottomAnchor),
             headerView.bottomAnchor.constraint(equalTo: calendarCollectionView.topAnchor),
             headerView.heightAnchor.constraint(equalToConstant: 85),
         ]

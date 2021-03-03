@@ -10,6 +10,8 @@ import UIKit
 
 class PresentationController: UIPresentationController {
     
+    private let height: CGFloat
+    
     private lazy var dimmView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(white: 0, alpha: 0.3)
@@ -19,11 +21,15 @@ class PresentationController: UIPresentationController {
 
     override var frameOfPresentedViewInContainerView: CGRect {
         let bounds = containerView!.bounds
-        let height = CGFloat(300)
         return CGRect(x: 0,
                       y: bounds.height - height,
                       width: bounds.width,
                       height: height)
+    }
+    
+    init(presentedViewController: UIViewController, presentingViewController: UIViewController?, height: CGFloat) {
+        self.height = height
+        super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
     }
     
     override func presentationTransitionWillBegin() {

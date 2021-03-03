@@ -43,7 +43,7 @@ class MainCoordinator: Coordinator {
         let detailVC: CourseViewController = storyboard.instantiateViewController()
         detailVC.didClose = completion
         detailVC.data = data
-        let transition = PanelTransition()
+        let transition = PanelTransition(height: 300)
         detailVC.transitioningDelegate = transition
         detailVC.modalPresentationStyle = .custom
         currentVC?.present(detailVC, animated: true, completion: nil)
@@ -72,7 +72,7 @@ class MainCoordinator: Coordinator {
         let calendarVC: CalendarViewController = storyboard.instantiateViewController()
         calendarVC.doneAction = doneAction
         calendarVC.initDate = selectedDate
-        let transition = PanelTransition()
+        let transition = PanelTransition(height: 350)
         calendarVC.transitioningDelegate = transition
         calendarVC.modalPresentationStyle = .custom
         currentVC?.present(calendarVC, animated: true, completion: nil)

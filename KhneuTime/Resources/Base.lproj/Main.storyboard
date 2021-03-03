@@ -251,18 +251,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T6Y-Wh-bju">
-                                <rect key="frame" x="177" y="54" width="60" height="10"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="CyY-OI-HF5"/>
-                                    <constraint firstAttribute="height" constant="10" id="TcS-0Z-nOz"/>
-                                </constraints>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xtP-Jf-eke">
-                                <rect key="frame" x="0.0" y="74" width="414" height="788"/>
+                                <rect key="frame" x="0.0" y="149" width="414" height="713"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="m81-2F-Sdx">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="m81-2F-Sdx">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -279,19 +271,40 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="R2o-0c-Pxc">
+                                <rect key="frame" x="0.0" y="54" width="414" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNm-oi-4E7">
+                                        <rect key="frame" x="0.0" y="0.0" width="83" height="30"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <state key="normal" title=" Close"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="as6-dS-2Sa">
+                                        <rect key="frame" x="336" y="0.0" width="78" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <state key="normal" title="Done"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ube-gf-51d"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vfp-iD-QPZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Vfp-iD-QPZ" firstAttribute="trailing" secondItem="xtP-Jf-eke" secondAttribute="trailing" id="2u4-7C-HAB"/>
                             <constraint firstItem="Vfp-iD-QPZ" firstAttribute="bottom" secondItem="xtP-Jf-eke" secondAttribute="bottom" id="3fC-m5-naV"/>
-                            <constraint firstItem="T6Y-Wh-bju" firstAttribute="centerX" secondItem="Gmn-qN-upu" secondAttribute="centerX" id="95a-3B-Tyx"/>
-                            <constraint firstItem="xtP-Jf-eke" firstAttribute="top" secondItem="T6Y-Wh-bju" secondAttribute="bottom" constant="10" id="Exu-dw-Iha"/>
+                            <constraint firstItem="xtP-Jf-eke" firstAttribute="top" secondItem="R2o-0c-Pxc" secondAttribute="bottom" constant="65" id="FFY-80-dGs"/>
+                            <constraint firstItem="Vfp-iD-QPZ" firstAttribute="trailing" secondItem="R2o-0c-Pxc" secondAttribute="trailing" id="VFJ-Vk-lOq"/>
                             <constraint firstItem="xtP-Jf-eke" firstAttribute="leading" secondItem="Vfp-iD-QPZ" secondAttribute="leading" id="a3R-Fb-xcQ"/>
-                            <constraint firstItem="T6Y-Wh-bju" firstAttribute="top" secondItem="Vfp-iD-QPZ" secondAttribute="top" constant="10" id="vb7-nf-Y1K"/>
+                            <constraint firstItem="R2o-0c-Pxc" firstAttribute="top" secondItem="Vfp-iD-QPZ" secondAttribute="top" constant="10" id="lPJ-kj-gId"/>
+                            <constraint firstItem="R2o-0c-Pxc" firstAttribute="leading" secondItem="Vfp-iD-QPZ" secondAttribute="leading" id="rd7-Vb-wr4"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="actionStackView" destination="R2o-0c-Pxc" id="lio-uc-Ch7"/>
                         <outlet property="calendarCollectionView" destination="xtP-Jf-eke" id="49B-v3-uFV"/>
                     </connections>
                 </viewController>
@@ -314,9 +327,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

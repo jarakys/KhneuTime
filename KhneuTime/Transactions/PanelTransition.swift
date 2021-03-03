@@ -12,10 +12,17 @@ class PanelTransition: NSObject, UIViewControllerTransitioningDelegate {
     
     private let driver = TransitionDriver()
     
+    var height: CGFloat = 300
+    
+    init(height: CGFloat) {
+        super.init()
+        self.height = height
+    }
+    
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         driver.link(to: presented)
         return PresentationController(presentedViewController: presented,
-                                                               presenting: presenting ?? source)
+                                      presentingViewController: presenting ?? source, height: height)
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
