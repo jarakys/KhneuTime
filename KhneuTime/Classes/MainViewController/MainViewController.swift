@@ -23,6 +23,11 @@ class MainViewController: CoordinableViewController {
         infoTableView.register(HeaderView.nib, forHeaderFooterViewReuseIdentifier: HeaderView.reusableIndentify)
         dataSources = [OptionDataSource(options: OptionsEnum.allCases, delegate: self), GroupsDataSource(coordinator: coordinator!)]
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        infoTableView.reloadData()
+    }
 }
 
 // MARK: UITableViewDelegate, UITableViewDataSource
