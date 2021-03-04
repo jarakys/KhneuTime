@@ -57,13 +57,13 @@ class ScheduleViewController: CoordinableViewController {
         })
     }
     
-    @IBAction func nextButtonDidTap(_ sender: Any) {
-        // Add Date + 1
+    @IBAction func backButtonDidTap(_ sender: Any) {
+        selectedDate = selectedDate.addDay(value: 1)
         getSchedule()
     }
     
-    @IBAction func backButtonDidTap(_ sender: Any) {
-        // Add Date + 1
+    @IBAction func nextButtonDidTap(_ sender: Any) {
+        selectedDate = selectedDate.addDay(value: -1)
         getSchedule()
     }
     

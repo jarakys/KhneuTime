@@ -17,4 +17,8 @@ extension Date {
         dateFormatterPrint.dateFormat = format
         return dateFormatterPrint.string(from: self)
     }
+    
+    func addDay(value: Int) -> Self {
+        return Calendar.current.date(byAdding: .day, value: value, to: self) ?? self
+    }
 }
