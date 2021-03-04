@@ -89,6 +89,14 @@ class DatabaseManager {
         return fetchController
     }
     
+    func deleteSchedule(for groupId: Int) {
+        let request: NSFetchRequest<NSFetchRequestResult> = ScheduleDb.fetchRequest()
+        request.predicate = NSPredicate(format: "id == %i", groupId)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
+        _ = try? dataStack.context.execute(deleteRequest)
+        saveContext()
+    }
+    
     func saveContext() {
         if dataStack.context.hasChanges {
             do {

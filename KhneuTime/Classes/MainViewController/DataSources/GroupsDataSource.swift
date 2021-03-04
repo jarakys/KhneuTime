@@ -6,15 +6,20 @@
 //
 
 import UIKit
+import CoreData
 
 class GroupsDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
-    let fetchController = DatabaseManager.shared.getGroups(by: PrefsManager.shared.get(pref: .selectedGroups) ?? [])
+    var fetchController: NSFetchedResultsController<GroupDB> {
+        let fetchController = DatabaseManager.shared.getGroups(by: PrefsManager.shared.get(pref: .selectedGroups) ?? [])
+        try? fetchController.performFetch()
+        return fetchController
+    }
     weak var coordinator: Coordinator?
     
     init(coordinator: Coordinator) {
+        super.init()
         self.coordinator = coordinator
-        try? fetchController.performFetch()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -41,6 +46,24 @@ class GroupsDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = fetchController.fetchedObjects![indexPath.row]
         coordinator?.openSchedule(for: model)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let model = fetchController.fetchedObjects![indexPath.row]
+        var groups: [Int] = PrefsManager.shared.get(pref: .selectedGroups) ?? []
+        groups.removeAll(where: { $0 == model.id })
+        DatabaseManager.shared.deleteSchedule(for: Int(model.id))
+        PrefsManager.shared.set(pref: .selectedGroups, value: groups)
+        try? fetchController.performFetch()
+        tableView.reloadData()
     }
 }
 

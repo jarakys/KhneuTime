@@ -45,6 +45,18 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         dataSources[section].tableView(tableView, numberOfRowsInSection: section)
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        dataSources[indexPath.section].tableView?(tableView, commit: editingStyle, forRowAt: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        dataSources[indexPath.section].tableView?(tableView, canEditRowAt: indexPath) ?? false
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        dataSources[indexPath.section].tableView?(tableView, editingStyleForRowAt: indexPath) ?? .none
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         dataSources[indexPath.section].tableView(tableView, cellForRowAt: indexPath)
     }

@@ -15,24 +15,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="491" height="174"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mikki" translatesAutoresizingMaskIntoConstraints="NO" id="X0T-wb-VRD">
-                        <rect key="frame" x="0.0" y="0.0" width="491" height="170"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noSchedule" translatesAutoresizingMaskIntoConstraints="NO" id="X0T-wb-VRD">
+                        <rect key="frame" x="97.5" y="0.0" width="296" height="170"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="170" id="aWC-SQ-gR3"/>
                         </constraints>
                     </imageView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="X0T-wb-VRD" secondAttribute="bottom" id="I4t-vN-LAZ"/>
+                    <constraint firstItem="X0T-wb-VRD" firstAttribute="centerX" secondItem="JZs-89-NW6" secondAttribute="centerX" id="TsW-MO-g3c"/>
                     <constraint firstItem="X0T-wb-VRD" firstAttribute="top" secondItem="JZs-89-NW6" secondAttribute="top" id="Uh2-M2-bIA"/>
-                    <constraint firstItem="X0T-wb-VRD" firstAttribute="leading" secondItem="JZs-89-NW6" secondAttribute="leading" id="f3w-kY-kg6"/>
-                    <constraint firstAttribute="trailing" secondItem="X0T-wb-VRD" secondAttribute="trailing" id="xhZ-Er-yCW"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <point key="canvasLocation" x="-215.21739130434784" y="107.14285714285714"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="mikki" width="600" height="561"/>
+        <image name="noSchedule" width="296" height="300"/>
     </resources>
 </document>
