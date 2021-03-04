@@ -11,8 +11,11 @@ import UIKit
 class CalendarCell: UICollectionViewCell, ReusableCell {
     
     @IBOutlet weak var numberTitle: UILabel!
-
+    
     func configure(number: String) {
         numberTitle.text = number
+        let view = UIView()
+        view.backgroundColor = UIColor.systemOrange.withAlphaComponent(0.3)
+        selectedBackgroundView = view
     }
 }

@@ -18,6 +18,7 @@ class CalendarViewController: UIViewController {
     
     private var calendar = Calendar.iso8601UTC
     private var days = [Day]()
+    private var selectedDay: Day?
     
     
     var doneAction: ((Date) -> Void)?
@@ -63,7 +64,16 @@ class CalendarViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         days = generateDaysInMonth(for: Date())
+        selectedDay = days.first(where: {$0.date.startOfDay == selectedDate.startOfDay})
         calendarCollectionView?.reloadData()
+        updateCalendarViewSelection()
+    }
+    
+    func updateCalendarViewSelection() {
+        calendarCollectionView?.reloadData()
+        guard let day = selectedDay else { return }
+        let indexPath = IndexPath(item: Int(day.number)! - 1, section: 0)
+        self.collectionView(calendarCollectionView, didSelectItemAt: indexPath)
     }
     
     func generateDaysInMonth(for baseDate: Date) -> [Day] {
@@ -151,6 +161,8 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarCell.reusableIndentify, for: indexPath)
         let model = days[indexPath.row]
         (cell as? CalendarCell)?.configure(number: model.number)
+        (cell as? CalendarCell)?.numberTitle.textColor = model.date.startOfDay == Date().startOfDay ? UIColor.systemOrange : .label
+        cell.selectedBackgroundView?.layer.cornerRadius = cell.frame.height / 2
         return cell
     }
     
@@ -164,7 +176,12 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedDate = days[indexPath.row].date
+        selectedDay = days[indexPath.row]
+        selectedDate = selectedDay?.date ?? Date()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        collectionView.cellForItem(at: indexPath)!.isSelected = false
     }
     
 }
