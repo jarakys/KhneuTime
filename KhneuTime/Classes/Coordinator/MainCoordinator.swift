@@ -72,6 +72,7 @@ class MainCoordinator: Coordinator {
         let calendarVC: CalendarViewController = storyboard.instantiateViewController()
         calendarVC.doneAction = doneAction
         calendarVC.initDate = selectedDate
+        calendarVC.selectedDate = selectedDate
         let transition = PanelTransition(height: 350)
         calendarVC.transitioningDelegate = transition
         calendarVC.modalPresentationStyle = .custom

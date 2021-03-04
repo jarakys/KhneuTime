@@ -24,7 +24,7 @@ class CalendarViewController: UIViewController {
     var doneAction: ((Date) -> Void)?
     public var initDate: Date!
     
-    private var selectedDate: Date = Date() {
+    var selectedDate: Date = Date() {
         didSet {
             headerView.baseDate = selectedDate
         }
@@ -73,6 +73,7 @@ class CalendarViewController: UIViewController {
         calendarCollectionView?.reloadData()
         guard let day = selectedDay else { return }
         let indexPath = IndexPath(item: Int(day.number)! - 1, section: 0)
+        self.calendarCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: [])
         self.collectionView(calendarCollectionView, didSelectItemAt: indexPath)
     }
     
