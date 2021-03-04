@@ -14,7 +14,13 @@ class DetailViewController: UIViewController {
     
     var didClose: ((DetailedModelProtocol?) -> Void)?
     
-    var data = [DetailedModelProtocol]()
+    var data = [DetailedModelProtocol]() {
+        didSet {
+            searchedData = data
+        }
+    }
+    
+    private var searchedData = [DetailedModelProtocol]()
     
     var selectedData: DetailedModelProtocol?
     var closeOnClick = false
@@ -49,12 +55,12 @@ class DetailViewController: UIViewController {
 //MARK: UITableViewDelegate, UITableViewDataSource
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        data.count
+        searchedData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailedCell.reusableIndentify, for: indexPath) as! DetailedCell
-        cell.configure(data: data[indexPath.row])
+        cell.configure(data: searchedData[indexPath.row])
         cell.accessoryType = .none
         return cell
     }
@@ -62,7 +68,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
-        selectedData = data[indexPath.row]
+        selectedData = searchedData[indexPath.row]
         if closeOnClick { saveDidTap(nil) }
     }
     
@@ -72,14 +78,36 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-//MARK: UISearchResultsUpdating
-extension DetailViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        
-    }
-}
-
 // MARK: UISearchBarDelegate {
 extension DetailViewController: UISearchBarDelegate {
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchedData = data
+        detailsViewController.reloadData()
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.showsCancelButton = true
+        return true
+    }
+    
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.showsCancelButton = false
+        return true
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty || searchText.trimmingCharacters(in: .whitespaces).count == 0 {
+            searchedData = data
+        } else {
+            searchedData = data.filter({ $0.nameDetailed.contains(searchText)} )
+        }
+        detailsViewController.reloadData()
+    }
 }
