@@ -19,6 +19,11 @@ extension ConfigureGroupViewModel {
     class SelectableDropdownNodeState {
         @Binding var value = ""
         @Binding var id = -1
+        
+        func reset() {
+            value = ""
+            id = -1
+        }
     }
     
     struct SelectableDropdownNode: SettingNode {

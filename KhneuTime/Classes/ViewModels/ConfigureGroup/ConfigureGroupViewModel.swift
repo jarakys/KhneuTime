@@ -30,6 +30,7 @@ class ConfigureGroupViewModel {
     func prepareState() {
         state.facultyState.$id.subscribe(self, callback: {[weak self] value in
             self?.updateDataSourceProperty(\.selectedFaculty, with: value)
+            self?.state.specialtyState.reset()
             self?.composeNodes()
         })
         
