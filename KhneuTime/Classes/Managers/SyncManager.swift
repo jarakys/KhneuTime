@@ -40,8 +40,6 @@ enum SyncEntitiesEnum: CaseIterable {
             return "ScheduleDB"
         case .studentTypes:
             return "StudentTypeDB"
-        default:
-            return ""
         }
     }
     
@@ -107,6 +105,7 @@ class SyncManager {
     func setSchedule(for groupId: Int, completion: @escaping(Bool) -> Void) {
         NetworkManager.shared.sendRequest(route: .shedule(groupId: groupId), completion: { result in
             if case let .success(schedule) = result {
+                DatabaseManager.shared.deleteSchedule(for: groupId)
                 DatabaseManager.shared.insertOrUpdateObject(entity: .schedule, data: schedule, completion: {
                     completion(true)
                 })

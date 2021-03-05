@@ -33,6 +33,7 @@
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="startUnix"/>
+                <constraint value="id"/>
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
