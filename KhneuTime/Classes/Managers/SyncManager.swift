@@ -70,36 +70,24 @@ class SyncManager {
         var currentOperation: Operation?
         let operationQueue = OperationQueue()
         for entity in entities {
-            let operation = AsynchronousOperation()
-            if let currentOperation = currentOperation {
-                operation.addDependency(currentOperation)
-            }
-            operation.block = {
-                let sem = DispatchSemaphore(value: 0)
-                for route in entity.routes {
-                    NetworkManager.shared.sendRequest(route: route, completion: {result in
-                        if case let .success(data) = result {
-                            DatabaseManager.shared.insertOrUpdateObject(entity: entity, data: data)
-                        }
-                        sem.signal()
-                    })
+            for route in entity.routes {
+                let operation = NetworkAsyncOperation(route: route, entity: entity)
+                operation.block = {
+                    if operationQueue.operations.count == 0 {
+                        completion()
+                    }
                 }
-                sem.wait()
-                if operation == operationQueue.operations.last {
-                    completion()
+                if let currentOperation = currentOperation {
+                    operation.addDependency(currentOperation)
                 }
+                operationQueue.addOperation(operation)
+                currentOperation = operation
             }
-            currentOperation = operation
-            operationQueue.addOperation(operation)
+            
         }
     }
     
     func startSync() {
-    }
-    
-    
-    func removeSchedule(for groupId: Int) {
-        
     }
     
     func setSchedule(for groupId: Int, completion: @escaping(Bool) -> Void) {
@@ -114,5 +102,4 @@ class SyncManager {
             }
         })
     }
-    
 }

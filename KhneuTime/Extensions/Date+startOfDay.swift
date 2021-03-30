@@ -21,4 +21,8 @@ extension Date {
     func addDay(value: Int) -> Self {
         return Calendar.current.date(byAdding: .day, value: value, to: self) ?? self
     }
+    
+    func addMonth(value: Int) -> Self {
+        return Calendar.current.date(byAdding: .month, value: value, to: self) ?? self
+    }
 }

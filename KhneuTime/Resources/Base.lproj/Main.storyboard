@@ -24,12 +24,40 @@
                     </tabBar>
                     <connections>
                         <segue destination="Xh5-MY-1Pp" kind="relationship" relationship="viewControllers" id="UAT-ep-Ji1"/>
-                        <segue destination="8vk-AD-4Nl" kind="relationship" relationship="viewControllers" id="7yV-mw-1cC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dnq-a9-IvU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-745" y="735"/>
+        </scene>
+        <!--Launch Screen View Controller-->
+        <scene sceneID="slK-nt-vfJ">
+            <objects>
+                <viewController storyboardIdentifier="LaunchScreenViewController" modalPresentationStyle="fullScreen" id="sTa-3H-7QP" customClass="LaunchScreenViewController" customModule="KhneuTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="blq-Po-V8n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KhneuTimeTable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gro-aX-zsp">
+                                <rect key="frame" x="20" y="427" width="374" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="35"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5Am-g7-c0z"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gro-aX-zsp" firstAttribute="leading" secondItem="5Am-g7-c0z" secondAttribute="leading" constant="20" id="5YN-cJ-h3h"/>
+                            <constraint firstItem="gro-aX-zsp" firstAttribute="centerY" secondItem="blq-Po-V8n" secondAttribute="centerY" id="OFD-Nz-rzJ"/>
+                            <constraint firstItem="gro-aX-zsp" firstAttribute="centerX" secondItem="blq-Po-V8n" secondAttribute="centerX" id="hPu-e7-aP6"/>
+                            <constraint firstItem="5Am-g7-c0z" firstAttribute="trailing" secondItem="gro-aX-zsp" secondAttribute="trailing" constant="20" id="w4b-Jo-dFw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HTY-bQ-Q6L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-836" y="1567"/>
         </scene>
         <!--Documents-->
         <scene sceneID="LaD-fH-0Zl">
@@ -40,7 +68,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="DQU-g0-u7T">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -247,11 +275,11 @@
         <scene sceneID="7Sd-Um-V2V">
             <objects>
                 <viewController storyboardIdentifier="CalendarViewController" id="abX-uy-Cr8" customClass="CalendarViewController" customModule="KhneuTime" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Gmn-qN-upu">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Gmn-qN-upu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xtP-Jf-eke">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtP-Jf-eke" customClass="SwipableCollectionView" customModule="KhneuTime" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="149" width="414" height="713"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="m81-2F-Sdx">
@@ -270,6 +298,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="plv-Yx-gXd" appends="YES" id="JpK-EX-zPi"/>
+                                    <outletCollection property="gestureRecognizers" destination="XO2-Jk-jPm" appends="YES" id="1Yi-YH-LGn"/>
+                                </connections>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="R2o-0c-Pxc">
                                 <rect key="frame" x="0.0" y="54" width="414" height="30"/>
@@ -299,6 +331,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vfp-iD-QPZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Vfp-iD-QPZ" firstAttribute="trailing" secondItem="xtP-Jf-eke" secondAttribute="trailing" id="2u4-7C-HAB"/>
                             <constraint firstItem="Vfp-iD-QPZ" firstAttribute="bottom" secondItem="xtP-Jf-eke" secondAttribute="bottom" id="3fC-m5-naV"/>
@@ -312,9 +345,21 @@
                     <connections>
                         <outlet property="actionStackView" destination="R2o-0c-Pxc" id="lio-uc-Ch7"/>
                         <outlet property="calendarCollectionView" destination="xtP-Jf-eke" id="49B-v3-uFV"/>
+                        <outlet property="liftSwipe" destination="plv-Yx-gXd" id="nmF-sc-hAd"/>
+                        <outlet property="rightSwipe" destination="XO2-Jk-jPm" id="A10-pc-aWj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCT-uP-4i2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="plv-Yx-gXd">
+                    <connections>
+                        <action selector="didSwipe:" destination="abX-uy-Cr8" id="Oxo-Y6-Fgf"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="XO2-Jk-jPm">
+                    <connections>
+                        <action selector="didSwipe:" destination="abX-uy-Cr8" id="FTq-QP-R8d"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1839" y="1017"/>
         </scene>

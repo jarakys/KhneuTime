@@ -50,7 +50,7 @@ class ConfigureGroupViewModel {
             for difference in differences {
                 switch difference {
                 case .remove(_, let element, _):
-                    SyncManager.shared.removeSchedule(for: element)
+                    DatabaseManager.shared.deleteSchedule(for: element)
                     
                 case .insert(_, let element, _):
                     self.coordinator.presentAlert(title: "Waiting", message: "Update schedule", actiions: [], callback: {_ in })

@@ -21,7 +21,6 @@ extension UIStoryboard {
         guard let viewController = self.instantiateViewController(withIdentifier: T.className) as? T else {
             fatalError("Couldn't instantiate view controller with identifier \(T.className) ")
         }
-        
         return viewController
     }
     

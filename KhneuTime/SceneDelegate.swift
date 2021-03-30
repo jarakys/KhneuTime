@@ -24,9 +24,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController: UITabBarController = storyboard.instantiateViewController()
         coordinator = MainCoordinator(tabBarController: tabBarController)
         coordinator?.initVCs()
+        let isNotFirstLaunch: Bool? = PrefsManager.shared.get(pref: .notFirstLaunch)
         window?.overrideUserInterfaceStyle = .dark
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
+        if isNotFirstLaunch == nil || (isNotFirstLaunch ?? false) == false {
+            let launchController: LaunchScreenViewController = storyboard.instantiateViewController()
+            tabBarController.present(launchController, animated: false, completion: nil)
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

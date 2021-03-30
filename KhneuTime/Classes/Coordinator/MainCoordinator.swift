@@ -17,6 +17,10 @@ class MainCoordinator: Coordinator {
         self.tabBarController = tabBarController
     }
     
+    func loadingScree() {
+        
+    }
+    
     func initVCs() {
         tabBarController.viewControllers?.forEach({ vc in
             ((vc as? UINavigationController)?.topViewController as? CoordinableViewController)?.coordinator = self
@@ -73,6 +77,7 @@ class MainCoordinator: Coordinator {
         calendarVC.doneAction = doneAction
         calendarVC.initDate = selectedDate
         calendarVC.selectedDate = selectedDate
+        calendarVC.baseDate = selectedDate
         let transition = PanelTransition(height: 350)
         calendarVC.transitioningDelegate = transition
         calendarVC.modalPresentationStyle = .custom

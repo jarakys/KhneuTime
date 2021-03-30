@@ -37,11 +37,7 @@ open class AsynchronousOperation: Operation {
         } else {
             state = .executing
         }
-        let _block = { [weak self] in
-            self?.block?()
-            self?.state = .finished
-        }
-        _block()
+        state = .finished
     }
     
     public func finish() {
@@ -78,4 +74,32 @@ open class AsynchronousOperation: Operation {
     private let stateQueue = DispatchQueue(label: "AsynchronousOperation_State_Queue", attributes: .concurrent)
     
     private var stateStore: State = .ready
+}
+
+
+final class NetworkAsyncOperation: AsynchronousOperation {
+    
+    let route: APIRouter
+    let entity: SyncEntitiesEnum
+    
+    init(route: APIRouter, entity: SyncEntitiesEnum) {
+        self.route = route
+        self.entity = entity
+        super.init()
+    }
+    
+     override func main() {
+        if self.isCancelled {
+            state = .finished
+        } else {
+            state = .executing
+        }
+        NetworkManager.shared.sendRequest(route: route, completion: {result in
+            if case let .success(data) = result {
+                DatabaseManager.shared.insertOrUpdateObject(entity: self.entity, data: data)
+            }
+            self.state = .finished
+            self.block?()
+        })
+    }
 }

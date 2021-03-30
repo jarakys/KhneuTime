@@ -14,7 +14,9 @@ protocol CalendarViewControllerDelegate: class {
 class CalendarViewController: UIViewController {
     
     @IBOutlet weak var actionStackView: UIStackView!
-    @IBOutlet weak var calendarCollectionView: UICollectionView!
+    @IBOutlet weak var calendarCollectionView: SwipableCollectionView!
+    @IBOutlet var liftSwipe: UISwipeGestureRecognizer!
+    @IBOutlet var rightSwipe: UISwipeGestureRecognizer!
     
     private var calendar = Calendar.iso8601UTC
     private var days = [Day]()
@@ -30,11 +32,10 @@ class CalendarViewController: UIViewController {
         }
     }
     private var selectedDateChanged: ((Date) -> Void)?
-    private var baseDate = Date() {
+    var baseDate: Date! {
         didSet {
             days = generateDaysInMonth(for: baseDate)
             headerView.baseDate = baseDate
-            calendarCollectionView.reloadData()
         }
     }
     
@@ -60,10 +61,13 @@ class CalendarViewController: UIViewController {
         ]
         headerView.baseDate = baseDate
         NSLayoutConstraint.activate(constraints)
+        liftSwipe.delegate = calendarCollectionView
+        rightSwipe.delegate = calendarCollectionView
+        calendarCollectionView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        days = generateDaysInMonth(for: Date())
+        days = generateDaysInMonth(for: baseDate)
         selectedDay = days.first(where: {$0.date.startOfDay == selectedDate.startOfDay})
         calendarCollectionView?.reloadData()
         updateCalendarViewSelection()
@@ -72,7 +76,8 @@ class CalendarViewController: UIViewController {
     func updateCalendarViewSelection() {
         calendarCollectionView?.reloadData()
         guard let day = selectedDay else { return }
-        let indexPath = IndexPath(item: Int(day.number)! - 1, section: 0)
+        let position  = days.firstIndex(where: { $0.number == day.number}) ?? 0
+        let indexPath = IndexPath(item: position, section: 0)
         self.calendarCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: [])
         self.collectionView(calendarCollectionView, didSelectItemAt: indexPath)
     }
@@ -140,6 +145,16 @@ class CalendarViewController: UIViewController {
             isSelected: false,
             isWithinDisplayedMonth: isWithinDisplayedMonth
         )
+    }
+    @IBAction func didSwipe(_ sender: UISwipeGestureRecognizer) {
+        switch sender.direction {
+        case .right:
+            baseDate = baseDate.addMonth(value: -1)
+        case .left:
+            baseDate = baseDate.addMonth(value: 1)
+        default: return
+        }
+        calendarCollectionView.reloadData()
     }
     
     @IBAction func doneDidTap(_ sender: Any) {
